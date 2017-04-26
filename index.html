@@ -385,6 +385,8 @@
 
 <h2 id="architectural-overview-common-api">Architectural overview - Common API</h2>
 
+<p><img src="/images/architec-overview-kopi.png" alt="overview" /></p>
+
 <h3 id="information-models">Information Models</h3>
 
 <p>The Common API consist of standardized information models that will presented as resources in the Consumer API. Each Common API can consist of one or more information models. The models are documented here <a href="https://dokumentasjon.felleskomponent.no">https://dokumentasjon.felleskomponent.no</a></p>
@@ -433,6 +435,9 @@ Keeps track of which data has changed since the last time the cache was populate
 
 <p>All events are logged at all stages.</p>
 
+<p><img src="/images/fint-event-flow.png" alt="Event flow" />
+<strong><em>Event flow</em></strong></p>
+
 <h2 id="provider-api">Provider API</h2>
 
 <p>The provider API is where the adapter communicates with the Common API. The adapter connects to get events from the Common API and sends back the response with the information from the business application.</p>
@@ -440,6 +445,8 @@ Keeps track of which data has changed since the last time the cache was populate
 <p>The provider API makes use of SSE (Server-Sent-Events) (<a href="https://en.wikipedia.org/wiki/Server-sent_events">https://en.wikipedia.org/wiki/Server-sent_events</a>) to send events to the adapter.</p>
 
 <h2 id="endpoints">Endpoints</h2>
+
+<p><img src="/images/adapter-flow.png" alt="Adapter Flow" /></p>
 
 <table>
 <thead>
@@ -479,7 +486,7 @@ Keeps track of which data has changed since the last time the cache was populate
 
 <p>The provider API is secured with OAuth2 using the Resource Owner Password Credentials Grant flow.</p>
 
-<p><image></p>
+<p><img src="/images/authentication.png" alt="Event flow" /></p>
 
 <p>The <strong><em>Adapter is both Resource Owner and Client</em></strong>. See <a href="https://github.com/FINTprosjektet/fint-oauth-consumer-client-sample">https://github.com/FINTprosjektet/fint-oauth-consumer-client-sample</a> for an example implementation.</p>
 
@@ -490,7 +497,7 @@ The event sent from the provider is not understood
 There is something wrong with the received event
 Could not communicate with the source system</p>
 
-<p>All of the error situations should result in an event sent from the adapter to the provider with the status “PROVIDER_REJECTED”. If the adapter has information about the error this can be added to the message field in the event-object.</p>
+<p>All of the error situations should result in an event sent from the adapter to the provider with the status <code>PROVIDER_REJECTED</code>. If the adapter has information about the error this can be added to the message field in the event-object.</p>
 
 <h2 id="adapter-skeleton">Adapter skeleton</h2>
 
