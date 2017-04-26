@@ -1,54 +1,27 @@
 baseURL = "https://fintprosjektet.github.io/"
 languageCode = "en-us"
 title = "FINTprosjektet"
-theme = "hugo-material-docs"
+theme = "docuapi"
+
 
 [params]
-  logo = "images/logo.jpg"
+logo = "images/logo.jpg"
+search = true
 
-[[menu.main]]
-  name   = "Introduction"
-  url    = "/introduction"
-  weight = 10
-  pre    = ""
+# Code higlighting settings
+pygmentsCodefences = true
+pygmentsCodeFencesGuesSsyntax = false
+pygmentsOptions = ""
+pygmentsStyle = "monokai"
+# The monokai stylesheet is included in the base template.
+pygmentsUseClasses = true
 
-[[menu.main]]
-  name   = "API"
-  identifier = "api"
-  weight = 0
-  pre    = ""
+defaultContentLanguage = "en"
+# Configure the language example tabs.
+[[params.language_tabs]]
+key = "shell"
+name = "Shell" 
+[[params.language_tabs]]
+key = "javascript"
+name = "Javascript"
 
-[[menu.main]]
-  name   = "Overview"
-  url    = "/api/overview"
-  parent = "api"
-  weight = 1
-  pre    = ""
-
-[[menu.main]]
-  name   = "Personal"
-  url    = "/api/personal"
-  parent = "api"
-  weight = 0
-  pre    = ""
-
-[[menu.main]]
-  name   = "Organisation"
-  url    = "/api/organisation"
-  parent = "api"
-  weight = 0
-  pre    = ""
-
-[[menu.main]]
-  name   = "Code list"
-  url    = "/api/codelist"
-  parent = "api"
-  weight = 0
-  pre    = ""
-
-[[menu.main]]
-  name   = "Common Code List"
-  url    = "/api/common-codelist"
-  parent = "api"
-  weight = 0
-  pre    = ""

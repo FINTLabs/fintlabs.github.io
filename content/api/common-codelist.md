@@ -4,93 +4,90 @@ title = "Common Codelist"
 
 +++
 
-
-
-<!-- TOC -->
-
-- [Overview](#overview)
-- [ISO/IEC 5218](#isoiec-5218)
-    - [Get a list of all codes](#get-a-list-of-all-codes)
-        - [Curl example](#curl-example)
-        - [Result](#result)
-    - [Get single code](#get-single-code)
-        - [Curl example](#curl-example-1)
-        - [Result](#result-1)
-- [ISO 3166-1 alpha-2](#iso-3166-1-alpha-2)
-- [ISO 639-1 alpha-2](#iso-639-1-alpha-2)
-
-<!-- /TOC -->
-
 --- 
-# Overview
+# Common Code List
 The Common Codelist API has endpoints for codelist that are open, not spesicifc to organisations and shared by many the APIs. 
+
 
 <ul class="fa-ul">
   <li><i class="fa-li fa fa-github"></i><a href="https://github.com/FINTprosjektet/fint-common-codelist">FINT Common Codelist</a></li>
 </ul>
 
 # ISO/IEC 5218
+
 <ul class="fa-ul">
   <li><i class="fa-li fa fa-book"></i><a href="https://dokumentasjon.felleskomponent.no/docs/iso_kjonn">Information model for ISO/IEC 5218</a></li>
 </ul>
-## Get a list of all codes
-`GET` `https://api.felleskomponent.no/felles/kodeverk/iso/5218`
 
-### Curl example
+## Get all codes
+
+> Get all codes 
+ 
 ```shell
 $ curl https://api.felleskomponent.no/felles/kodeverk/iso/5218
 ```
-### Result
+
+> Result
+
 ```json
 [
   {
-    systemId: {
-      identifikatorverdi: '0'
+    "systemId": {
+      "identifikatorverdi": "0"
     },
-    kode: '0',
-    navn: 'uvisst'
+    "kode": "0",
+    "navn": "uvisst"
   },
   {
-    systemId: {
-      identifikatorverdi: '1'
+    "systemId": {
+      "identifikatorverdi": "1"
     },
-    kode: '1',
-    navn: 'mann'
+    "kode": "1",
+    "navn": "mann"
   },
   {
-    systemId: {
-      identifikatorverdi: '2'
+    "systemId": {
+      "identifikatorverdi": "2"
     },
-    kode: '2',
-    navn: 'kvinne'
+    "kode": "2",
+    "navn": "kvinne"
   },
   {
-    systemId: {
-      identifikatorverdi: '9'
+    "systemId": {
+      "identifikatorverdi": "9"
     },
-    kode: '9',
-    navn: 'gjelder ikke'
+    "kode": "9",
+    "navn": "gjelder ikke"
   }
 ]
 ```
-## Get single code
-`GET` `https://api.felleskomponent.no/felles/kodeverk/iso/5218/systemid/:id`
 
-### Curl example
+Endpoint to get all iso5218 codes
+### HTTP Request
+`GET https://api.felleskomponent.no/felles/kodeverk/iso/5218`
+
+## Get single code
+
+> Get single code
+
 ```shell
-$ curl https://api.felleskomponent.no/felles/kodeverk/iso/5218/systemid/1
+$ curl "https://api.felleskomponent.no/felles/kodeverk/iso/5218/systemid/1"
 ```
 
-### Result
+> Result
+
 ```json
 {
-  systemId: {
-    identifikatorverdi: "1"
+  "systemId": {
+    "identifikatorverdi": "1"
   },
-  kode: "1",
-  navn: "mann"
+  "kode": "1",
+  "navn": "mann"
 }
 ```
+
+### HTTP Request
+`GET https://api.felleskomponent.no/felles/kodeverk/iso/5218/systemid/:id`
 
 # ISO 3166-1 alpha-2
 
