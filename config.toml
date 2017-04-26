@@ -1,4 +1,4 @@
-baseURL = "https://fintprosjektet.github.io/"
+baseURL = "https://fintprosjektet.github.io/docs"
 languageCode = "en-us"
 title = "FINTprosjektet"
 theme = "hugo-material-docs"
