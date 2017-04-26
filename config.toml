@@ -1,10 +1,10 @@
-baseURL = "https://fintprosjektet.github.io/docs"
+baseURL = "https://fintprosjektet.github.io/docs/"
 languageCode = "en-us"
 title = "FINTprosjektet"
 theme = "hugo-material-docs"
 
 [params]
-  logo = "/images/logo.jpg"
+  logo = "images/logo.jpg"
 
 [[menu.main]]
   name   = "Introduction"
