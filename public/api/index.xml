@@ -21,6 +21,18 @@
     </item>
     
     <item>
+      <title>Common Codelist</title>
+      <link>https://fintprosjektet.github.io/api/common-codelist/</link>
+      <pubDate>Wed, 26 Apr 2017 11:49:04 +0200</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/api/common-codelist/</guid>
+      <description>Overview ISO/IEC 5218  Get a list of all codes Result Get single code Result  ISO 3166-1 alpha-2 ISO 639-1 alpha-2  Overview The Common Codelist API has endpoints for codelist that are open, not spesicifc to organisations and shared by many the APIs.
+GitHub
+ISO/IEC 5218 Get a list of all codes ´https://api.felleskomponent.no/felles/kodeverk/iso/5218`
+$ curl https://api.felleskomponent.no/felles/kodeverk/iso/5218  Result [ { systemId: { identifikatorverdi: &amp;quot;0&amp;quot; }, kode: &amp;quot;0&amp;quot;, navn: &amp;quot;uvisst&amp;quot; }, { systemId: { identifikatorverdi: &amp;quot;1&amp;quot; }, kode: &amp;quot;1&amp;quot;, navn: &amp;quot;mann&amp;quot; }, { systemId: { identifikatorverdi: &amp;quot;2&amp;quot; }, kode: &amp;quot;2&amp;quot;, navn: &amp;quot;kvinne&amp;quot; }, { systemId: { identifikatorverdi: &amp;quot;9&amp;quot; }, kode: &amp;quot;9&amp;quot;, navn: &amp;quot;gjelder ikke&amp;quot; } ]  Get single code https://api.</description>
+    </item>
+    
+    <item>
       <title>Organisation</title>
       <link>https://fintprosjektet.github.io/api/organisation/</link>
       <pubDate>Wed, 26 Apr 2017 11:49:04 +0200</pubDate>
