@@ -9,14 +9,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Introduction - FINTprosjektet</title>
+    <title>Common Codelist - FINTprosjektet</title>
     <meta name="generator" content="Hugo 0.20.5" />
 
     
-    <link rel="canonical" href="https://fintprosjektet.github.io/introduction/">
+    <link rel="canonical" href="https://fintprosjektet.github.io/api/common-codelist/">
     
 
-    <meta property="og:url" content="https://fintprosjektet.github.io/introduction/">
+    <meta property="og:url" content="https://fintprosjektet.github.io/api/common-codelist/">
     <meta property="og:title" content="FINTprosjektet">
     <meta property="og:image" content="https://fintprosjektet.github.io/images/logo.jpg">
     <meta name="apple-mobile-web-app-title" content="FINTprosjektet">
@@ -43,7 +43,6 @@
       }
     </style>
 
-    <link rel="stylesheet" href="https://fintprosjektet.github.io/stylesheets/fint.css">
     <link rel="stylesheet" href="https://fintprosjektet.github.io/stylesheets/application.css">
     <link rel="stylesheet" href="https://fintprosjektet.github.io/stylesheets/temporary.css">
     <link rel="stylesheet" href="https://fintprosjektet.github.io/stylesheets/palettes.css">
@@ -91,7 +90,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Introduction
+        Common Codelist
       </div>
     </div>
 
@@ -252,9 +251,98 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Introduction </h1>
+			<h1>Common Codelist </h1>
 
-			<p><strong>test</strong></p>
+			
+
+<!-- TOC -->
+
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#isoiec-5218">ISO/IEC 5218</a>
+
+<ul>
+<li><a href="#get-a-list-of-all-codes">Get a list of all codes</a></li>
+<li><a href="#result">Result</a></li>
+<li><a href="#get-single-code">Get single code</a></li>
+<li><a href="#result-1">Result</a></li>
+</ul></li>
+<li><a href="#iso-3166-1-alpha-2">ISO 3166-1 alpha-2</a></li>
+<li><a href="#iso-639-1-alpha-2">ISO 639-1 alpha-2</a></li>
+</ul>
+
+<!-- /TOC -->
+
+<h1 id="overview">Overview</h1>
+
+<p>The Common Codelist API has endpoints for codelist that are open, not spesicifc to organisations and shared by many the APIs.</p>
+
+<p><a href="https://github.com/FINTprosjektet/fint-common-codelist">GitHub</a></p>
+
+<h1 id="iso-iec-5218">ISO/IEC 5218</h1>
+
+<h2 id="get-a-list-of-all-codes">Get a list of all codes</h2>
+
+<p>´<a href="https://api.felleskomponent.no/felles/kodeverk/iso/5218`">https://api.felleskomponent.no/felles/kodeverk/iso/5218`</a></p>
+
+<pre><code class="language-shell">$ curl https://api.felleskomponent.no/felles/kodeverk/iso/5218
+</code></pre>
+
+<h2 id="result">Result</h2>
+
+<pre><code class="language-json">[
+{
+systemId: {
+identifikatorverdi: &quot;0&quot;
+},
+kode: &quot;0&quot;,
+navn: &quot;uvisst&quot;
+},
+{
+systemId: {
+identifikatorverdi: &quot;1&quot;
+},
+kode: &quot;1&quot;,
+navn: &quot;mann&quot;
+},
+{
+systemId: {
+identifikatorverdi: &quot;2&quot;
+},
+kode: &quot;2&quot;,
+navn: &quot;kvinne&quot;
+},
+{
+systemId: {
+identifikatorverdi: &quot;9&quot;
+},
+kode: &quot;9&quot;,
+navn: &quot;gjelder ikke&quot;
+}
+]
+</code></pre>
+
+<h2 id="get-single-code">Get single code</h2>
+
+<p><code>https://api.felleskomponent.no/felles/kodeverk/iso/5218/systemid/1</code></p>
+
+<pre><code class="language-shell">$ curl https://api.felleskomponent.no/felles/kodeverk/iso/5218/systemid/1
+</code></pre>
+
+<h2 id="result-1">Result</h2>
+
+<pre><code class="language-json">{
+systemId: {
+identifikatorverdi: &quot;1&quot;
+},
+kode: &quot;1&quot;,
+navn: &quot;mann&quot;
+}
+</code></pre>
+
+<h1 id="iso-3166-1-alpha-2">ISO 3166-1 alpha-2</h1>
+
+<h1 id="iso-639-1-alpha-2">ISO 639-1 alpha-2</h1>
 
 
 			<aside class="copyright" role="note">
