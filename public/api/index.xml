@@ -26,9 +26,10 @@
       <pubDate>Wed, 26 Apr 2017 11:49:04 +0200</pubDate>
       
       <guid>https://fintprosjektet.github.io/api/common-codelist/</guid>
-      <description>Overview ISO/IEC 5218  Get a list of all codes  Curl example Result  Get single code  Curl example Result   ISO 3166-1 alpha-2 ISO 639-1 alpha-2  Overview The Common Codelist API has endpoints for codelist that are open, not spesicifc to organisations and shared by many the APIs.
-FINT Common Codelist  ISO/IEC 5218 Information model for ISO/IEC 5218 
-Get a list of all codes GET https://api.</description>
+      <description>Common Code List The Common Codelist API has endpoints for codelist that are open, not spesicifc to organisations and shared by many the APIs.
+FINT Common Codelist  ISO/IEC 5218 Information model for ISO/IEC 5218  Get all codes  Get all codes
+ $ curl https://api.felleskomponent.no/felles/kodeverk/iso/5218   Result
+ [ { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;0&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;0&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;uvisst&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;1&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;1&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;mann&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;2&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;2&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;kvinne&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;9&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;9&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;gjelder ikke&amp;quot; } ]  Endpoint to get all iso5218 codes</description>
     </item>
     
     <item>
@@ -55,7 +56,8 @@ Get a list of all codes GET https://api.</description>
       <pubDate>Wed, 26 Apr 2017 11:48:42 +0200</pubDate>
       
       <guid>https://fintprosjektet.github.io/api/overview/</guid>
-      <description></description>
+      <description> Overview Bladi bladi bladi
+Authentication </description>
     </item>
     
   </channel>
