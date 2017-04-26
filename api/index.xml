@@ -17,7 +17,7 @@
       <pubDate>Wed, 26 Apr 2017 11:49:12 +0200</pubDate>
       
       <guid>https://fintprosjektet.github.io/api/codelist/</guid>
-      <description> Code lists </description>
+      <description> Code lists Test223 Test22 </description>
     </item>
     
     <item>
@@ -28,8 +28,8 @@
       <guid>https://fintprosjektet.github.io/api/common-codelist/</guid>
       <description>Common Code List The Common Codelist API has endpoints for codelist that are open, not spesicifc to organisations and shared by many the APIs.
 FINT Common Codelist  ISO/IEC 5218 Information model for ISO/IEC 5218  Get all codes  Get all codes
- $ curl https://api.felleskomponent.no/felles/kodeverk/iso/5218   Result
- [ { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;0&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;0&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;uvisst&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;1&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;1&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;mann&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;2&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;2&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;kvinne&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;9&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;9&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;gjelder ikke&amp;quot; } ]  Endpoint to get all iso5218 codes</description>
+ $ curl https://api.felleskomponent.no/felles/kodeverk/iso/5218  Result
+ [ { &#34;systemId&#34;: { &#34;identifikatorverdi&#34;: &#34;0&#34; }, &#34;kode&#34;: &#34;0&#34;, &#34;navn&#34;: &#34;uvisst&#34; }, { &#34;systemId&#34;: { &#34;identifikatorverdi&#34;: &#34;1&#34; }, &#34;kode&#34;: &#34;</description>
     </item>
     
     <item>
