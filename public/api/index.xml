@@ -28,8 +28,8 @@
       <guid>https://fintprosjektet.github.io/api/common-codelist/</guid>
       <description>Overview ISO/IEC 5218  Get a list of all codes Result Get single code Result  ISO 3166-1 alpha-2 ISO 639-1 alpha-2  Overview The Common Codelist API has endpoints for codelist that are open, not spesicifc to organisations and shared by many the APIs.
 GitHub
-ISO/IEC 5218 Get a list of all codes ´https://api.felleskomponent.no/felles/kodeverk/iso/5218`
-$ curl https://api.felleskomponent.no/felles/kodeverk/iso/5218  Result [ { systemId: { identifikatorverdi: &#39;0&#39; }, kode: &#39;0&#39;, navn: &#39;uvisst&#39; }, { systemId: { identifikatorverdi: &#39;1&#39; }, kode: &#39;1&#39;, navn: &#39;mann&#39; }, { systemId: { identifikatorverdi: &#39;2&#39; }, kode: &#39;2&#39;, navn: &#39;kvinne&#39; }, { systemId: { identifikatorverdi: &#39;9&#39; }, kode: &#39;9&#39;, navn: &#39;gjelder ikke&#39; } ]  Get single code https://api.</description>
+ISO/IEC 5218 Get a list of all codes https://api.felleskomponent.no/felles/kodeverk/iso/5218
+$ curl https://api.felleskomponent.no/felles/kodeverk/iso/5218  Result [ { systemId: { identifikatorverdi: &#39;0&#39; }, kode: &#39;0&#39;, navn: &#39;uvisst&#39; }, { systemId: { identifikatorverdi: &#39;1&#39; }, kode: &#39;1&#39;, navn: &#39;mann&#39; }, { systemId: { identifikatorverdi: &#39;2&#39; }, kode: &#39;2&#39;, navn: &#39;kvinne&#39; }, { systemId: { identifikatorverdi: &#39;9&#39; }, kode: &#39;9&#39;, navn: &#39;gjelder ikke&#39; } ]  Get single code GET https://api.</description>
     </item>
     
     <item>
