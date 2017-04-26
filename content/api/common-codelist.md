@@ -13,13 +13,13 @@ The Common Codelist API has endpoints for codelist that are open, not spesicifc 
   <li><i class="fa-li fa fa-github"></i><a href="https://github.com/FINTprosjektet/fint-common-codelist">FINT Common Codelist</a></li>
 </ul>
 
-# ISO/IEC 5218
+## ISO/IEC 5218
 
 <ul class="fa-ul">
   <li><i class="fa-li fa fa-book"></i><a href="https://dokumentasjon.felleskomponent.no/docs/iso_kjonn">Information model for ISO/IEC 5218</a></li>
 </ul>
 
-## Get all codes
+### Get all codes
 
 > Get all codes 
  
@@ -62,11 +62,18 @@ $ curl https://api.felleskomponent.no/felles/kodeverk/iso/5218
 ]
 ```
 
-Endpoint to get all iso5218 codes
-### HTTP Request
+Endpoint to get all codes
+
+***HTTP Request***
+
 `GET https://api.felleskomponent.no/felles/kodeverk/iso/5218`
 
-## Get single code
+***HTTP Response***
+
+* `200 - Success`
+* `404 - Not found`
+
+### Get single code
 
 > Get single code
 
@@ -86,9 +93,15 @@ $ curl "https://api.felleskomponent.no/felles/kodeverk/iso/5218/systemid/1"
 }
 ```
 
-### HTTP Request
+***HTTP Request***
+
 `GET https://api.felleskomponent.no/felles/kodeverk/iso/5218/systemid/:id`
 
-# ISO 3166-1 alpha-2
+***HTTP Response***
 
-# ISO 639-1 alpha-2
+* `200 - Success`
+* `404 - Not found`
+
+## ISO 3166-1 alpha-2
+
+## ISO 639-1 alpha-2
