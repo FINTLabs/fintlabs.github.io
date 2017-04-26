@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-  
-  
-  
-  
-   <html class="no-js"> 
 
-  <head lang="en-us">
+
+
+
+
+<html class="no-js">
+
+
+<head lang="en-us" >
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Common Codelist - FINTprosjektet</title>
-    <meta name="generator" content="Hugo 0.20.5" />
+    <meta name="generator" content="Hugo 0.20.5" /> 
+    <link rel="canonical" href="https://fintprosjektet.github.io/api/common-codelist/"> 
 
-    
-    <link rel="canonical" href="https://fintprosjektet.github.io/api/common-codelist/">
-    
-
-    <meta property="og:url" content="https://fintprosjektet.github.io/api/common-codelist/">
-    <meta property="og:title" content="FINTprosjektet">
-    <meta property="og:image" content="https://fintprosjektet.github.io/images/logo.jpg">
+    <meta property="og:url" content="https://fintprosjektet.github.io/api/common-codelist/"> 
+    <meta property="og:title" content="FINTprosjektet"> 
+    <meta property="og:image" content="https://fintprosjektet.github.io/images/logo.jpg"> 
     <meta name="apple-mobile-web-app-title" content="FINTprosjektet">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -27,39 +26,41 @@
     <link rel="icon" type="image/x-icon" href="https://fintprosjektet.github.io/images/favicon.ico">
 
     <style>
-      @font-face {
-        font-family: 'Icon';
-        src: url('https://fintprosjektet.github.io/fonts/icon.eot');
-        src: url('https://fintprosjektet.github.io/fonts/icon.eot')
-               format('embedded-opentype'),
-             url('https://fintprosjektet.github.io/fonts/icon.woff')
-               format('woff'),
-             url('https://fintprosjektet.github.io/fonts/icon.ttf')
-               format('truetype'),
-             url('https://fintprosjektet.github.io/fonts/icon.svg')
-               format('svg');
-        font-weight: normal;
-        font-style: normal;
-      }
+        @font-face {
+            font-family: 'Icon';
+            src: url('https://fintprosjektet.github.io/fonts/icon.eot');
+            src: url('https://fintprosjektet.github.io/fonts/icon.eot') format('embedded-opentype'),
+            url('https://fintprosjektet.github.io/fonts/icon.woff') format('woff'),
+            url('https://fintprosjektet.github.io/fonts/icon.ttf') format('truetype'),
+            url('https://fintprosjektet.github.io/fonts/icon.svg') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
     </style>
 
+    <link rel="stylesheet" href="https://fintprosjektet.github.io/stylesheets/font-awesome.min.css">
     <link rel="stylesheet" href="https://fintprosjektet.github.io/stylesheets/fint.css">
     <link rel="stylesheet" href="https://fintprosjektet.github.io/stylesheets/application.css">
     <link rel="stylesheet" href="https://fintprosjektet.github.io/stylesheets/temporary.css">
     <link rel="stylesheet" href="https://fintprosjektet.github.io/stylesheets/palettes.css">
-    <link rel="stylesheet" href="https://fintprosjektet.github.io/stylesheets/highlight/highlight.css">
-
-    
-    
-    
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700|Roboto&#43;Mono">
+    <link rel="stylesheet" href="https://fintprosjektet.github.io/stylesheets/highlight/highlight.css">   
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700|Roboto&#43;%20Mono">
     <style>
-      body, input {
-        font-family: 'Roboto', Helvetica, Arial, sans-serif;
-      }
-      pre, code {
-        font-family: 'Roboto Mono', 'Courier New', 'Courier', monospace;
-      }
+        body,
+        input {
+            font-family: 'Roboto',
+            Helvetica,
+            Arial,
+            sans-serif;
+        }
+        
+        pre,
+        code {
+            font-family: 'Roboto Mono',
+            'Courier New',
+            'Courier',
+            monospace;
+        }
     </style>
 
     
@@ -67,8 +68,9 @@
 
     
 
-  </head>
-  <body class=" ">
+</head>
+
+<body class=" ">
 
 
 
@@ -263,10 +265,18 @@
 <li><a href="#isoiec-5218">ISO/IEC 5218</a>
 
 <ul>
-<li><a href="#get-a-list-of-all-codes">Get a list of all codes</a></li>
+<li><a href="#get-a-list-of-all-codes">Get a list of all codes</a>
+
+<ul>
+<li><a href="#curl-example">Curl example</a></li>
 <li><a href="#result">Result</a></li>
-<li><a href="#get-single-code">Get single code</a></li>
+</ul></li>
+<li><a href="#get-single-code">Get single code</a>
+
+<ul>
+<li><a href="#curl-example-1">Curl example</a></li>
 <li><a href="#result-1">Result</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#iso-3166-1-alpha-2">ISO 3166-1 alpha-2</a></li>
 <li><a href="#iso-639-1-alpha-2">ISO 639-1 alpha-2</a></li>
@@ -274,22 +284,32 @@
 
 <!-- /TOC -->
 
+<hr />
+
 <h1 id="overview">Overview</h1>
 
 <p>The Common Codelist API has endpoints for codelist that are open, not spesicifc to organisations and shared by many the APIs.</p>
 
-<p><a href="https://github.com/FINTprosjektet/fint-common-codelist">GitHub</a></p>
+<ul class="fa-ul">
+  <li><i class="fa-li fa fa-github"></i><a href="https://github.com/FINTprosjektet/fint-common-codelist">FINT Common Codelist</a></li>
+</ul>
 
 <h1 id="iso-iec-5218">ISO/IEC 5218</h1>
 
+<p><ul class="fa-ul">
+  <li><i class="fa-li fa fa-book"></i><a href="https://dokumentasjon.felleskomponent.no/docs/iso_kjonn">Information model for ISO/IEC 5218</a></li>
+</ul></p>
+
 <h2 id="get-a-list-of-all-codes">Get a list of all codes</h2>
 
-<p><code>https://api.felleskomponent.no/felles/kodeverk/iso/5218</code></p>
+<p><code>GET</code> <code>https://api.felleskomponent.no/felles/kodeverk/iso/5218</code></p>
+
+<h3 id="curl-example">Curl example</h3>
 
 <pre><code class="language-shell">$ curl https://api.felleskomponent.no/felles/kodeverk/iso/5218
 </code></pre>
 
-<h2 id="result">Result</h2>
+<h3 id="result">Result</h3>
 
 <pre><code class="language-json">[
   {
@@ -325,12 +345,14 @@
 
 <h2 id="get-single-code">Get single code</h2>
 
-<p>GET <code>https://api.felleskomponent.no/felles/kodeverk/iso/5218/systemid/1</code></p>
+<p><code>GET</code> <code>https://api.felleskomponent.no/felles/kodeverk/iso/5218/systemid/:id</code></p>
+
+<h3 id="curl-example-1">Curl example</h3>
 
 <pre><code class="language-shell">$ curl https://api.felleskomponent.no/felles/kodeverk/iso/5218/systemid/1
 </code></pre>
 
-<h2 id="result-1">Result</h2>
+<h3 id="result-1">Result</h3>
 
 <pre><code class="language-json">{
   systemId: {
