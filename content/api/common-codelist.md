@@ -33,34 +33,34 @@ $ curl https://api.felleskomponent.no/felles/kodeverk/iso/5218
 ## Result
 ```json
 [
-{
-systemId: {
-identifikatorverdi: "0"
-},
-kode: "0",
-navn: "uvisst"
-},
-{
-systemId: {
-identifikatorverdi: "1"
-},
-kode: "1",
-navn: "mann"
-},
-{
-systemId: {
-identifikatorverdi: "2"
-},
-kode: "2",
-navn: "kvinne"
-},
-{
-systemId: {
-identifikatorverdi: "9"
-},
-kode: "9",
-navn: "gjelder ikke"
-}
+  {
+    systemId: {
+      identifikatorverdi: '0'
+    },
+    kode: '0',
+    navn: 'uvisst'
+  },
+  {
+    systemId: {
+      identifikatorverdi: '1'
+    },
+    kode: '1',
+    navn: 'mann'
+  },
+  {
+    systemId: {
+      identifikatorverdi: '2'
+    },
+    kode: '2',
+    navn: 'kvinne'
+  },
+  {
+    systemId: {
+      identifikatorverdi: '9'
+    },
+    kode: '9',
+    navn: 'gjelder ikke'
+  }
 ]
 ```
 ## Get single code
@@ -73,11 +73,11 @@ $ curl https://api.felleskomponent.no/felles/kodeverk/iso/5218/systemid/1
 ## Result
 ```json
 {
-systemId: {
-identifikatorverdi: "1"
-},
-kode: "1",
-navn: "mann"
+  systemId: {
+    identifikatorverdi: "1"
+  },
+  kode: "1",
+  navn: "mann"
 }
 ```
 
