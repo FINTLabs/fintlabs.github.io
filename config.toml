@@ -45,3 +45,10 @@ theme = "hugo-material-docs"
   parent = "api"
   weight = 0
   pre    = ""
+
+[[menu.main]]
+  name   = "Common Code List"
+  url    = "/api/common-codelist"
+  parent = "api"
+  weight = 0
+  pre    = ""
