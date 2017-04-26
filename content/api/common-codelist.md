@@ -25,7 +25,7 @@ The Common Codelist API has endpoints for codelist that are open, not spesicifc 
 # ISO/IEC 5218
 
 ## Get a list of all codes
-´https://api.felleskomponent.no/felles/kodeverk/iso/5218`
+`https://api.felleskomponent.no/felles/kodeverk/iso/5218`
 
 ```shell
 $ curl https://api.felleskomponent.no/felles/kodeverk/iso/5218
@@ -64,7 +64,7 @@ $ curl https://api.felleskomponent.no/felles/kodeverk/iso/5218
 ]
 ```
 ## Get single code
-`https://api.felleskomponent.no/felles/kodeverk/iso/5218/systemid/1`
+GET `https://api.felleskomponent.no/felles/kodeverk/iso/5218/systemid/1`
 
 ```shell
 $ curl https://api.felleskomponent.no/felles/kodeverk/iso/5218/systemid/1
