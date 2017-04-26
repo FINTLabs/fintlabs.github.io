@@ -17,56 +17,65 @@
       <pubDate>Wed, 26 Apr 2017 11:46:57 +0200</pubDate>
       
       <guid>https://fintprosjektet.github.io/introduction/</guid>
-      <description> Introduction </description>
-    </item>
-    
-    <item>
-      <title>Overview</title>
-      <link>https://fintprosjektet.github.io/api/overview/</link>
-      <pubDate>Wed, 26 Apr 2017 11:48:42 +0200</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/overview/</guid>
-      <description> Overview Bladi bladi bladi
-Authentication </description>
+      <description>Introduction Bladi</description>
     </item>
     
     <item>
       <title>Code List</title>
-      <link>https://fintprosjektet.github.io/api/codelist/</link>
-      <pubDate>Wed, 26 Apr 2017 11:49:12 +0200</pubDate>
+      <link>https://fintprosjektet.github.io/api/codelist/codelist/</link>
+      <pubDate>Wed, 26 Apr 2017 11:50:12 +0200</pubDate>
       
-      <guid>https://fintprosjektet.github.io/api/codelist/</guid>
-      <description> Code lists Test223 Test22 Test 23 </description>
+      <guid>https://fintprosjektet.github.io/api/codelist/codelist/</guid>
+      <description> Code lists </description>
     </item>
     
     <item>
       <title>Common Codelist</title>
-      <link>https://fintprosjektet.github.io/api/common-codelist/</link>
+      <link>https://fintprosjektet.github.io/api/api/</link>
       <pubDate>Wed, 26 Apr 2017 11:49:04 +0200</pubDate>
       
-      <guid>https://fintprosjektet.github.io/api/common-codelist/</guid>
+      <guid>https://fintprosjektet.github.io/api/api/</guid>
+      <description> API </description>
+    </item>
+    
+    <item>
+      <title>Common Codelist</title>
+      <link>https://fintprosjektet.github.io/api/common-codelist/common-codelist/</link>
+      <pubDate>Wed, 26 Apr 2017 11:49:04 +0200</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/api/common-codelist/common-codelist/</guid>
       <description>Common Code List The Common Codelist API has endpoints for codelist that are open, not spesicifc to organisations and shared by many the APIs.
-FINT Common Codelist  ISO/IEC 5218 Information model for ISO/IEC 5218  Get all codes  Get all codes
- $ curl https://api.felleskomponent.no/felles/kodeverk/iso/5218   Result
- [ { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;0&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;0&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;uvisst&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;1&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;1&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;mann&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;2&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;2&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;kvinne&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;9&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;9&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;gjelder ikke&amp;quot; } ]  Endpoint to get all codes</description>
+FINT Common Codelist  ISO 639-1 alpha-2 Information model for ISO 639-1 alpha-2  Get all codes  Get all codes
+ $ curl https://api.felleskomponent.no/felles/kodeverk/iso/6391alpha2   Result
+ [ { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;aa&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;aa&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;Afar&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;ab&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;ab&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;Abkhasisk&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;ae&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;ae&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;Avestisk&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;af&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;af&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;Afrikaans&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;ak&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;ak&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;Akan&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;am&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;am&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;Amharisk&amp;quot; }, {.</description>
     </item>
     
     <item>
       <title>Organisation</title>
-      <link>https://fintprosjektet.github.io/api/organisation/</link>
+      <link>https://fintprosjektet.github.io/api/organisation/organisation/</link>
       <pubDate>Wed, 26 Apr 2017 11:49:04 +0200</pubDate>
       
-      <guid>https://fintprosjektet.github.io/api/organisation/</guid>
+      <guid>https://fintprosjektet.github.io/api/organisation/organisation/</guid>
       <description> Organisasjon </description>
     </item>
     
     <item>
       <title>Personal</title>
-      <link>https://fintprosjektet.github.io/api/personal/</link>
+      <link>https://fintprosjektet.github.io/api/personal/personal/</link>
       <pubDate>Wed, 26 Apr 2017 11:48:52 +0200</pubDate>
       
-      <guid>https://fintprosjektet.github.io/api/personal/</guid>
+      <guid>https://fintprosjektet.github.io/api/personal/personal/</guid>
       <description> Personal </description>
+    </item>
+    
+    <item>
+      <title>ISO 639-1 alpha-2</title>
+      <link>https://fintprosjektet.github.io/adapter/adapter/</link>
+      <pubDate>Wed, 26 Apr 2017 11:49:04 +0200</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/adapter/adapter/</guid>
+      <description>Adapter Introduction A Common API is a API on a business application. The Common API gets and sends information to/from a business application through an adapter. This document aims to describe how an adapter should be implemented.
+Architectural overview - Common API Information Models The Common API consist of standardized information models that will presented as resources in the Consumer API. Each Common API can consist of one or more information models.</description>
     </item>
     
   </channel>

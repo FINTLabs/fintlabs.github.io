@@ -53,32 +53,22 @@
 
 <h1 id="introduction">Introduction</h1>
 
-    
-        
-
-<h1 id="overview">Overview</h1>
-
-<p>Bladi bladi bladi</p>
-
-<h2 id="authentication">Authentication</h2>
+<p>Bladi</p>
 
     
         
 
-<h1 id="code-lists">Code lists</h1>
-
-<h2 id="test223">Test223</h2>
-
-<h3 id="test22">Test22</h3>
-
-<h3 id="test-23">Test 23</h3>
+<h2 id="code-lists">Code lists</h2>
 
     
         
 
-<hr />
+<h1 id="api">API</h1>
 
-<h1 id="common-code-list">Common Code List</h1>
+    
+        
+
+<h2 id="common-code-list">Common Code List</h2>
 
 <p>The Common Codelist API has endpoints for codelist that are open, not spesicifc to organisations and shared by many the APIs.</p>
 
@@ -86,13 +76,208 @@
   <li><i class="fa-li fa fa-github"></i><a href="https://github.com/FINTprosjektet/fint-common-codelist">FINT Common Codelist</a></li>
 </ul>
 
-<h2 id="iso-iec-5218">ISO/IEC 5218</h2>
+<h3 id="iso-639-1-alpha-2">ISO 639-1 alpha-2</h3>
+
+<ul class="fa-ul">
+  <li><i class="fa-li fa fa-book"></i><a href="https://dokumentasjon.felleskomponent.no/docs/iso_sprak">Information model for ISO 639-1 alpha-2</a></li>
+</ul>
+
+<h4 id="get-all-codes">Get all codes</h4>
+
+<blockquote>
+<p>Get all codes</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ curl https://api.felleskomponent.no/felles/kodeverk/iso/6391alpha2
+</code></pre></div>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;systemId&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;identifikatorverdi&quot;</span><span class="p">:</span> <span class="s2">&quot;aa&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;kode&quot;</span><span class="p">:</span> <span class="s2">&quot;aa&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;navn&quot;</span><span class="p">:</span> <span class="s2">&quot;Afar&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;systemId&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;identifikatorverdi&quot;</span><span class="p">:</span> <span class="s2">&quot;ab&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;kode&quot;</span><span class="p">:</span> <span class="s2">&quot;ab&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;navn&quot;</span><span class="p">:</span> <span class="s2">&quot;Abkhasisk&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;systemId&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;identifikatorverdi&quot;</span><span class="p">:</span> <span class="s2">&quot;ae&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;kode&quot;</span><span class="p">:</span> <span class="s2">&quot;ae&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;navn&quot;</span><span class="p">:</span> <span class="s2">&quot;Avestisk&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;systemId&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;identifikatorverdi&quot;</span><span class="p">:</span> <span class="s2">&quot;af&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;kode&quot;</span><span class="p">:</span> <span class="s2">&quot;af&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;navn&quot;</span><span class="p">:</span> <span class="s2">&quot;Afrikaans&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;systemId&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;identifikatorverdi&quot;</span><span class="p">:</span> <span class="s2">&quot;ak&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;kode&quot;</span><span class="p">:</span> <span class="s2">&quot;ak&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;navn&quot;</span><span class="p">:</span> <span class="s2">&quot;Akan&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;systemId&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;identifikatorverdi&quot;</span><span class="p">:</span> <span class="s2">&quot;am&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;kode&quot;</span><span class="p">:</span> <span class="s2">&quot;am&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;navn&quot;</span><span class="p">:</span> <span class="s2">&quot;Amharisk&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span><span class="err">...</span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+
+<p>Endpoint to get all codes</p>
+
+<p><strong><em>HTTP Request</em></strong></p>
+
+<p><code>GET https://api.felleskomponent.no/felles/kodeverk/iso/6391alpha2</code></p>
+
+<p><strong><em>HTTP Response</em></strong></p>
+
+<ul>
+<li><code>200 - Success</code></li>
+<li><code>404 - Not found</code></li>
+</ul>
+
+<h4 id="get-single-code">Get single code</h4>
+
+<blockquote>
+<p>Get single code</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ curl <span class="s2">&quot;https://api.felleskomponent.no/felles/kodeverk/iso/6391alpha2/systemid/aa&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+  <span class="nt">&quot;systemId&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;identifikatorverdi&quot;</span><span class="p">:</span> <span class="s2">&quot;ae&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;kode&quot;</span><span class="p">:</span> <span class="s2">&quot;ae&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;navn&quot;</span><span class="p">:</span> <span class="s2">&quot;Avestisk&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong><em>HTTP Request</em></strong></p>
+
+<p><code>GET https://api.felleskomponent.no/felles/kodeverk/iso/6391alpha2/systemid/:id</code></p>
+
+<p><strong><em>HTTP Response</em></strong></p>
+
+<ul>
+<li><code>200 - Success</code></li>
+<li><code>404 - Not found</code></li>
+</ul>
+
+<h3 id="iso-3166-1-alpha-2">ISO 3166-1 alpha-2</h3>
+
+<ul class="fa-ul">
+  <li><i class="fa-li fa fa-book"></i><a href="https://dokumentasjon.felleskomponent.no/docs/iso_landkode">Information model for ISO 3166-1 alpha-2</a></li>
+</ul>
+
+<h4 id="get-all-codes-1">Get all codes</h4>
+
+<blockquote>
+<p>Get all codes</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ curl https://api.felleskomponent.no/felles/kodeverk/iso/31661alpha2
+</code></pre></div>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;systemId&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;identifikatorverdi&quot;</span><span class="p">:</span> <span class="s2">&quot;AD&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;kode&quot;</span><span class="p">:</span> <span class="s2">&quot;AD&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;navn&quot;</span><span class="p">:</span> <span class="s2">&quot;Andorra&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;systemId&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;identifikatorverdi&quot;</span><span class="p">:</span> <span class="s2">&quot;AE&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;kode&quot;</span><span class="p">:</span> <span class="s2">&quot;AE&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;navn&quot;</span><span class="p">:</span> <span class="s2">&quot;De forente arabiske emirater&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;systemId&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;identifikatorverdi&quot;</span><span class="p">:</span> <span class="s2">&quot;AF&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;kode&quot;</span><span class="p">:</span> <span class="s2">&quot;AF&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;navn&quot;</span><span class="p">:</span> <span class="s2">&quot;Afghanistan&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span><span class="err">...</span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+
+<p>Endpoint to get all codes</p>
+
+<p><strong><em>HTTP Request</em></strong></p>
+
+<p><code>GET https://api.felleskomponent.no/felles/kodeverk/iso/31661alpha2</code></p>
+
+<p><strong><em>HTTP Response</em></strong></p>
+
+<ul>
+<li><code>200 - Success</code></li>
+<li><code>404 - Not found</code></li>
+</ul>
+
+<h4 id="get-single-code-1">Get single code</h4>
+
+<blockquote>
+<p>Get single code</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ curl <span class="s2">&quot;https://api.felleskomponent.no/felles/kodeverk/iso/31661alpha2/systemid/AD&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Result</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+  <span class="nt">&quot;systemId&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;identifikatorverdi&quot;</span><span class="p">:</span> <span class="s2">&quot;AD&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;kode&quot;</span><span class="p">:</span> <span class="s2">&quot;AD&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;navn&quot;</span><span class="p">:</span> <span class="s2">&quot;Andorra&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong><em>HTTP Request</em></strong></p>
+
+<p><code>GET https://api.felleskomponent.no/felles/kodeverk/iso/31661alpha2/systemid/:id</code></p>
+
+<p><strong><em>HTTP Response</em></strong></p>
+
+<ul>
+<li><code>200 - Success</code></li>
+<li><code>404 - Not found</code></li>
+</ul>
+
+<h3 id="iso-iec-5218">ISO/IEC 5218</h3>
 
 <ul class="fa-ul">
   <li><i class="fa-li fa fa-book"></i><a href="https://dokumentasjon.felleskomponent.no/docs/iso_kjonn">Information model for ISO/IEC 5218</a></li>
 </ul>
 
-<h3 id="get-all-codes">Get all codes</h3>
+<h4 id="get-all-codes-2">Get all codes</h4>
 
 <blockquote>
 <p>Get all codes</p>
@@ -148,7 +333,7 @@
 <li><code>404 - Not found</code></li>
 </ul>
 
-<h3 id="get-single-code">Get single code</h3>
+<h4 id="get-single-code-2">Get single code</h4>
 
 <blockquote>
 <p>Get single code</p>
@@ -179,19 +364,194 @@
 <li><code>404 - Not found</code></li>
 </ul>
 
-<h2 id="iso-3166-1-alpha-2">ISO 3166-1 alpha-2</h2>
+    
+        
 
-<h2 id="iso-639-1-alpha-2">ISO 639-1 alpha-2</h2>
+<h2 id="organisasjon">Organisasjon</h2>
 
     
         
 
-<h1 id="organisasjon">Organisasjon</h1>
+<h2 id="personal">Personal</h2>
 
     
         
 
-<h1 id="personal">Personal</h1>
+<h1 id="adapter">Adapter</h1>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>A Common API is a API on a business application. The Common API gets and sends information to/from a business application through an adapter. This document aims to describe how an adapter should be implemented.</p>
+
+<h2 id="architectural-overview-common-api">Architectural overview - Common API</h2>
+
+<h3 id="information-models">Information Models</h3>
+
+<p>The Common API consist of standardized information models that will presented as resources in the Consumer API. Each Common API can consist of one or more information models. The models are documented here <a href="https://dokumentasjon.felleskomponent.no">https://dokumentasjon.felleskomponent.no</a></p>
+
+<h3 id="consumer-api">Consumer API</h3>
+
+<p>Consumer API is where clients (applications, processes etc) access the data from the Business Application.
+Provider API
+Provider API is where the adapter feeds the Common API with data.</p>
+
+<h3 id="adapter-1">Adapter</h3>
+
+<p>The adapter is the “link” between the Common API and the Business Application. The main tasks for the adapter is:
+Getting data from the Business Application
+Mapping the data from the business application model to the Common API model
+Sending the mapped data to the Common API</p>
+
+<h2 id="common-api-internals">Common API internals</h2>
+
+<p>The Common API has two main services:</p>
+
+<ul>
+<li>Cache service</li>
+<li>Event service</li>
+</ul>
+
+<h3 id="cache-service">Cache Service</h3>
+
+<p>The cache service has the following responsibility:
+Store data from the business applications for all the organisations using the Common API
+Populate the cache
+Keeps track of which data has changed since the last time the cache was populated</p>
+
+<h3 id="event-service">Event service</h3>
+
+<p>The internals in the Common API is event based. An event is created by:</p>
+
+<ul>
+<li>Cache Service</li>
+<li>Client</li>
+</ul>
+
+<p>When a client hits a endpoint in the Consumer API the Common API is generating an event and sends it to the Cache Service. An event from the client will never go all the way down to the adapter.</p>
+
+<p>When the Cache Service need to update the cache it sends an event down to the adapter.</p>
+
+<p>All events are logged at all stages.</p>
+
+<h2 id="provider-api">Provider API</h2>
+
+<p>The provider API is where the adapter communicates with the Common API. The adapter connects to get events from the Common API and sends back the response with the information from the business application.</p>
+
+<p>The provider API makes use of SSE (Server-Sent-Events) (<a href="https://en.wikipedia.org/wiki/Server-sent_events">https://en.wikipedia.org/wiki/Server-sent_events</a>) to send events to the adapter.</p>
+
+<h2 id="endpoints">Endpoints</h2>
+
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Flow#</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>/provider/sse/:id</td>
+<td>GET</td>
+<td>1</td>
+<td>The adapter registers on this endpoint. Id should be an UUID. If the adapter supports several orgId’s each orgId must have it’s own UUID.</td>
+</tr>
+
+<tr>
+<td>/provider/status</td>
+<td>POST</td>
+<td>3</td>
+<td>When the adapter receives an event it should post back a status to tell the provider if the event can be handled.</td>
+</tr>
+
+<tr>
+<td>/provider/response</td>
+<td>POST</td>
+<td>4</td>
+<td>This is where the adapter sends back the response.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="authentication">Authentication</h2>
+
+<p>The provider API is secured with OAuth2 using the Resource Owner Password Credentials Grant flow.</p>
+
+<p><image></p>
+
+<p>The <strong><em>Adapter is both Resource Owner and Client</em></strong>. See <a href="https://github.com/FINTprosjektet/fint-oauth-consumer-client-sample">https://github.com/FINTprosjektet/fint-oauth-consumer-client-sample</a> for an example implementation.</p>
+
+<h2 id="error-handling">Error handling</h2>
+
+<p>The adapter must handle the following error scenarios:
+The event sent from the provider is not understood
+There is something wrong with the received event
+Could not communicate with the source system</p>
+
+<p>All of the error situations should result in an event sent from the adapter to the provider with the status “PROVIDER_REJECTED”. If the adapter has information about the error this can be added to the message field in the event-object.</p>
+
+<h2 id="adapter-skeleton">Adapter skeleton</h2>
+
+<p>There is a skeleton as a starting point and guideline for develop a adapter. This skeleton has code for communicating with the provider api. See the readme for more information.</p>
+
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Link</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Java</td>
+<td><a href="https://github.com/FINTprosjektet/fint-sse-adapter-skeleton">https://github.com/FINTprosjektet/fint-sse-adapter-skeleton</a></td>
+</tr>
+
+<tr>
+<td>C#</td>
+<td><a href="https://github.com/FINTprosjektet/fint-sse-adapter-skeleton-csharp">https://github.com/FINTprosjektet/fint-sse-adapter-skeleton-csharp</a></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="information-models-1">Information Models</h2>
+
+<p>The main purpose of the adapter is to map the internal business application model to the FINT information model. This includes relations between objects.</p>
+
+<p>The FINT information model consist of two key elements:</p>
+
+<p>Main classes which represent the resources. This can be a person, student, employee, employment, code and so on.
+Relations between main classes.</p>
+
+<p>For more information about the FINT information model and a description of all the classes, attributes and relations one can go to <a href="https://dokumentasjon.felleskomponent.no">https://dokumentasjon.felleskomponent.no</a>.</p>
+
+<p>The technical implementations of the models can be found at <a href="https://github.com/FINTmodels">https://github.com/FINTmodels</a>.</p>
+
+<h2 id="vocabulary">Vocabulary</h2>
+
+<table>
+<thead>
+<tr>
+<th>Norwegian term</th>
+<th>English term</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Felleskomponent</td>
+<td>Common API</td>
+</tr>
+
+<tr>
+<td>Fagapplikasjon</td>
+<td>Business application</td>
+</tr>
+</tbody>
+</table>
 
     
 
