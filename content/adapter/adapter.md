@@ -11,6 +11,7 @@ A Common API is a API on a business application. The Common API gets and sends i
 
 ## Architectural overview - Common API
 
+![overview](/images/architec-overview-kopi.png)
 ### Information Models
 The Common API consist of standardized information models that will presented as resources in the Consumer API. Each Common API can consist of one or more information models. The models are documented here https://dokumentasjon.felleskomponent.no
 
@@ -51,12 +52,17 @@ When the Cache Service need to update the cache it sends an event down to the ad
 
 All events are logged at all stages.
 
+![Event flow](/images/fint-event-flow.png)
+***Event flow***
+
 ## Provider API
 The provider API is where the adapter communicates with the Common API. The adapter connects to get events from the Common API and sends back the response with the information from the business application.
 
 The provider API makes use of SSE (Server-Sent-Events) (https://en.wikipedia.org/wiki/Server-sent_events) to send events to the adapter.
 
 ## Endpoints
+
+![Adapter Flow](/images/adapter-flow.png)
 
 | Endpoint           | Method | Flow# | Description                                                                                                                               |
 |--------------------|--------|-------|-------------------------------------------------------------------------------------------------------------------------------------------|
@@ -68,7 +74,7 @@ The provider API makes use of SSE (Server-Sent-Events) (https://en.wikipedia.org
 
 The provider API is secured with OAuth2 using the Resource Owner Password Credentials Grant flow.
 
-<image>
+![Event flow](/images/authentication.png)
 
 The ***Adapter is both Resource Owner and Client***. See https://github.com/FINTprosjektet/fint-oauth-consumer-client-sample for an example implementation.
 
@@ -79,7 +85,7 @@ The event sent from the provider is not understood
 There is something wrong with the received event
 Could not communicate with the source system
 
-All of the error situations should result in an event sent from the adapter to the provider with the status “PROVIDER_REJECTED”. If the adapter has information about the error this can be added to the message field in the event-object.
+All of the error situations should result in an event sent from the adapter to the provider with the status `PROVIDER_REJECTED`. If the adapter has information about the error this can be added to the message field in the event-object.
 
 ## Adapter skeleton
 
