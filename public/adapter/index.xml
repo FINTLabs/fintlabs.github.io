@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Adapters on FINTprosjektet</title>
+    <link>https://fintprosjektet.github.io/adapter/</link>
+    <description>Recent content in Adapters on FINTprosjektet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 26 Apr 2017 11:49:04 +0200</lastBuildDate>
+    
+	<atom:link href="https://fintprosjektet.github.io/adapter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ISO 639-1 alpha-2</title>
+      <link>https://fintprosjektet.github.io/adapter/adapter/</link>
+      <pubDate>Wed, 26 Apr 2017 11:49:04 +0200</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/adapter/adapter/</guid>
+      <description>Adapter Introduction A Common API is a API on a business application. The Common API gets and sends information to/from a business application through an adapter. This document aims to describe how an adapter should be implemented.
+Architectural overview - Common API Information Models The Common API consist of standardized information models that will presented as resources in the Consumer API. Each Common API can consist of one or more information models.</description>
+    </item>
+    
+  </channel>
+</rss>
