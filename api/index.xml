@@ -17,7 +17,7 @@
       <pubDate>Wed, 26 Apr 2017 11:49:12 +0200</pubDate>
       
       <guid>https://fintprosjektet.github.io/api/codelist/</guid>
-      <description>Code list</description>
+      <description> Code lists </description>
     </item>
     
     <item>
@@ -38,7 +38,7 @@ FINT Common Codelist  ISO/IEC 5218 Information model for ISO/IEC 5218  Get all c
       <pubDate>Wed, 26 Apr 2017 11:49:04 +0200</pubDate>
       
       <guid>https://fintprosjektet.github.io/api/organisation/</guid>
-      <description></description>
+      <description> Organisasjon </description>
     </item>
     
     <item>
@@ -47,7 +47,7 @@ FINT Common Codelist  ISO/IEC 5218 Information model for ISO/IEC 5218  Get all c
       <pubDate>Wed, 26 Apr 2017 11:48:52 +0200</pubDate>
       
       <guid>https://fintprosjektet.github.io/api/personal/</guid>
-      <description></description>
+      <description> Personal </description>
     </item>
     
     <item>
