@@ -12,3 +12,33 @@
   padding-left: 35px;
   font-size: 12px;
 }
+
+.tocify-wrapper {
+  background-color: #d1202e;
+}
+
+.tocify-wrapper > .search:before {
+  color: inherit;
+}
+
+.tocify-wrapper > .search:before {
+  left: 18px;
+}
+
+.tocify-wrapper > .search input {
+  background-color: white;
+  color: inherit;
+}
+
+.tocify-wrapper .search-results {
+  background-color: #87141d;
+}
+
+.tocify-wrapper .tocify-subheader {
+  background-color: #87141d;
+}
+
+.tocify-wrapper > img {
+  max-width: 75%;
+  margin: 0 auto;
+}
