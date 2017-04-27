@@ -1,7 +1,7 @@
 +++
 date = "2017-04-26T11:49:04+02:00"
 title = "Common Codelist"
-weight = 10
+weight = 11
 +++
 
 ## Common Code List
@@ -22,7 +22,7 @@ The Common Codelist API has endpoints for codelist that are open, not spesicifc 
 > Get all codes 
  
 ```shell
-$ curl https://api.felleskomponent.no/felles/kodeverk/iso/6391alpha2
+$ curl "https://api.felleskomponent.no/felles/kodeverk/iso/6391alpha2"
 ```
 
 > Result
@@ -126,7 +126,7 @@ $ curl "https://api.felleskomponent.no/felles/kodeverk/iso/6391alpha2/systemid/a
 > Get all codes 
  
 ```shell
-$ curl https://api.felleskomponent.no/felles/kodeverk/iso/31661alpha2
+$ curl "https://api.felleskomponent.no/felles/kodeverk/iso/31661alpha2"
 ```
 
 > Result
@@ -209,7 +209,7 @@ $ curl "https://api.felleskomponent.no/felles/kodeverk/iso/31661alpha2/systemid/
 > Get all codes 
  
 ```shell
-$ curl https://api.felleskomponent.no/felles/kodeverk/iso/5218
+$ curl "https://api.felleskomponent.no/felles/kodeverk/iso/5218"
 ```
 
 > Result

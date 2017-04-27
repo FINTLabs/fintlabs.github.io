@@ -6,10 +6,19 @@
     <description>Recent content in Apis on FINTprosjektet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Apr 2017 11:50:12 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 26 Apr 2017 11:49:04 +0200</lastBuildDate>
     
 	<atom:link href="https://fintprosjektet.github.io/api/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Common Codelist</title>
+      <link>https://fintprosjektet.github.io/api/api/</link>
+      <pubDate>Wed, 26 Apr 2017 11:49:04 +0200</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/api/api/</guid>
+      <description> API </description>
+    </item>
     
     <item>
       <title>Code List</title>
@@ -22,22 +31,13 @@
     
     <item>
       <title>Common Codelist</title>
-      <link>https://fintprosjektet.github.io/api/api/</link>
-      <pubDate>Wed, 26 Apr 2017 11:49:04 +0200</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/api/</guid>
-      <description> API </description>
-    </item>
-    
-    <item>
-      <title>Common Codelist</title>
       <link>https://fintprosjektet.github.io/api/common-codelist/common-codelist/</link>
       <pubDate>Wed, 26 Apr 2017 11:49:04 +0200</pubDate>
       
       <guid>https://fintprosjektet.github.io/api/common-codelist/common-codelist/</guid>
       <description>Common Code List The Common Codelist API has endpoints for codelist that are open, not spesicifc to organisations and shared by many the APIs.
 FINT Common Codelist  ISO 639-1 alpha-2 Information model for ISO 639-1 alpha-2  Get all codes  Get all codes
- $ curl https://api.felleskomponent.no/felles/kodeverk/iso/6391alpha2   Result
+ $ curl &amp;quot;https://api.felleskomponent.no/felles/kodeverk/iso/6391alpha2&amp;quot;   Result
  [ { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;aa&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;aa&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;Afar&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;ab&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;ab&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;Abkhasisk&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;ae&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;ae&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;Avestisk&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;af&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;af&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;Afrikaans&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;ak&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;ak&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;Akan&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;am&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;am&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;Amharisk&amp;quot; }, {.</description>
     </item>
     
