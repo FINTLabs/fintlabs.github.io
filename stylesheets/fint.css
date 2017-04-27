@@ -1,3 +1,7 @@
+.tocify-wrapper .tocify-item > a {
+  font-size: 14px;
+}
+
 .tocify-wrapper .tocify-subheader .tocify-item > a {
   padding-left: 15px;
   font-size: 12px;
@@ -28,6 +32,7 @@
 .tocify-wrapper > .search input {
   background-color: white;
   color: inherit;
+  margin: 10px 15px 20px 15px;
 }
 
 .tocify-wrapper .search-results {
@@ -41,6 +46,7 @@
 .tocify-wrapper > img {
   max-width: 70%;
   margin: 0 auto;
+  padding-top: 7px;
 }
 
 .tocify-wrapper .tocify-focus {
