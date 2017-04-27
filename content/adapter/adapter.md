@@ -1,7 +1,7 @@
 +++
 date = "2017-04-26T11:49:04+02:00"
 title = "ISO 639-1 alpha-2"
-weight = 20
+weight = 200
 +++
 
 # Adapter
