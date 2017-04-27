@@ -28,5 +28,5 @@ name = "Javascript"
 key = "java"
 name = "Java"
 [[params.language_tabs]]
-key = "c#"
+key = "csharp"
 name = "C#"

@@ -10,6 +10,11 @@
 ### Deploy to github pages  
 `./deploy`
 
+### Install Pygments syntax highlighter
+
+[Install Pygments Mac OS](http://www.andrewhavens.com/posts/13/how-to-install-pygments-syntax-highlighter-using-homebrew/)  
+`sudo easy_install Pygments`
+
 ---
 
 ### References
