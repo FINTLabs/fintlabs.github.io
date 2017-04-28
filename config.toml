@@ -1,32 +1,25 @@
 baseURL = "https://fintprosjektet.github.io/"
 languageCode = "en-us"
 title = "FINTprosjektet"
-theme = "docuapi"
-
+theme = "hugo-theme-bootie-docs"
+contentdir = "content"
+publishdir = "public"
 
 [params]
-logo = "images/logo.jpg"
-search = true
+  highlightStyle = "github"
+  noCategoryLink = "true"
+  description = "This is the technical documentation site for the FINT project."
 
-# Code higlighting settings
-pygmentsCodefences = true
-pygmentsCodeFencesGuesSsyntax = false
-pygmentsOptions = ""
-pygmentsStyle = "monokai"
-# The monokai stylesheet is included in the base template.
-pygmentsUseClasses = true
+[[menu.main]]
+  name   = "Adapter"
+  url    = "/adapter"
+  weight = 10
 
-defaultContentLanguage = "en"
-# Configure the language example tabs.
-[[params.language_tabs]]
-key = "shell"
-name = "Curl" 
-[[params.language_tabs]]
-key = "java"
-name = "Java"
-[[params.language_tabs]]
-key = "csharp"
-name = "C#"
-[[params.language_tabs]]
-key = "javascript"
-name = "Javascript"
+[[menu.main]]
+  name   = "Api"
+  url    = "/apidocs"
+  weight = 20
+[[menu.main]]
+  name   = "Information models"
+  url    = "https://dokumentasjon.felleskomponent.no"
+  weight = 30

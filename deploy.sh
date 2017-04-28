@@ -1,6 +1,7 @@
 HUGO=`which hugo`
 if [ -f "$HUGO" ];
 then
+  rm -rf public
   hugo && \
   git add . && \
   git commit -m "built hugo static resources" && \

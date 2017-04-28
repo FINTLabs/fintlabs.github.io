@@ -1,0 +1,359 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/index.xml" type="application/rss+xml" title="FINTprosjektet">
+    <link rel="icon" href="https://fintprosjektet.github.io//favicon.ico">
+    <title>A Technical Overview Of Adapters - FINTprosjektet</title>
+    
+    <link rel="stylesheet" href="https://fintprosjektet.github.io//css/highlight/github.css">
+    <link rel="stylesheet" href="https://fintprosjektet.github.io//css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fintprosjektet.github.io//css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://fintprosjektet.github.io//css/theme.css">
+    <link rel="stylesheet" href="https://fintprosjektet.github.io//css/bootie-docs.css">
+    <link rel="stylesheet" href="https://fintprosjektet.github.io//css/site.css">
+    <link rel="stylesheet" href="https://fintprosjektet.github.io//stylesheets/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body role="document">
+
+    
+    <nav class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+                <a class="navbar-brand" href="https://fintprosjektet.github.io//">FINTprosjektet</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    
+                      
+                    <li ><a href="/adapter">Adapter</a></li>
+                    
+                    <li ><a href="/apidocs">Api</a></li>
+                    
+                    <li ><a href="https://dokumentasjon.felleskomponent.no">Information models</a></li>
+                      
+                </ul>
+                
+            </div>
+            
+        </div>
+    </nav>
+
+    <div class="container">
+
+<div class="row">
+	<div class="col-sm-8 doc-main">
+		<main role="main">
+			<article>
+				<a id="title"></a>
+				<h1 class="doc-entry-title">A Technical Overview Of Adapters</h1>
+				<div class="doc-entry-meta">
+					<span><time datetime="2017-04-26">April 26, 2017</time></span>
+				</div>
+				<section>
+					
+
+<h1 id="introduction">Introduction</h1>
+
+<p>A Common API is a API on a business application. The Common API gets and sends information to/from a business application through an adapter. This document aims to describe how an adapter should be implemented.</p>
+
+<h1 id="architectural-overview-common-api">Architectural overview - Common API</h1>
+
+<p><img src="/images/architec-overview-kopi.png" alt="overview" /></p>
+
+<h2 id="information-models">Information Models</h2>
+
+<p>The Common API consist of standardized information models that will presented as resources in the Consumer API. Each Common API can consist of one or more information models. The models are documented here <a href="https://dokumentasjon.felleskomponent.no">https://dokumentasjon.felleskomponent.no</a></p>
+
+<h2 id="consumer-api">Consumer API</h2>
+
+<p>Consumer API is where clients (applications, processes etc) access the data from the Business Application.
+Provider API
+Provider API is where the adapter feeds the Common API with data.</p>
+
+<h2 id="adapter">Adapter</h2>
+
+<p>The adapter is the “link” between the Common API and the Business Application. The main tasks for the adapter is:
+Getting data from the Business Application
+Mapping the data from the business application model to the Common API model
+Sending the mapped data to the Common API</p>
+
+<h1 id="common-api-internals">Common API internals</h1>
+
+<p>The Common API has two main services:</p>
+
+<ul>
+<li>Cache service</li>
+<li>Event service</li>
+</ul>
+
+<h2 id="cache-service">Cache Service</h2>
+
+<p>The cache service has the following responsibility:
+Store data from the business applications for all the organisations using the Common API
+Populate the cache
+Keeps track of which data has changed since the last time the cache was populated</p>
+
+<h2 id="event-service">Event service</h2>
+
+<p>The internals in the Common API is event based. An event is created by:</p>
+
+<ul>
+<li>Cache Service</li>
+<li>Client</li>
+</ul>
+
+<p>When a client hits a endpoint in the Consumer API the Common API is generating an event and sends it to the Cache Service. An event from the client will never go all the way down to the adapter.</p>
+
+<p>When the Cache Service need to update the cache it sends an event down to the adapter.</p>
+
+<p>All events are logged at all stages.</p>
+
+<p><img src="/images/fint-event-flow.png" alt="Event flow" />
+<strong><em>Event flow</em></strong></p>
+
+<h1 id="provider-api">Provider API</h1>
+
+<p>The provider API is where the adapter communicates with the Common API. The adapter connects to get events from the Common API and sends back the response with the information from the business application.</p>
+
+<p>The provider API makes use of SSE (Server-Sent-Events) (<a href="https://en.wikipedia.org/wiki/Server-sent_events">https://en.wikipedia.org/wiki/Server-sent_events</a>) to send events to the adapter.</p>
+
+<h1 id="endpoints">Endpoints</h1>
+
+<p><img src="/images/adapter-flow.png" alt="Adapter Flow" /></p>
+
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Flow#</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>/provider/sse/:id</td>
+<td>GET</td>
+<td>1</td>
+<td>The adapter registers on this endpoint. Id should be an UUID. If the adapter supports several orgId’s each orgId must have it’s own UUID.</td>
+</tr>
+
+<tr>
+<td>/provider/status</td>
+<td>POST</td>
+<td>3</td>
+<td>When the adapter receives an event it should post back a status to tell the provider if the event can be handled.</td>
+</tr>
+
+<tr>
+<td>/provider/response</td>
+<td>POST</td>
+<td>4</td>
+<td>This is where the adapter sends back the response.</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="authentication">Authentication</h1>
+
+<p>The provider API is secured with OAuth2 using the Resource Owner Password Credentials Grant flow.</p>
+
+<p><img src="/images/authentication.png" alt="Event flow" /></p>
+
+<p>The <strong><em>Adapter is both Resource Owner and Client</em></strong>. See <a href="https://github.com/FINTprosjektet/fint-oauth-consumer-client-sample">https://github.com/FINTprosjektet/fint-oauth-consumer-client-sample</a> for an example implementation.</p>
+
+<h1 id="error-handling">Error handling</h1>
+
+<p>The adapter must handle the following error scenarios:
+The event sent from the provider is not understood
+There is something wrong with the received event
+Could not communicate with the source system</p>
+
+<p>All of the error situations should result in an event sent from the adapter to the provider with the status <code>PROVIDER_REJECTED</code>. If the adapter has information about the error this can be added to the message field in the event-object.</p>
+
+<h1 id="adapter-skeleton">Adapter skeleton</h1>
+
+<p>There is a skeleton as a starting point and guideline for develop a adapter. This skeleton has code for communicating with the provider api. See the readme for more information.</p>
+
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Link</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Java</td>
+<td><a href="https://github.com/FINTprosjektet/fint-sse-adapter-skeleton">https://github.com/FINTprosjektet/fint-sse-adapter-skeleton</a></td>
+</tr>
+
+<tr>
+<td>C#</td>
+<td><a href="https://github.com/FINTprosjektet/fint-sse-adapter-skeleton-csharp">https://github.com/FINTprosjektet/fint-sse-adapter-skeleton-csharp</a></td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="information-models-1">Information Models</h1>
+
+<p>The main purpose of the adapter is to map the internal business application model to the FINT information model. This includes relations between objects.</p>
+
+<p>The FINT information model consist of two key elements:</p>
+
+<p>Main classes which represent the resources. This can be a person, student, employee, employment, code and so on.
+Relations between main classes.</p>
+
+<p>For more information about the FINT information model and a description of all the classes, attributes and relations one can go to <a href="https://dokumentasjon.felleskomponent.no">https://dokumentasjon.felleskomponent.no</a>.</p>
+
+<p>The technical implementations of the models can be found at <a href="https://github.com/FINTmodels">https://github.com/FINTmodels</a>.</p>
+
+<h1 id="vocabulary">Vocabulary</h1>
+
+<table>
+<thead>
+<tr>
+<th>Norwegian term</th>
+<th>English term</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Felleskomponent</td>
+<td>Common API</td>
+</tr>
+
+<tr>
+<td>Fagapplikasjon</td>
+<td>Business application</td>
+</tr>
+</tbody>
+</table>
+
+				</section>
+			</article>
+		</main>
+	</div> 
+
+	
+
+<div class="col-sm-3 col-sm-offset-1 doc-sidebar">
+	<div id="sidebar">
+	<div class="sidebar-module">
+		<div class="sidebar-toc">
+			<h4 class="sidebar-heading">Table of Contents</h4>
+			<ul>
+				<li><strong><a href="#title">A Technical Overview Of Adapters</a></strong></li>
+			</ul>
+			<nav id="TableOfContents">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#architectural-overview-common-api">Architectural overview - Common API</a>
+<ul>
+<li><a href="#information-models">Information Models</a></li>
+<li><a href="#consumer-api">Consumer API</a></li>
+<li><a href="#adapter">Adapter</a></li>
+</ul></li>
+<li><a href="#common-api-internals">Common API internals</a>
+<ul>
+<li><a href="#cache-service">Cache Service</a></li>
+<li><a href="#event-service">Event service</a></li>
+</ul></li>
+<li><a href="#provider-api">Provider API</a></li>
+<li><a href="#endpoints">Endpoints</a></li>
+<li><a href="#authentication">Authentication</a></li>
+<li><a href="#error-handling">Error handling</a></li>
+<li><a href="#adapter-skeleton">Adapter skeleton</a></li>
+<li><a href="#information-models-1">Information Models</a></li>
+<li><a href="#vocabulary">Vocabulary</a></li>
+</ul>
+</nav>
+		</div>
+	</div>
+	<div class="sidebar-module">
+		<h4 class="sidebar-heading">Pages in Categories</h4>
+		<ul class="sidebar-category-list">
+		
+			<li>
+				<a href="https://fintprosjektet.github.io//categories/general">
+					<span class="doc-list-category">General</span>
+				</a>
+				<ul>
+					<li><a href="/adapter/howto/">Howto Develop An Adapter</a>
+					</li>
+				
+				</ul>
+			</li>
+		
+		</ul>
+	</div>
+	<div class="sidebar-module">
+		<h4 class="sidebar-heading">Tags</h4>
+		<div class="tag-box">
+		
+			<a class="tag-item" href="https://fintprosjektet.github.io//tags/document">document</a>
+		
+		</div>
+	</div>
+	</div>
+</div>
+
+</div> 
+
+
+
+
+
+</div>
+
+
+<hr />
+<footer>
+     
+    <a class="btn btn-link" href="#" aria-label="FINTProsjektet">
+        <i class="fa fa-home" aria-hidden="true"></i> FINTProsjektet website
+    </a>
+    |
+    <a class="btn btn-link" href="#" aria-label="FINTProsjektet">
+        <i class="fa fa-github" aria-hidden="true"></i> FINTProsjektet
+    </a>
+    |
+    <a class="btn btn-link" href="#" aria-label="FINTModels">
+        <i class="fa fa-github" aria-hidden="true"></i> FINTModels
+    </a>
+    |
+    <a class="btn btn-link" href="#" aria-label="FINTLibs">
+        <i class="fa fa-github" aria-hidden="true"></i> FINTLibs
+    </a>
+</footer>
+
+
+
+<script src="https://fintprosjektet.github.io//js/jquery.min.js"></script>
+<script src="https://fintprosjektet.github.io//js/bootstrap.min.js"></script>
+
+<script src="https://fintprosjektet.github.io//js/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://fintprosjektet.github.io//js/ie10-viewport-bug-workaround.js"></script>
+<script src="https://fintprosjektet.github.io//js/bootie-docs.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+baseURL = "https://fintprosjektet.github.io/"
+languageCode = "en-us"
+title = "FINTprosjektet"
+theme = "docuapi"
+contentdir = "content"
+publishdir = "../public/apidocs"
+
+[params]
+logo = "images/logo.png"
+search = true
+
+# Code higlighting settings
+pygmentsCodefences = true
+pygmentsCodeFencesGuesSsyntax = false
+pygmentsOptions = ""
+pygmentsStyle = "monokai"
+# The monokai stylesheet is included in the base template.
+pygmentsUseClasses = true
+
+defaultContentLanguage = "en"
+# Configure the language example tabs.
+[[params.language_tabs]]
+key = "http"
+name = "HTTP"
+[[params.language_tabs]]
+key = "shell"
+name = "Curl" 
+[[params.language_tabs]]
+key = "java"
+name = "Java"
+[[params.language_tabs]]
+key = "csharp"
+name = "C#"
+[[params.language_tabs]]
+key = "javascript"
+name = "Javascript"
