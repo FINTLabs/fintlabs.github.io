@@ -2,7 +2,10 @@ HUGO=`which hugo`
 if [ -f "$HUGO" ];
 then
   rm -rf public
-  hugo && \
+  cd apidocs
+  hugo
+  cd ..
+  hugo
   git add . && \
   git commit -m "built hugo static resources" && \
   git push && git subtree push --prefix public origin master
