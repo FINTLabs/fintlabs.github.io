@@ -34,3 +34,7 @@ name = "C#"
 [[params.language_tabs]]
 key = "javascript"
 name = "Javascript"
+
+toc_footers = [ 
+"<a class="btn btn-link" href="https://github.com/FINTlibs" aria-label="FINTlibs"><i class="fa fa-github" aria-hidden="true"></i> FINTLibs</a>",
+]
