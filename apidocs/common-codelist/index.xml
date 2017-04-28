@@ -1,50 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Apis on FINTprosjektet</title>
-    <link>https://fintprosjektet.github.io/api/</link>
-    <description>Recent content in Apis on FINTprosjektet</description>
+    <title>Common-codelists on FINTprosjektet</title>
+    <link>https://fintprosjektet.github.io/common-codelist/</link>
+    <description>Recent content in Common-codelists on FINTprosjektet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 26 Apr 2017 11:49:04 +0200</lastBuildDate>
     
-	<atom:link href="https://fintprosjektet.github.io/api/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fintprosjektet.github.io/common-codelist/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Common Codelist</title>
-      <link>https://fintprosjektet.github.io/api/api/</link>
+      <link>https://fintprosjektet.github.io/common-codelist/common-codelist/</link>
       <pubDate>Wed, 26 Apr 2017 11:49:04 +0200</pubDate>
       
-      <guid>https://fintprosjektet.github.io/api/api/</guid>
-      <description> API </description>
-    </item>
-    
-    <item>
-      <title>Code List</title>
-      <link>https://fintprosjektet.github.io/api/codelist/codelist/</link>
-      <pubDate>Wed, 26 Apr 2017 11:50:12 +0200</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/codelist/codelist/</guid>
-      <description> Code lists </description>
-    </item>
-    
-    <item>
-      <title>Common Codelist</title>
-      <link>https://fintprosjektet.github.io/api/common-codelist/common-codelist/</link>
-      <pubDate>Wed, 26 Apr 2017 11:49:04 +0200</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/common-codelist/common-codelist/</guid>
+      <guid>https://fintprosjektet.github.io/common-codelist/common-codelist/</guid>
       <description> Common Code List The Common Codelist API has endpoints for codelist that are open, not spesicifc to organisations and shared by many the APIs.
 FINT Common Codelist  </description>
     </item>
     
     <item>
       <title>ISO 639-1 alpha-2</title>
-      <link>https://fintprosjektet.github.io/api/common-codelist/iso639-1alpha-2/</link>
+      <link>https://fintprosjektet.github.io/common-codelist/iso639-1alpha-2/</link>
       <pubDate>Wed, 26 Apr 2017 11:49:04 +0200</pubDate>
       
-      <guid>https://fintprosjektet.github.io/api/common-codelist/iso639-1alpha-2/</guid>
+      <guid>https://fintprosjektet.github.io/common-codelist/iso639-1alpha-2/</guid>
       <description>ISO 639-1 alpha-2 Information model for ISO 639-1 alpha-2  Get all codes  Get all codes
  $ curl &amp;quot;https://api.felleskomponent.no/felles/kodeverk/iso/6391alpha2&amp;quot;   Result
  [ { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;aa&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;aa&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;Afar&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;ab&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;ab&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;Abkhasisk&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;ae&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;ae&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;Avestisk&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;af&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;af&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;Afrikaans&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;ak&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;ak&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;Akan&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;am&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;am&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;Amharisk&amp;quot; }, {.</description>
@@ -52,10 +34,10 @@ FINT Common Codelist  </description>
     
     <item>
       <title>ISO 3166-1 alpha-2</title>
-      <link>https://fintprosjektet.github.io/api/common-codelist/iso3166-1-alpha-2/</link>
+      <link>https://fintprosjektet.github.io/common-codelist/iso3166-1-alpha-2/</link>
       <pubDate>Wed, 26 Apr 2017 11:49:04 +0200</pubDate>
       
-      <guid>https://fintprosjektet.github.io/api/common-codelist/iso3166-1-alpha-2/</guid>
+      <guid>https://fintprosjektet.github.io/common-codelist/iso3166-1-alpha-2/</guid>
       <description>ISO 3166-1 alpha-2 Information model for ISO 3166-1 alpha-2  Get all codes  Get all codes
  $ curl &amp;quot;https://api.felleskomponent.no/felles/kodeverk/iso/31661alpha2&amp;quot;   Result
  [ { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;AD&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;AD&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;Andorra&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;AE&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;AE&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;De forente arabiske emirater&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;AF&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;AF&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;Afghanistan&amp;quot; }, {...} ]  Endpoint to get all codes</description>
@@ -63,31 +45,13 @@ FINT Common Codelist  </description>
     
     <item>
       <title>Common Codelist</title>
-      <link>https://fintprosjektet.github.io/api/common-codelist/isoiec-5218/</link>
+      <link>https://fintprosjektet.github.io/common-codelist/isoiec-5218/</link>
       <pubDate>Wed, 26 Apr 2017 11:49:04 +0200</pubDate>
       
-      <guid>https://fintprosjektet.github.io/api/common-codelist/isoiec-5218/</guid>
+      <guid>https://fintprosjektet.github.io/common-codelist/isoiec-5218/</guid>
       <description>ISO/IEC 5218 Information model for ISO/IEC 5218  Get all codes  Get all codes
  $ curl &amp;quot;https://api.felleskomponent.no/felles/kodeverk/iso/5218&amp;quot;   Result
  [ { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;0&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;0&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;uvisst&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;1&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;1&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;mann&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;2&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;2&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;kvinne&amp;quot; }, { &amp;quot;systemId&amp;quot;: { &amp;quot;identifikatorverdi&amp;quot;: &amp;quot;9&amp;quot; }, &amp;quot;kode&amp;quot;: &amp;quot;9&amp;quot;, &amp;quot;navn&amp;quot;: &amp;quot;gjelder ikke&amp;quot; } ]  Endpoint to get all codes</description>
-    </item>
-    
-    <item>
-      <title>Organisation</title>
-      <link>https://fintprosjektet.github.io/api/organisation/organisation/</link>
-      <pubDate>Wed, 26 Apr 2017 11:49:04 +0200</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/organisation/organisation/</guid>
-      <description> Organisasjon </description>
-    </item>
-    
-    <item>
-      <title>Personal</title>
-      <link>https://fintprosjektet.github.io/api/personal/personal/</link>
-      <pubDate>Wed, 26 Apr 2017 11:48:52 +0200</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/personal/personal/</guid>
-      <description> Personal </description>
     </item>
     
   </channel>
