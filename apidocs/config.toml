@@ -36,8 +36,6 @@ key = "javascript"
 name = "Javascript"
 
 [languages]
-
-[languages.en]
 toc_footers = [ 
 "<a class='btn btn-link' href='/' aria-label='FINT'><i class='fa fa-home' aria-hidden='true'></i> FINT technial docs</a>"
 ]
