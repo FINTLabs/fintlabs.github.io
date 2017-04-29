@@ -1,6 +1,6 @@
 baseURL = "https://fintprosjektet.github.io"
 languageCode = "en-us"
-title = "FINTprosjektet"
+title = "FINTprosjektet technical docs"
 theme = "hugo-theme-bootie-docs"
 contentdir = "content"
 publishdir = "public"
