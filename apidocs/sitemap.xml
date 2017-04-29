@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/apidocs/codelist/codelist/</loc>
+    <lastmod>2017-04-26T11:50:12+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/apidocs/common-codelist/common-codelist/</loc>
+    <lastmod>2017-04-26T11:49:04+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/apidocs/common-codelist/iso639-1alpha-2/</loc>
+    <lastmod>2017-04-26T11:49:04+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/apidocs/common-codelist/iso3166-1-alpha-2/</loc>
+    <lastmod>2017-04-26T11:49:04+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/apidocs/common-codelist/isoiec-5218/</loc>
+    <lastmod>2017-04-26T11:49:04+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/apidocs/organisation/organisation/</loc>
+    <lastmod>2017-04-26T11:49:04+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/apidocs/personal/personal/</loc>
+    <lastmod>2017-04-26T11:48:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/apidocs/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/apidocs/codelist/</loc>
+    <lastmod>2017-04-26T11:50:12+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/apidocs/common-codelist/</loc>
+    <lastmod>2017-04-26T11:49:04+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/apidocs/</loc>
+    <lastmod>2017-04-26T11:50:12+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/apidocs/organisation/</loc>
+    <lastmod>2017-04-26T11:49:04+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/apidocs/personal/</loc>
+    <lastmod>2017-04-26T11:48:52+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/apidocs/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
