@@ -1,3 +1,7 @@
+/*
+    Palatte https://coolors.co/d1202e-bfdbf7-053c5e-0c7c59-1f7a8c
+*/
+
 .navbar {
     background-color: #d1202e;
     text-shadow: none;
@@ -24,18 +28,19 @@
 
 .jumbotron {
     color: whitesmoke;
-    background-color: #dc4444;
+    /*background-color: #dc4444;*/
+    background-color: #1F7A8C;
 }
 
 .jumbotron>p>a,
 .jumbotron>p>a:hover {
     color: whitesmoke;
-    background-color: #dc4444;
+    background-color: #1F7A8C;
 }
 
 footer {
     text-align: center;
-    color: #dc4444;
+    color: black;
     font-size: 12px;
 }
 
@@ -43,7 +48,7 @@ footer>a.btn-link,
 footer>a.btn-link:active,
 footer>a.btn-link:focus,
 footer>a.btn-link:hover {
-    color: #dc4444;
+    color: black;
     font-size: 12px;
 }
 
@@ -53,6 +58,7 @@ footer>a.btn-link:hover {
 
 .fint-highlights>a:hover.btn-default {
     box-shadow: none;
+    /*background-color: #d1202e;*/
     background-color: #d1202e;
     border: none;
     color: white;
@@ -64,7 +70,7 @@ footer>a.btn-link:hover {
     box-shadow: none;
     background-color: whitesmoke;
     border: none;
-    color: #d1202e;
+    color: #1F7A8C;
     text-decoration: none;
     text-shadow: none;
 }
