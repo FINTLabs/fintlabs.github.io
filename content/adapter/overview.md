@@ -9,7 +9,8 @@ A Common API is a API on a business application. The Common API gets and sends i
 
 # Architectural overview - Common API
 
-![overview](/images/architec-overview-kopi.png)
+<img src="/images/architec-overview-kopi.png" alt="Overview" class="img-responsive" />
+
 ## Information Models
 The Common API consist of standardized information models that will presented as resources in the Consumer API. Each Common API can consist of one or more information models. The models are documented here https://dokumentasjon.felleskomponent.no
 
@@ -50,7 +51,8 @@ When the Cache Service need to update the cache it sends an event down to the ad
 
 All events are logged at all stages.
 
-![Event flow](/images/fint-event-flow.png)
+<img src="/images/fint-event-flow.png" alt="Event Flow" class="img-responsive" />
+
 ***Event flow***
 
 # Provider API
@@ -60,7 +62,7 @@ The provider API makes use of SSE (Server-Sent-Events) (https://en.wikipedia.org
 
 # Endpoints
 
-![Adapter Flow](/images/adapter-flow.png)
+<img src="/images/adapter-flow.png" alt="Adapter Flow" class="img-responsive" />
 
 | Endpoint           | Method | Flow# | Description                                                                                                                               |
 |--------------------|--------|-------|-------------------------------------------------------------------------------------------------------------------------------------------|
@@ -72,7 +74,7 @@ The provider API makes use of SSE (Server-Sent-Events) (https://en.wikipedia.org
 
 The provider API is secured with OAuth2 using the Resource Owner Password Credentials Grant flow.
 
-![Event flow](/images/authentication.png)
+<img src="/images/authentication.png" alt="Authentication" class="img-responsive" />
 
 The ***Adapter is both Resource Owner and Client***. See https://github.com/FINTprosjektet/fint-oauth-consumer-client-sample for an example implementation.
 
