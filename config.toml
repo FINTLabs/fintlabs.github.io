@@ -20,6 +20,10 @@ publishdir = "public"
   url    = "/apidocs"
   weight = 20
 [[menu.main]]
-  name   = "Information models"
-  url    = "https://dokumentasjon.felleskomponent.no"
+  name   = "Javadocs/.Net"
+  url    = "https://docs.felleskomponent.no"
   weight = 30
+[[menu.main]]
+  name   = "Information models"
+  url    = "https://informasjonsmodell.felleskomponent.no"
+  weight = 40

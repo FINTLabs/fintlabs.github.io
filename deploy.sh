@@ -2,9 +2,9 @@ HUGO=`which hugo`
 if [ -f "$HUGO" ];
 then
   rm -rf public
-  cd apidocs
-  hugo
-  cd ..
+  #cd apidocs
+  #hugo
+  #cd ..
   hugo
   git add . && \
   git commit -m "built hugo static resources" && \
