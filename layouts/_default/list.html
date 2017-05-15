@@ -1,0 +1,39 @@
+{{ partial "header.html" . }}
+
+<div class="row">
+    <div class="col-sm-8 doc-main">
+        <main role="main">
+            <div class="doc-list-header">
+                <h3>{{ .Title }}</h3>
+            </div>
+            <div class="doc-list-entry">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Document</th>
+                        <th>Description</th>
+                    </tr>
+                    {{ range .Data.Pages }}
+                    <tr>
+                        <td>
+                            <a class="doc-entry" href="{{ .RelPermalink }}">
+                                <span class="doc-entry-title">{{ .Title }}{{ if .Draft }} #Draft{{ end }}</span>
+
+                            </a>
+                        </td>
+                        <td>
+                            {{ .Params.description }}
+                        </td>
+                    </tr>
+                    {{ end }}
+                </table>
+            </div>
+        </main>
+    </div>
+    <!-- /.doc-main -->
+
+
+
+</div>
+<!-- /.row -->
+
+{{ partial "footer.html" . }}

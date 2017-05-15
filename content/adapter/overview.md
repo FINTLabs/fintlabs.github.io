@@ -1,6 +1,7 @@
 +++
 date = "2017-04-26T11:49:04+02:00"
 title = "A Technical Overview Of Adapters"
+description = "This document aims to describe how an adapter should be implemented."
 weight = 1
 +++
 
