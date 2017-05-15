@@ -2,7 +2,7 @@ swagger: '2.0'
 info:
   version: 'v1.0.0'
   title: FINT Common Codelists
-  description: Bladi bladi bladi
+  description: Common codelists APIs is codelists shared by many of the FINT APIs. These APIs are open.
 host: api.felleskomponent.no
 schemes: 
   - https
