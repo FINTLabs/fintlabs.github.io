@@ -3,6 +3,11 @@ info:
   version: 'v1.0.0'
   title: FINT Common Codelists
   description: Common codelists APIs is codelists shared by many of the FINT APIs. These APIs are open.
+  x-logo:
+    url: '/images/logo.png'
+externalDocs:
+  description: Go to the FINT technical documentation site
+  url: 'https://fintprosjektet.github.io'
 host: api.felleskomponent.no
 schemes: 
   - https
