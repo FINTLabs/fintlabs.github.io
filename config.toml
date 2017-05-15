@@ -17,7 +17,7 @@ publishdir = "public"
 
 [[menu.main]]
   name   = "Api"
-  url    = "/apidocs"
+  url    = "/api"
   weight = 20
 [[menu.main]]
   name   = "Javadocs/.Net"
