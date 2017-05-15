@@ -1,0 +1,184 @@
+swagger: '2.0'
+info:
+  version: 'v1.0.0'
+  title: FINT Common Codelists
+  description: Bladi bladi bladi
+host: api.felleskomponent.no
+schemes: 
+  - https
+basePath: /felles/kodeverk
+tags:
+  - name: 'ISO 639-1 alpha-2'
+    description: Endpoint to get ISO 639-1 alpha-2 codes
+  - name: 'ISO 3166-1 alpha-2'
+    description: Endpoint to get ISO 3166-1 alpha-2 codes
+  - name: 'ISO/IEC 5218'
+    description: Endpoint to get 
+paths:
+  /iso/6391alpha2:
+    get:
+      tags:
+        - 'ISO 639-1 alpha-2'
+      summary: List codes
+      description: List all ISO 639-1 alpha-2 codes
+      consumes:
+        - application/json
+      produces:
+        - application/json;charset=UTF-8
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Begrep'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/Nil'
+  /iso/6391alpha2/{id}:
+    get:
+      tags:
+        - 'ISO 639-1 alpha-2'
+      summary: Inspect code
+      consumes:
+        - application/json
+      produces:
+        - application/json;charset=UTF-8
+      parameters: 
+        - name: id
+          in: path
+          type: string
+          required: true
+          description: ID of code
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Begrep'
+        '404':
+          description: Not found
+          schema:
+            $ref: '#/definitions/Nil'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/Nil'
+  /iso/31661alpha2:
+      get:
+        tags:
+          - 'ISO 3166-1 alpha-2'
+        summary: List codes
+        description: List all ISO 3166-1 alpha-2 codes
+        consumes:
+          - application/json
+        produces:
+          - application/json;charset=UTF-8
+        responses:
+          '200':
+            description: OK
+            schema:
+              type: array
+              items:
+                $ref: '#/definitions/Begrep'
+          '500':
+            description: Internal error
+            schema:
+              $ref: '#/definitions/Nil'
+  /iso/31661alpha2/{id}:
+      get:
+        tags:
+          - 'ISO 3166-1 alpha-2'
+        summary: Inspect code
+        consumes:
+          - application/json
+        produces:
+          - application/json;charset=UTF-8
+        parameters: 
+          - name: id
+            in: path
+            type: string
+            required: true
+            description: ID of code
+        responses:
+          '200':
+            description: OK
+            schema:
+              $ref: '#/definitions/Begrep'
+          '404':
+            description: Not found
+            schema:
+              $ref: '#/definitions/Nil'
+          '500':
+            description: Internal error
+            schema:
+              $ref: '#/definitions/Nil'
+  
+  /iso/5218:
+      get:
+        tags:
+          - 'ISO/IEC 5218'
+        summary: List codes
+        description: List all ISO/IEC 5218 codes
+        consumes:
+          - application/json
+        produces:
+          - application/json;charset=UTF-8
+        responses:
+          '200':
+            description: OK
+            schema:
+              type: array
+              items:
+                $ref: '#/definitions/Begrep'
+          '500':
+            description: Internal error
+            schema:
+              $ref: '#/definitions/Nil'
+  /iso/5218/{id}:
+      get:
+        tags:
+          - 'ISO/IEC 5218'
+        summary: Inspect code
+        consumes:
+          - application/json
+        produces:
+          - application/json;charset=UTF-8
+        parameters: 
+          - name: id
+            in: path
+            type: string
+            required: true
+            description: ID of code
+        responses:
+          '200':
+            description: OK
+            schema:
+              $ref: '#/definitions/Begrep'
+          '404':
+            description: Not found
+            schema:
+              $ref: '#/definitions/Nil'
+          '500':
+            description: Internal error
+            schema:
+              $ref: '#/definitions/Nil'
+definitions:
+  Identifikatorverdi:
+    type: object
+    properties:
+      identifikatorverdi:
+        type: string
+  Begrep:
+    type: object
+    properties:
+      systemId:
+        $ref: '#/definitions/Identifikatorverdi'
+      kode:
+        type: string
+      navn:
+        type: string
+  Nil:
+    type: object
+    propterties:
+
