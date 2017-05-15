@@ -17,18 +17,23 @@
   </url>
   
   <url>
-    <loc>https://fintprosjektet.github.io/apidocs/</loc>
-  </url>
-  
-  <url>
     <loc>https://fintprosjektet.github.io/adapter/</loc>
     <lastmod>2017-04-29T00:48:50+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://fintprosjektet.github.io/api/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://fintprosjektet.github.io/categories/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/api/common-code-list/</loc>
   </url>
   
   <url>
