@@ -13,7 +13,7 @@ A Common API is a API on a business application. The Common API gets and sends i
 <img src="/images/architec-overview-kopi.png" alt="Overview" class="img-responsive" />
 
 ## Information Models
-The Common API consist of standardized information models that will presented as resources in the Consumer API. Each Common API can consist of one or more information models. The models are documented here https://dokumentasjon.felleskomponent.no
+The Common API consist of standardized information models that will presented as resources in the Consumer API. Each Common API can consist of one or more information models. The models are documented here https://informasjonsmodell.felleskomponent.no
 
 ## Consumer API
 Consumer API is where clients (applications, processes etc) access the data from the Business Application. 
@@ -105,7 +105,7 @@ The FINT information model consist of two key elements:
 Main classes which represent the resources. This can be a person, student, employee, employment, code and so on.
 Relations between main classes. 
 
-For more information about the FINT information model and a description of all the classes, attributes and relations one can go to https://dokumentasjon.felleskomponent.no.
+For more information about the FINT information model and a description of all the classes, attributes and relations one can go to https://informasjonsmodell.felleskomponent.no.
 
 The technical implementations of the models can be found at https://github.com/FINTmodels.
 
