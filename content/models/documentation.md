@@ -10,7 +10,7 @@ description = "Here you can find links to the Information Model Documentation Po
 The models are designed and documented `Enterprise Architect (EA)`. You can find the `EA` project at [https://github.com/FINTprosjektet/fint-informasjonsmodell](https://github.com/FINTprosjektet/fint-informasjonsmodell). 
 
 ### Documentation portal
-For a more userfriendly view of the models we developet a frontend to the `XMI` export from `EA`. You can find the documentation portal at [https://informasjonsmodell.felleskomponent.no](https://informasjonsmodell.felleskomponent.no).
+For a more userfriendly view of the models we developet a frontend to the `XMI 2.1` export from `EA`. You can find the documentation portal at [https://informasjonsmodell.felleskomponent.no](https://informasjonsmodell.felleskomponent.no).
 
 The project for the frontend is found [here](https://github.com/FINTprosjektet/fint-informasjonsmodell-documentation)
 
