@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="alternate" href="/index.xml" type="application/rss+xml" title="FINTprosjektet technical docs">
+    <link rel="alternate" href="/index.xml" type="application/rss+xml" title="FINT technical docs">
     <link rel="icon" href="https://fintprosjektet.github.io/favicon.ico">
-    <title>Howto Develop An Adapter - FINTprosjektet technical docs</title>
+    <title>Information Model Documentation Portal - FINT technical docs</title>
     
     <link rel="stylesheet" href="https://fintprosjektet.github.io/css/highlight/github.css">
     <link rel="stylesheet" href="https://fintprosjektet.github.io/css/bootstrap.min.css">
@@ -31,7 +31,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-                <a class="navbar-brand" href="https://fintprosjektet.github.io/">FINTprosjektet technical docs</a>
+                <a class="navbar-brand" href="https://fintprosjektet.github.io/">FINT technical docs</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -41,9 +41,7 @@
                     
                     <li ><a href="/api">Api</a></li>
                     
-                    <li ><a href="https://docs.felleskomponent.no">Javadocs/.Net</a></li>
-                    
-                    <li ><a href="https://informasjonsmodell.felleskomponent.no">Information models</a></li>
+                    <li ><a href="/models">Information models</a></li>
                       
                 </ul>
                 
@@ -59,10 +57,27 @@
         <main role="main">
             <article>
                 <a id="title"></a>
-                <h1 class="doc-entry-title">Howto Develop An Adapter</h1>
+                <h1 class="doc-entry-title">Information Model Documentation Portal</h1>
 
                 <section>
                     
+
+<p><b><a href="https://github.com/FINTprosjektet/fint-informasjonsmodell-documentation">Go directly to the documentation portal</a> <i class="fa fa-book" aria-hidden="true"></i></b></p>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>The models are designed and documented <code>Enterprise Architect</code>. You can find the <code>EA</code> project at <a href="https://github.com/FINTprosjektet/fint-informasjonsmodell">https://github.com/FINTprosjektet/fint-informasjonsmodell</a>.</p>
+
+<h3 id="documentation-portal">Documentation portal</h3>
+
+<p>For a more userfriendly view of the models we developet a frontend to the <code>XMI</code> export from <code>EA</code>. You can find the documentation portal at <a href="https://informasjonsmodell.felleskomponent.no">https://informasjonsmodell.felleskomponent.no</a>.</p>
+
+<p>The project for the frontend is found <a href="https://github.com/FINTprosjektet/fint-informasjonsmodell-documentation">here</a></p>
+
+<h3 id="contribute">Contribute</h3>
+
+<p>If you find bugs or have suggestions for improvement please feel free to submit an <a href="https://github.com/FINTprosjektet/fint-informasjonsmodell/issues">issue</a></p>
+
                 </section>
             </article>
         </main>
@@ -76,9 +91,21 @@
             <div class="sidebar-toc">
                 <h4 class="sidebar-heading">Table of Contents</h4>
                 <ul>
-                    <li><strong><a href="#title">Howto Develop An Adapter</a></strong></li>
+                    <li><strong><a href="#title">Information Model Documentation Portal</a></strong></li>
                 </ul>
-                
+                <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#documentation-portal">Documentation portal</a></li>
+<li><a href="#contribute">Contribute</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
             </div>
         </div>
     </div>
@@ -98,20 +125,28 @@
 <hr />
 <footer>
      
-    <a class="btn btn-link" href="https://www.fintprosjektet.no" aria-label="FINTProsjektet">
+    <a class="btn btn-link" href="https://www.fintprosjektet.no" target="_blank" aria-label="FINTProsjektet">
         <i class="fa fa-home" aria-hidden="true"></i> FINTProsjektet website
     </a>
     |
-    <a class="btn btn-link" href="https://github.com/FINTprosjektet/" aria-label="FINTProsjektet">
+    <a class="btn btn-link" href="https://github.com/FINTprosjektet/" target="_blank" aria-label="FINTProsjektet">
         <i class="fa fa-github" aria-hidden="true"></i> FINTProsjektet
     </a>
     |
-    <a class="btn btn-link" href="https://github.com/FINTmodels" aria-label="FINTmodels">
+    <a class="btn btn-link" href="https://github.com/FINTmodels" target="_blank" aria-label="FINTmodels">
         <i class="fa fa-github" aria-hidden="true"></i> FINTModels
     </a>
     |
-    <a class="btn btn-link" href="https://github.com/FINTlibs" aria-label="FINTlibs">
+    <a class="btn btn-link" href="https://github.com/FINTlibs" target="_blank" aria-label="FINTlibs">
         <i class="fa fa-github" aria-hidden="true"></i> FINTLibs
+    </a>
+    |
+    <a class="btn btn-link" href="https://informasjonsmodell.felleskomponent.no" target="_blank" aria-label="FIDP">
+        <i class="fa fa-book" aria-hidden="true"></i> Information Model Documentation Portal
+    </a>
+    |
+    <a class="btn btn-link" href="https://docs.felleskomponent.no" target="_blank" aria-label="FTDS">
+        <i class="fa fa-book" aria-hidden="true"></i> Java/.Net docs
     </a>
 </footer>
 

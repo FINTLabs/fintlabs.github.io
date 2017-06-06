@@ -7,15 +7,6 @@
   </url>
   
   <url>
-    <loc>https://fintprosjektet.github.io/introduction/</loc>
-    <lastmod>2017-04-26T11:46:57+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://fintprosjektet.github.io/adapter/howto/</loc>
-  </url>
-  
-  <url>
     <loc>https://fintprosjektet.github.io/adapter/</loc>
     <lastmod>2017-04-26T11:49:04+02:00</lastmod>
     <priority>0</priority>
@@ -42,8 +33,29 @@
   </url>
   
   <url>
+    <loc>https://fintprosjektet.github.io/models/documentation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/models/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/api/pfw-provider/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/api/pfwa-provider/</loc>
+  </url>
+  
+  <url>
     <loc>https://fintprosjektet.github.io/tags/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/models/models/</loc>
   </url>
   
 </urlset>
