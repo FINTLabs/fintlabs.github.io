@@ -4,5 +4,6 @@ description = "Common codelists APIs is codelists shared by many of the FINT API
 type = "api"
 layout = "redoc"
 specUrl = "../common-code-list.yaml"
+env = "prod"
 +++
 

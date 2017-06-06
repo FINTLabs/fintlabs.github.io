@@ -6,19 +6,19 @@ info:
   x-logo:
     url: '/images/logo.png'
 externalDocs:
-  description: Go to the FINT technical documentation site
-  url: 'https://fintprosjektet.github.io'
+  description: Go to the API list
+  url: '/api'
 host: api.felleskomponent.no
 schemes: 
   - https
 basePath: /felles/kodeverk
 tags:
   - name: 'ISO 639-1 alpha-2'
-    description: Endpoint to get ISO 639-1 alpha-2 codes
+    description: Endpoint to get ISO 639-1 alpha-2 codes (Languange codes). See <a href="https://informasjonsmodell.felleskomponent.no/docs/iso_sprak">documentation</a> for more infomation.
   - name: 'ISO 3166-1 alpha-2'
-    description: Endpoint to get ISO 3166-1 alpha-2 codes
+    description: Endpoint to get ISO 3166-1 alpha-2 codes (Contry codes). See <a href="https://informasjonsmodell.felleskomponent.no/docs/iso_landkode">documentation</a> for more infomation.
   - name: 'ISO/IEC 5218'
-    description: Endpoint to get 
+    description: Endpoint to get (Gender codes). See <a href="https://informasjonsmodell.felleskomponent.no/docs/iso_kjonn">documentation</a> for more infomation.
 paths:
   /iso/6391alpha2:
     get:

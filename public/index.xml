@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>FINTprosjektet technical docs</title>
+    <title>FINT technical docs</title>
     <link>https://fintprosjektet.github.io/</link>
-    <description>Recent content on FINTprosjektet technical docs</description>
+    <description>Recent content on FINT technical docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 26 Apr 2017 11:49:04 +0200</lastBuildDate>
@@ -22,29 +22,51 @@ Architectural overview - Common API Information Models The Common API consist of
     </item>
     
     <item>
-      <title>Introduction</title>
-      <link>https://fintprosjektet.github.io/introduction/</link>
-      <pubDate>Wed, 26 Apr 2017 11:46:57 +0200</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/introduction/</guid>
-      <description>Introduction Bladi</description>
-    </item>
-    
-    <item>
-      <title>Howto Develop An Adapter</title>
-      <link>https://fintprosjektet.github.io/adapter/howto/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/adapter/howto/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Common code list</title>
       <link>https://fintprosjektet.github.io/api/common-code-list/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fintprosjektet.github.io/api/common-code-list/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Information Model Documentation Portal</title>
+      <link>https://fintprosjektet.github.io/models/documentation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/models/documentation/</guid>
+      <description>Go directly to the documentation portal 
+Introduction The models are designed and documented Enterprise Architect. You can find the EA project at https://github.com/FINTprosjektet/fint-informasjonsmodell.
+Documentation portal For a more userfriendly view of the models we developet a frontend to the XMI export from EA. You can find the documentation portal at https://informasjonsmodell.felleskomponent.no.
+The project for the frontend is found here
+Contribute If you find bugs or have suggestions for improvement please feel free to submit an issue</description>
+    </item>
+    
+    <item>
+      <title>Provider</title>
+      <link>https://fintprosjektet.github.io/api/pfw-provider/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/api/pfw-provider/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Provider</title>
+      <link>https://fintprosjektet.github.io/api/pfwa-provider/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/api/pfwa-provider/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Technical Models</title>
+      <link>https://fintprosjektet.github.io/models/models/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/models/models/</guid>
       <description></description>
     </item>
     

@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="alternate" href="/index.xml" type="application/rss+xml" title="FINTprosjektet technical docs">
+    <link rel="alternate" href="/index.xml" type="application/rss+xml" title="FINT technical docs">
     <link rel="icon" href="https://fintprosjektet.github.io/favicon.ico">
-    <title>Apis - FINTprosjektet technical docs</title>
+    <title>Apis - FINT technical docs</title>
     
     <link rel="stylesheet" href="https://fintprosjektet.github.io/css/highlight/github.css">
     <link rel="stylesheet" href="https://fintprosjektet.github.io/css/bootstrap.min.css">
@@ -31,7 +31,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-                <a class="navbar-brand" href="https://fintprosjektet.github.io/">FINTprosjektet technical docs</a>
+                <a class="navbar-brand" href="https://fintprosjektet.github.io/">FINT technical docs</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -41,9 +41,7 @@
                     
                     <li ><a href="/api">Api</a></li>
                     
-                    <li ><a href="https://docs.felleskomponent.no">Javadocs/.Net</a></li>
-                    
-                    <li ><a href="https://informasjonsmodell.felleskomponent.no">Information models</a></li>
+                    <li ><a href="/models">Information models</a></li>
                       
                 </ul>
                 
@@ -55,42 +53,131 @@
     <div class="container">
 
 <div class="row">
-    <div class="col-sm-8 doc-main">
+    <div class="col-sm-12 doc-main">
         <main role="main">
             <div class="doc-list-header">
                 <h3>Apis</h3>
+                <div class="alert alert-info" role="alert">
+                    The <code>Provider API</code> is the same for all services so they will look the same.
+                </div>
             </div>
             <div class="doc-list-entry">
-                <table class="table table-striped">
-                    <tr>
-                        <th>Document</th>
-                        <th>Description</th>
-                    </tr>
-                    
-                    <tr>
-                        <td>
-                            <a class="doc-entry" href="/api/common-code-list/">
-                                <span class="doc-entry-title">Common code list</span>
 
-                            </a>
-                        </td>
-                        <td>
-                            Common codelists APIs is codelists shared by many of the FINT APIs. These APIs are open.
-                        </td>
-                    </tr>
-                    
-                </table>
-            </div>
+                
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        Environment: Play-With-FINT-Adapter
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>API</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            
+                            <tr>
+                                <td>
+                                    <a class="doc-entry" href="/api/pfwa-provider/">
+                                        <span class="doc-entry-title">Provider</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    Provider API is where the adapter connects and communicates with the Common API.
+                                </td>
+                            </tr>
+                            
+                        </table>
+                    </div>
+                </div>
+
+                
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        Environment: Play-With-FINT
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>API</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            
+                            <tr>
+                                <td>
+                                    <a class="doc-entry" href="/api/pfw-provider/">
+                                        <span class="doc-entry-title">Provider</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    Provider API is where the adapter connects and communicates with the Common API.
+                                </td>
+                            </tr>
+                            
+                        </table>
+                    </div>
+                </div>
+
+                
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        Environment: Beta
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>API</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            
+                        </table>
+                    </div>
+                </div>
+
+                
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        Environment: Production
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>API</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            
+                            <tr>
+                                <td>
+                                    <a class="doc-entry" href="/api/common-code-list/">
+                                        <span class="doc-entry-title">Common code list</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    Common codelists APIs is codelists shared by many of the FINT APIs. These APIs are open.
+                                </td>
+                            </tr>
+                            
+                        </table>
+                    </div>
+                </div>
+
         </main>
+        </div>
+        
+
+
+
     </div>
     
 
-
-
-</div>
-
-
-
+    
 
 
 
@@ -100,20 +187,28 @@
 <hr />
 <footer>
      
-    <a class="btn btn-link" href="https://www.fintprosjektet.no" aria-label="FINTProsjektet">
+    <a class="btn btn-link" href="https://www.fintprosjektet.no" target="_blank" aria-label="FINTProsjektet">
         <i class="fa fa-home" aria-hidden="true"></i> FINTProsjektet website
     </a>
     |
-    <a class="btn btn-link" href="https://github.com/FINTprosjektet/" aria-label="FINTProsjektet">
+    <a class="btn btn-link" href="https://github.com/FINTprosjektet/" target="_blank" aria-label="FINTProsjektet">
         <i class="fa fa-github" aria-hidden="true"></i> FINTProsjektet
     </a>
     |
-    <a class="btn btn-link" href="https://github.com/FINTmodels" aria-label="FINTmodels">
+    <a class="btn btn-link" href="https://github.com/FINTmodels" target="_blank" aria-label="FINTmodels">
         <i class="fa fa-github" aria-hidden="true"></i> FINTModels
     </a>
     |
-    <a class="btn btn-link" href="https://github.com/FINTlibs" aria-label="FINTlibs">
+    <a class="btn btn-link" href="https://github.com/FINTlibs" target="_blank" aria-label="FINTlibs">
         <i class="fa fa-github" aria-hidden="true"></i> FINTLibs
+    </a>
+    |
+    <a class="btn btn-link" href="https://informasjonsmodell.felleskomponent.no" target="_blank" aria-label="FIDP">
+        <i class="fa fa-book" aria-hidden="true"></i> Information Model Documentation Portal
+    </a>
+    |
+    <a class="btn btn-link" href="https://docs.felleskomponent.no" target="_blank" aria-label="FTDS">
+        <i class="fa fa-book" aria-hidden="true"></i> Java/.Net docs
     </a>
 </footer>
 

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Models on FINT technical docs</title>
+    <link>https://fintprosjektet.github.io/models/</link>
+    <description>Recent content in Models on FINT technical docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://fintprosjektet.github.io/models/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Information Model Documentation Portal</title>
+      <link>https://fintprosjektet.github.io/models/documentation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/models/documentation/</guid>
+      <description>Go directly to the documentation portal 
+Introduction The models are designed and documented Enterprise Architect. You can find the EA project at https://github.com/FINTprosjektet/fint-informasjonsmodell.
+Documentation portal For a more userfriendly view of the models we developet a frontend to the XMI export from EA. You can find the documentation portal at https://informasjonsmodell.felleskomponent.no.
+The project for the frontend is found here
+Contribute If you find bugs or have suggestions for improvement please feel free to submit an issue</description>
+    </item>
+    
+    <item>
+      <title>Technical Models</title>
+      <link>https://fintprosjektet.github.io/models/models/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/models/models/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

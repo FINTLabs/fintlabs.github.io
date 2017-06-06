@@ -1,6 +1,6 @@
 baseURL = "https://fintprosjektet.github.io"
 languageCode = "en-us"
-title = "FINTprosjektet technical docs"
+title = "FINT technical docs"
 theme = "hugo-theme-bootie-docs"
 contentdir = "content"
 publishdir = "public"
@@ -20,10 +20,6 @@ publishdir = "public"
   url    = "/api"
   weight = 20
 [[menu.main]]
-  name   = "Javadocs/.Net"
-  url    = "https://docs.felleskomponent.no"
-  weight = 30
-[[menu.main]]
   name   = "Information models"
-  url    = "https://informasjonsmodell.felleskomponent.no"
+  url    = "/models"
   weight = 40
