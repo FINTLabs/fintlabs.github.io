@@ -17,10 +17,10 @@
       
       <guid>https://fintprosjektet.github.io/models/documentation/</guid>
       <description>Go directly to the documentation portal 
-Introduction The models are designed and documented Enterprise Architect (EA). You can find the EA project at https://github.com/FINTprosjektet/fint-informasjonsmodell.
+Introduction The models are designed and documented in Enterprise Architect (EA). You can find the EA project at https://github.com/FINTprosjektet/fint-informasjonsmodell.
 Documentation portal For a more userfriendly view of the models we developet a frontend to the XMI 2.1 export from EA. You can find the documentation portal at https://informasjonsmodell.felleskomponent.no.
 The project for the frontend is found here.
-Contribute If you find bugs or have suggestions for improvement please feel free to submit an issue</description>
+Contribute If you find bugs or have suggestions for improvement please feel free to submit an issue.</description>
     </item>
     
     <item>
