@@ -8,7 +8,7 @@
 `hugo server -w`
 
 ### Deploy to github pages  
-`./deploy`
+Run `./deploy` to commit and deploy
 
 ### Install Pygments syntax highlighter
 
