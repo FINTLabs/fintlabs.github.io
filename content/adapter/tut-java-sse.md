@@ -2,13 +2,14 @@
 title = "Tutorial: Java SSE adapter"
 weight = 1
 description = "This is a tutorial on how to getting started developing a Java SSE adapter"
-draft = true
+draft = false
 +++
 
 ### Introduction
-* [Javadocs](https://docs.felleskomponent.no/fint-sse-adapter-skeleton) for the Java SSE Adapter Skeleton
-* [Github prosject](https://github.com/FINTprosjektet/fint-sse-adapter-skeleton) for the Java SSE Adapter Skeleton
-* [Overview](/adapter/overview/) of the adapter and FINT architecture
+This tutorial will lead you through the process of setting up and adapter to communicate with the Play-With-FINT-Adapter service.
+
+
+
 
 
 ### Setting up the enviornment
@@ -18,9 +19,10 @@ draft = true
 ```shell
 $ git clone https://github.com/FINTprosjektet/fint-sse-adapter-skeleton.git my-adapter
 $ cd my-adapter
+$ rm -rf .git
 ```
 
-#### Open the project in our favorite IDE
+#### Open the project in your favorite IDE
 This is a Gradle project so make sure to import the Gradle dependencies. You can either do it in the IDE or in the commandline:
 
 ```shell
@@ -39,7 +41,18 @@ Breakpoint -->      Event event = EventUtil.toEvent(json);
                 }
 ```
 * Start the adapter in debug mode
-* Open a browser and hit []()
+* Open a browser and hit [https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html](https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html)
+* Send a health event from the `Health` controller.
+* Step through the code to see what happens.
+* You can also hit the `dog` and `owner` controllers to see how `FintResources` and `Relations` are build. See [https://github.com/FINTmodels/fint-relation-model](https://github.com/FINTmodels/fint-relation-model) for more information.
+
+
+### Links
+* [Javadocs](https://docs.felleskomponent.no/fint-sse-adapter-skeleton) for the Java SSE Adapter Skeleton
+* [Github project](https://github.com/FINTprosjektet/fint-sse-adapter-skeleton) for the Java SSE Adapter Skeleton
+* [fint-sse](https://github.com/FINTlibs/fint-sse)
+* [fint-relation-model](https://github.com/FINTmodels/fint-relation-model)
+* [Overview](/adapter/overview/) of the adapter and FINT architecture
 
 
 
