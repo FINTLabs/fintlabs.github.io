@@ -83,6 +83,18 @@ $ rm -rf .git
 $ ./gradlew --refresh-dependencies
 </code></pre>
 
+<h3 id="get-a-orgid">Get a OrgId</h3>
+
+<ul>
+<li>Go to <a href="https://play-with-fint-adapter.felleskomponent.no/admin/organization/generateOrgId">here</a> to get a <code>OrgId</code></li>
+<li>Put the <code>OrgId</code> in the <code>application.yml</code> file:</li>
+</ul>
+
+<pre><code class="language-yaml">fint:
+ adapter:
+  organizations: OrgId
+</code></pre>
+
 <h3 id="the-first-test">The first test</h3>
 
 <ul>
@@ -141,6 +153,7 @@ Breakpoint --&gt;      Event event = EventUtil.toEvent(json);
 <li><a href="#clone-the-skeleton">Clone the skeleton</a></li>
 <li><a href="#open-the-project-in-your-favorite-ide">Open the project in your favorite IDE</a></li>
 </ul></li>
+<li><a href="#get-a-orgid">Get a OrgId</a></li>
 <li><a href="#the-first-test">The first test</a></li>
 <li><a href="#links">Links</a></li>
 </ul></li>
