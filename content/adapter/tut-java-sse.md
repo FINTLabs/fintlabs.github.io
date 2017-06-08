@@ -29,7 +29,16 @@ This is a Gradle project so make sure to import the Gradle dependencies. You can
 $ ./gradlew wrapper
 $ ./gradlew --refresh-dependencies
 ```
+### Get a OrgId
+* Go to [here](https://play-with-fint-adapter.felleskomponent.no/admin/organization/generateOrgId) to get a `OrgId`
+* Put the `OrgId` in the `application.yml` file:
 
+```yaml
+fint:
+ adapter:
+  organizations: OrgId
+```
+ 
 ### The first test
 * Set a breakpoint at the start of the handleEvent method in the `EventStatusService` class.
 
