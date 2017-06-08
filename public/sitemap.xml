@@ -46,6 +46,14 @@
   </url>
   
   <url>
+    <loc>https://fintprosjektet.github.io/api/pfw-consumer-organisasjon/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/api/pfw-consumer-personal/</loc>
+  </url>
+  
+  <url>
     <loc>https://fintprosjektet.github.io/api/pfw-provider/</loc>
   </url>
   
