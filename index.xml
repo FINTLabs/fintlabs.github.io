@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{ F }INT { T }echnical { D }ocs</title>
+    <title>FINT Technical Docs</title>
     <link>https://fintprosjektet.github.io/</link>
-    <description>Recent content on { F }INT { T }echnical { D }ocs</description>
+    <description>Recent content on FINT Technical Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 26 Apr 2017 11:49:04 +0200</lastBuildDate>
