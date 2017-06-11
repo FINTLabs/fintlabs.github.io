@@ -31,12 +31,6 @@
   </url>
   
   <url>
-    <loc>https://fintprosjektet.github.io/</loc>
-    <lastmod>2017-04-26T11:49:04+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://fintprosjektet.github.io/models/documentation/</loc>
   </url>
   
@@ -68,6 +62,12 @@
   
   <url>
     <loc>https://fintprosjektet.github.io/models/models/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/</loc>
+    <lastmod>2017-04-26T11:49:04+02:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>
