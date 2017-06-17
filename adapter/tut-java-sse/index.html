@@ -85,7 +85,7 @@ $ rm -rf .git
 <h3 id="get-a-orgid">Get a OrgId</h3>
 
 <ul>
-<li>Go to <a href="https://play-with-fint-adapter.felleskomponent.no/admin/organization/generateOrgId">here</a> to get a <code>OrgId</code></li>
+<li>Go <a href="https://play-with-fint-adapter.felleskomponent.no/admin/organization/generateOrgId">here</a> to get a <code>OrgId</code></li>
 <li>Put the <code>OrgId</code> in the <code>application.yml</code> file:</li>
 </ul>
 
@@ -97,12 +97,11 @@ $ rm -rf .git
 <h3 id="the-first-test">The first test</h3>
 
 <ul>
-<li>Set a breakpoint at the start of the handleEvent method in the <code>EventStatusService</code> class.</li>
+<li>Set a breakpoint at the start of the handleEvent method in the <code>EventHandlerService</code> class.</li>
 </ul>
 
-<pre><code class="language-java">                public void handleEvent(String json) {
-Breakpoint --&gt;      Event event = EventUtil.toEvent(json);
-                    if (event.isHealthCheck()) {
+<pre><code class="language-java">                public void handleEvent(Event event) {
+Breakpoint --&gt;      if (event.isHealthCheck()) {
                     ...
                 }
 </code></pre>
@@ -110,7 +109,11 @@ Breakpoint --&gt;      Event event = EventUtil.toEvent(json);
 <ul>
 <li>Start the adapter in debug mode</li>
 <li>Open a browser and hit <a href="https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html">https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html</a></li>
-<li>Send a health event from the <code>Health</code> controller.</li>
+<li>Send a health event from the <code>Admin</code> controller, use the <code>/admin/health</code> endpoint.
+
+<ul>
+<li>Add the the value <code>pwfa</code> to the <code>x-org-id</code> header and <code>test</code> to the <code>x-client</code> header.</li>
+</ul></li>
 <li>Step through the code to see what happens.</li>
 <li>You can also hit the <code>dog</code> and <code>owner</code> controllers to see how <code>FintResources</code> and <code>Relations</code> are build. See <a href="https://github.com/FINTmodels/fint-relation-model">https://github.com/FINTmodels/fint-relation-model</a> for more information.</li>
 </ul>
