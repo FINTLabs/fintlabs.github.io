@@ -28,7 +28,7 @@ This is a Gradle project so make sure to import the Gradle dependencies. You can
 ```shell
 $ ./gradlew --refresh-dependencies
 ```
-### Get a OrgId
+### Get an OrgId
 * Go [here](https://play-with-fint-adapter.felleskomponent.no/admin/organization/generateOrgId) to get a `OrgId`
 * Put the `OrgId` in the `application.yml` file:
 
@@ -50,7 +50,7 @@ Breakpoint -->      if (event.isHealthCheck()) {
 * Start the adapter in debug mode
 * Open a browser and hit [https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html](https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html)
 * From the `Admin` controller, configure the `/admin/health` with setting the following headers:
-  * `x-org-id` to `pwfa`
+  * `x-org-id` to the value from [Get an OrgId](#get-an-orgid)
   * `x-client` to `test`
 * Send the health event from the `/admin/health` endpoint.
 * Step through the code to see what happens.
