@@ -49,7 +49,7 @@ Breakpoint -->      if (event.isHealthCheck()) {
 ```
 * Start the adapter in debug mode
 * Open a browser and hit [https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html](https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html)
-* From the `Admin` controller, configure the `/admin/health` by adding the value `pwfa` to the `x-org-id` header and `test` to the `x-client` header.
+* From the `Admin` controller, configure the `/admin/health` with setting the `x-org-id` header to `pwfa` and `x-client` to `test`.
 * Send the health event from the `/admin/health` endpoint.
 * Step through the code to see what happens.
 * You can also hit the `dog` and `owner` controllers to see how `FintResources` and `Relations` are build. See [https://github.com/FINTmodels/fint-relation-model](https://github.com/FINTmodels/fint-relation-model) for more information.
