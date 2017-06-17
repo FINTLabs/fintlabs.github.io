@@ -29,7 +29,7 @@ This is a Gradle project so make sure to import the Gradle dependencies. You can
 $ ./gradlew --refresh-dependencies
 ```
 ### Get a OrgId
-* Go to [here](https://play-with-fint-adapter.felleskomponent.no/admin/organization/generateOrgId) to get a `OrgId`
+* Go [here](https://play-with-fint-adapter.felleskomponent.no/admin/organization/generateOrgId) to get a `OrgId`
 * Put the `OrgId` in the `application.yml` file:
 
 ```yaml
@@ -39,18 +39,18 @@ fint:
 ```
  
 ### The first test
-* Set a breakpoint at the start of the handleEvent method in the `EventStatusService` class.
+* Set a breakpoint at the start of the handleEvent method in the `EventHandlerService` class.
 
 ```java
-                public void handleEvent(String json) {
-Breakpoint -->      Event event = EventUtil.toEvent(json);
-                    if (event.isHealthCheck()) {
+                public void handleEvent(Event event) {
+Breakpoint -->      if (event.isHealthCheck()) {
                     ...
                 }
 ```
 * Start the adapter in debug mode
 * Open a browser and hit [https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html](https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html)
-* Send a health event from the `Health` controller.
+* Send a health event from the `Admin` controller, use the `/admin/health` endpoint.
+    * Add the the value `pwfa` to the `x-org-id` header and `test` to the `x-client` header.
 * Step through the code to see what happens.
 * You can also hit the `dog` and `owner` controllers to see how `FintResources` and `Relations` are build. See [https://github.com/FINTmodels/fint-relation-model](https://github.com/FINTmodels/fint-relation-model) for more information.
 
