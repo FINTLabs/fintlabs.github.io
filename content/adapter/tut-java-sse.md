@@ -29,7 +29,7 @@ This is a Gradle project so make sure to import the Gradle dependencies. You can
 $ ./gradlew --refresh-dependencies
 ```
 ### Get an OrgId
-* Go [here](https://play-with-fint-adapter.felleskomponent.no/admin/organization/generateOrgId) to get a `OrgId`
+* Go <a href="https://play-with-fint-adapter.felleskomponent.no/admin/organization/generateOrgId" target="_blank">here</a> to generate an `OrgId`
 * Put the `OrgId` in the `application.yml` file:
 
 ```yaml
