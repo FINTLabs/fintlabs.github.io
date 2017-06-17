@@ -26,7 +26,6 @@ $ rm -rf .git
 This is a Gradle project so make sure to import the Gradle dependencies. You can either do it in the IDE or in the commandline:
 
 ```shell
-$ ./gradlew wrapper
 $ ./gradlew --refresh-dependencies
 ```
 ### Get a OrgId
