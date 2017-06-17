@@ -50,7 +50,7 @@ Breakpoint -->      if (event.isHealthCheck()) {
 * Start the adapter in debug mode
 * Open a browser and hit [https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html](https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html)
 * From the `Admin` controller, configure the `/admin/health` with setting the following headers:
-  * `x-org-id` to the value from [Get an OrgId](#get-an-orgid)
+  * `x-org-id` use the generated OrgId
   * `x-client` to `test`
 * Send the health event from the `/admin/health` endpoint.
 * Step through the code to see what happens.
