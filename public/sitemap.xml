@@ -59,14 +59,6 @@
   </url>
   
   <url>
-    <loc>https://fintprosjektet.github.io/api/pfw-provider/</loc>
-  </url>
-  
-  <url>
-    <loc>https://fintprosjektet.github.io/api/pfwa-provider/</loc>
-  </url>
-  
-  <url>
     <loc>https://fintprosjektet.github.io/tags/</loc>
     <priority>0</priority>
   </url>
