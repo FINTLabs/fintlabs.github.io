@@ -56,11 +56,13 @@
                                     <th>Base URL</th>
                                 </tr>
                             </thead>
+                            {{ range where .Site.Pages ".Params.env" "eq" "pwf" }}
                             <tr>
                                 <td>
                                 HELLO {{ .Params.baseUrl }}
                                 </td>
                             </tr>
+                            {{ end }}
                         </table>
                         <table class="table table-hover">
                             <thead>
