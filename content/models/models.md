@@ -26,7 +26,7 @@ description = "Here you can find a mapping of models and API"
 |   | [Fravær](https://informasjonsmodell.felleskomponent.no/docs/komplekse_datatyper_fravar) | [Java](https://docs.felleskomponent.no/java/fint-utdanning-model-java) / [.NET](https://docs.felleskomponent.no/net)|
 |   | [Resultat](https://informasjonsmodell.felleskomponent.no/docs/komplekse_datatyper_resultat) | [Java](https://docs.felleskomponent.no/java/fint-utdanning-model-java) / [.NET](https://docs.felleskomponent.no/net)|
 |   | [Medlemskap](https://informasjonsmodell.felleskomponent.no/docs/utdanning_medlemskap) | [Java](https://docs.felleskomponent.no/java/fint-utdanning-model-java) / [.NET](https://docs.felleskomponent.no/net)|
-|   | [Elevkategori]  | [Java](https://informasjonsmodell.felleskomponent.no/docs/kodeverk_elevkategori) | [Java](https://docs.felleskomponent.no/java/fint-utdanning-model-java) / [.NET](https://docs.felleskomponent.no/net)|
+|   | [Elevkategori] (https://informasjonsmodell.felleskomponent.no/docs/kodeverk_elevkategori) | [Java](https://docs.felleskomponent.no/java/fint-utdanning-model-java) / [.NET](https://docs.felleskomponent.no/net)|
 |   | [Skole](https://informasjonsmodell.felleskomponent.no/docs/kodeverk_grepkode) | [Java](https://docs.felleskomponent.no/java/fint-utdanning-model-java) / [.NET](https://docs.felleskomponent.no/net)|
 |   | [Grepkode](https://informasjonsmodell.felleskomponent.no/docs/kodeverk_vigokode) | [Java](https://docs.felleskomponent.no/java/fint-utdanning-model-java) / [.NET](https://docs.felleskomponent.no/net)|
 |   | [Vigokode](https://informasjonsmodell.felleskomponent.no/docs/kodeverk_karakterskala) | [Java](https://docs.felleskomponent.no/java/fint-utdanning-model-java) / [.NET](https://docs.felleskomponent.no/net)|
