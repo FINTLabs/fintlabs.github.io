@@ -80,23 +80,5 @@ Contribute If you find bugs or have suggestions for improvement please feel free
       <description></description>
     </item>
     
-    <item>
-      <title>Provider</title>
-      <link>https://fintprosjektet.github.io/api/pfw-provider/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/pfw-provider/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Provider</title>
-      <link>https://fintprosjektet.github.io/api/pfwa-provider/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/pfwa-provider/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>
