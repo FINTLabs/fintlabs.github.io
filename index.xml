@@ -54,12 +54,48 @@ Contribute If you find bugs or have suggestions for improvement please feel free
     </item>
     
     <item>
+      <title>Kodeverk</title>
+      <link>https://fintprosjektet.github.io/api/beta-consumer-kodeverk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/api/beta-consumer-kodeverk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kodeverk</title>
+      <link>https://fintprosjektet.github.io/api/pfw-consumer-kodeverk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/api/pfw-consumer-kodeverk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kodeverk</title>
+      <link>https://fintprosjektet.github.io/api/prod-consumer-kodeverk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/api/prod-consumer-kodeverk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Models and API (felleskomponent)</title>
       <link>https://fintprosjektet.github.io/models/models/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fintprosjektet.github.io/models/models/</guid>
       <description>Felleskomponent Modeller Technical     Personal Person Java / .NET    Personalressurs Java / .NET    Arbeidsforhold Java / .NET   Organisasjon Organisasjonselement Java / .NET   Kodeverk Ansvar Java / .NET    Art Java / .NET    Funksjon Java / .NET    Prosjekt Java / .NET   Utdanning Undervisningsforhold Java / .</description>
+    </item>
+    
+    <item>
+      <title>Organisasjon</title>
+      <link>https://fintprosjektet.github.io/api/beta-consumer-organisasjon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/api/beta-consumer-organisasjon/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -72,11 +108,38 @@ Contribute If you find bugs or have suggestions for improvement please feel free
     </item>
     
     <item>
+      <title>Organisasjon</title>
+      <link>https://fintprosjektet.github.io/api/prod-consumer-organisasjon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/api/prod-consumer-organisasjon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Personal</title>
+      <link>https://fintprosjektet.github.io/api/beta-consumer-personal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/api/beta-consumer-personal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Personal</title>
       <link>https://fintprosjektet.github.io/api/pfw-consumer-personal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fintprosjektet.github.io/api/pfw-consumer-personal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Personal</title>
+      <link>https://fintprosjektet.github.io/api/prod-consumer-personal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/api/prod-consumer-personal/</guid>
       <description></description>
     </item>
     
