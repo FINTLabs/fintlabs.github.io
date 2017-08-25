@@ -42,6 +42,18 @@
   </url>
   
   <url>
+    <loc>https://fintprosjektet.github.io/api/beta-consumer-kodeverk/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/api/pfw-consumer-kodeverk/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/api/prod-consumer-kodeverk/</loc>
+  </url>
+  
+  <url>
     <loc>https://fintprosjektet.github.io/models/</loc>
     <priority>0</priority>
   </url>
@@ -51,11 +63,27 @@
   </url>
   
   <url>
+    <loc>https://fintprosjektet.github.io/api/beta-consumer-organisasjon/</loc>
+  </url>
+  
+  <url>
     <loc>https://fintprosjektet.github.io/api/pfw-consumer-organisasjon/</loc>
   </url>
   
   <url>
+    <loc>https://fintprosjektet.github.io/api/prod-consumer-organisasjon/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/api/beta-consumer-personal/</loc>
+  </url>
+  
+  <url>
     <loc>https://fintprosjektet.github.io/api/pfw-consumer-personal/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/api/prod-consumer-personal/</loc>
   </url>
   
   <url>

@@ -10,6 +10,7 @@
                     <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> The <code>Provider API</code> is the same for all services so they will look the same
                 </div>
                 -->
+
             </div>
             <div class="doc-list-entry">
 
@@ -53,6 +54,9 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
+                                    <th>
+                                        <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+                                    </th>
                                     <th>API</th>
                                     <th>Description</th>
                                     <th>Base URL</th>
@@ -61,14 +65,17 @@
                             {{ range where .Site.Pages ".Params.env" "eq" "pwf" }}
                             <tr>
                                 <td>
-                                    <a class="doc-entry" href="{{ .RelPermalink }}">
-                                        <span class="doc-entry-title">{{ .Title }}{{ if .Draft }} #Draft{{ end }}</span>
+                                    <a class="doc-entry" href="{{ .RelPermalink }}" target="_blank">
+                                        <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
                                     </a>
+                                </td>
+                                <td>
+                                        <span class="doc-entry-title">{{ .Title }}{{ if .Draft }} #Draft{{ end }}</span>
                                 </td>
                                 <td>
                                     {{ .Params.description }}
                                 </td>
-                                <td>{{ .Params.baseUrl }}</td>
+                                <td><small><code>{{ .Params.baseUrl }}</code></small></td>
                             </tr>
                             {{ end }}
                         </table>
@@ -81,27 +88,24 @@
                         Environment: Beta
                     </div>
                     <div class="panel-body">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Base URL</th>
-                                </tr>
-                            </thead>
-                            <tr>
-                                <td>
-                                {{ .Params.baseUrl }}
-                                </td>
-                            </tr>
-                        </table>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
+                                    <th>
+                                        <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+                                    </th>
                                     <th>API</th>
                                     <th>Description</th>
+                                    <th>Base URL</th>
                                 </tr>
                             </thead>
                             {{ range where .Site.Pages ".Params.env" "eq" "beta" }}
                             <tr>
+                                <td>
+                                    <a class="doc-entry" href="{{ .RelPermalink }}" target="_blank">
+                                        <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+                                    </a>
+                                </td>
                                 <td>
                                     <a class="doc-entry" href="{{ .RelPermalink }}">
                                         <span class="doc-entry-title">{{ .Title }}{{ if .Draft }} #Draft{{ end }}</span>
@@ -110,6 +114,7 @@
                                 <td>
                                     {{ .Params.description }}
                                 </td>
+                                <td><small><code>{{ .Params.baseUrl }}</code></small></td>
                             </tr>
                             {{ end }}
                         </table>
@@ -119,30 +124,27 @@
                 <!-- Prod -->
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        Environment: Production
+                        Environment: Production<
                     </div>
                     <div class="panel-body">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Base URL</th>
-                                </tr>
-                            </thead>
-                            <tr>
-                                <td>
-                                {{ .Params.baseUrl }}
-                                </td>
-                            </tr>
-                        </table>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
+                                    <th>
+                                        <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+                                    </th>
                                     <th>API</th>
                                     <th>Description</th>
+                                    <th>Base URL</th>
                                 </tr>
                             </thead>
                             {{ range where .Site.Pages ".Params.env" "eq" "prod" }}
                             <tr>
+                                <td>
+                                    <a class="doc-entry" href="{{ .RelPermalink }}" target="_blank">
+                                        <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+                                    </a>
+                                </td>
                                 <td>
                                     <a class="doc-entry" href="{{ .RelPermalink }}">
                                         <span class="doc-entry-title">{{ .Title }}{{ if .Draft }} #Draft{{ end }}</span>
@@ -151,6 +153,7 @@
                                 <td>
                                     {{ .Params.description }}
                                 </td>
+                                <td><small><code>{{ .Params.baseUrl }}</code></small></td>
                             </tr>
                             {{ end }}
                         </table>
