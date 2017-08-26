@@ -19,7 +19,7 @@
                             {{ range .Data.Pages }}
                             <tr>
                                 <td>
-                                    <a class="doc-entry" href="{{ .RelPermalink }}">
+                                    <a class="doc-entry" href="{{ if .Params.Link }} {{ .Params.Link}} {{ else }} {{ .RelPermalink }} {{ end }}">
                                         <span class="doc-entry-title">{{ .Title }}{{ if .Draft }} #Draft{{ end }}</span>
 
                                     </a>

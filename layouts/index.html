@@ -7,13 +7,15 @@
         <div class="jumbotron">
             <h1>{{ .Site.Title }}</h1>
             <p>{{ with .Site.Params.description }}{{ . }}{{ else }}You can customize this text by params "description" in your <code>config.toml</code>.{{ end }}</p>
-            <p>
-                <a href="https://www.fintprosjektet.no" target="_blank" class="btn btn-link active" role="button">For more information about the project goto the main site (Norwegian)</a>
-            </p>
+
             <p class="fint-highlights">
                 <a href="/adapter" class="btn btn-lg btn-default active" role="button">I want to develop adapter <i class="fa fa-plug" aria-hidden="true"></i></a>
                 <a href="/api" class="btn btn-lg btn-default active" role="button">I want to use the FINT APIs <i class="fa fa-cloud" aria-hidden="true"></i></a>
-                <a href="/api" class="btn btn-lg btn-default active" role="button">Play-With-FINT <i class="fa fa-play" aria-hidden="true"></i></a>
+                <a href="https://play-with-fint.felleskomponent.no/administrasjon/personal/personalressurs" target="_blank" class="btn btn-lg btn-default active" role="button">Play-With-FINT <i class="fa fa-play" aria-hidden="true"></i></a>
+            </p>
+
+            <p>
+                <a href="https://www.fintprosjektet.no" target="_blank" class="btn btn-link active" role="button">For more information about the project goto the main site (Norwegian)</a>
             </p>
         </div>
     </div>
