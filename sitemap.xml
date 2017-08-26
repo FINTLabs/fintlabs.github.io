@@ -8,7 +8,15 @@
   </url>
   
   <url>
+    <loc>https://fintprosjektet.github.io/adapter/models/</loc>
+  </url>
+  
+  <url>
     <loc>https://fintprosjektet.github.io/adapter/tut-java-sse/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fintprosjektet.github.io/adapter/tut-dotnet-sse/</loc>
   </url>
   
   <url>
@@ -56,10 +64,6 @@
   <url>
     <loc>https://fintprosjektet.github.io/models/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://fintprosjektet.github.io/models/models/</loc>
   </url>
   
   <url>
