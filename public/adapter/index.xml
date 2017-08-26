@@ -22,6 +22,17 @@ Architectural overview - Common API Information Models The Common API consist of
     </item>
     
     <item>
+      <title>Models and Common API</title>
+      <link>https://fintprosjektet.github.io/adapter/models/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/adapter/models/</guid>
+      <description>Introduction FINT Information models are models used in the Common API. The models contains information ressoures the county council use in their day to day tasks. FINT aims to develop this model to contain vital information in all the areas the county council operates in. This means that every new version will contain more information and an new areas.
+Versioning FINT is using semantic versioning for it&amp;rsquo;s models:
+ MAJOR version when you make incompatible changes MINOR (featur release) version when you add functionality in a backwards-compatible manner, and PATCH (bugfixes) version when you make backwards-compatible bug fixes.</description>
+    </item>
+    
+    <item>
       <title>Tutorial: Java SSE adapter</title>
       <link>https://fintprosjektet.github.io/adapter/tut-java-sse/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -29,6 +40,15 @@ Architectural overview - Common API Information Models The Common API consist of
       <guid>https://fintprosjektet.github.io/adapter/tut-java-sse/</guid>
       <description>Introduction This tutorial will lead you through the process of setting up and adapter to communicate with the Play-With-FINT-Adapter service.
 Setting up the enviornment Clone the skeleton $ git clone https://github.com/FINTprosjektet/fint-sse-adapter-skeleton.git my-adapter $ cd my-adapter $ rm -rf .git  Open the project in your favorite IDE This is a Gradle project so make sure to import the Gradle dependencies. You can either do it in the IDE or in the commandline:</description>
+    </item>
+    
+    <item>
+      <title>Tutorial: .Net SSE adapter</title>
+      <link>https://fintprosjektet.github.io/adapter/tut-dotnet-sse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/adapter/tut-dotnet-sse/</guid>
+      <description> Introduction  Github prosject for the .Net SSE Adapter Skeleton Overview of the adapter and FINT architecture  Setting up the enviornment Clone the skeleton $ git clone https://github.com/FINTprosjektet/fint-sse-adapter-skeleton.git my-adapter $ cd my-adapter  Open the project in our favorite IDE </description>
     </item>
     
   </channel>

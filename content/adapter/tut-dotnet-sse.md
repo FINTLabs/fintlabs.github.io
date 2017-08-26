@@ -1,8 +1,8 @@
 +++
 title = "Tutorial: .Net SSE adapter"
-weight = 1
+weight = 11
 description = "This is a tutorial on how to getting started developing a .Net SSE adapter"
-draft = true
+draft = false
 +++
 
 ### Introduction

@@ -23,14 +23,5 @@ The project for the frontend is found here.
 Contribute If you find bugs or have suggestions for improvement please feel free to submit an issue.</description>
     </item>
     
-    <item>
-      <title>Models and API (felleskomponent)</title>
-      <link>https://fintprosjektet.github.io/models/models/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/models/models/</guid>
-      <description>Felleskomponent Modeller Technical     Personal Person Java / .NET    Personalressurs Java / .NET    Arbeidsforhold Java / .NET   Organisasjon Organisasjonselement Java / .NET   Kodeverk Ansvar Java / .NET    Art Java / .NET    Funksjon Java / .NET    Prosjekt Java / .NET   Utdanning Undervisningsforhold Java / .</description>
-    </item>
-    
   </channel>
 </rss>

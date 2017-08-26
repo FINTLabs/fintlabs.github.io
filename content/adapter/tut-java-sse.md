@@ -1,6 +1,6 @@
 +++
 title = "Tutorial: Java SSE adapter"
-weight = 1
+weight = 10
 description = "This is a tutorial on how to getting started developing a Java SSE adapter"
 draft = false
 +++
