@@ -75,6 +75,8 @@ Breakpoint -->      if (serverSideEvent.IsHealthCheck())
 * [Fint.Relation.Model](https://github.com/FINTmodels/Fint.Relation.Model])
 * [Overview](/adapter/overview/) of the adapter and FINT architecture
 
+### Contribute
+If you find bugs or have suggestions for improvement please feel free to submit an [issue](https://github.com/FINTprosjektet/Fint.Sse.Adapter.Skeleton/issues).
 
 
 

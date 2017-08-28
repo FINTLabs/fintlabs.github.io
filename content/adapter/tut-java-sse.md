@@ -67,5 +67,8 @@ Breakpoint -->      if (event.isHealthCheck()) {
 * [fint-relation-model](https://github.com/FINTmodels/fint-relation-model)
 * [Overview](/adapter/overview/) of the adapter and FINT architecture
 
+### Contribute
+If you find bugs or have suggestions for improvement please feel free to submit an [issue]((https://github.com/FINTprosjektet/fint-sse-adapter-skeleton/issues).
+
 
 
