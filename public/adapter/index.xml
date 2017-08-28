@@ -29,7 +29,7 @@ Architectural overview - Common API Information Models The Common API consist of
       <guid>https://fintprosjektet.github.io/adapter/models/</guid>
       <description>Introduction FINT Information models are models used in the Common API. The models contains information ressoures the county council use in their day to day tasks. FINT aims to develop this model to contain vital information in all the areas the county council operates in. This means that every new version will contain more information and an new areas.
 Versioning FINT is using semantic versioning for it&amp;rsquo;s models:
- MAJOR version when you make incompatible changes MINOR (feature release) version when you add functionality in a backwards-compatible manner, and PATCH (bugfixes) version when you make backwards-compatible bug fixes.</description>
+ MAJOR version when you make incompatible changes MINOR (feature release) version when you add functionality in a backwards-compatible manner, and PATCH (bug fixes) version when you make backwards-compatible bug fixes.</description>
     </item>
     
     <item>
