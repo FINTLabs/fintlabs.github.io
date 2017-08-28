@@ -12,7 +12,7 @@ weight = 2
 FINT is using [semantic versioning](http://semver.org/) for it's models:
 
 - `MAJOR` version when you make **incompatible changes**
-- `MINOR (featur release)` version when you add functionality in a **backwards-compatible manner**, and
+- `MINOR (feature release)` version when you add functionality in a **backwards-compatible manner**, and
 - `PATCH (bugfixes)` version when you make **backwards-compatible bug fixes**.
 
 Additional labels for pre-release and build metadata are available as extensions to the `MAJOR.MINOR.PATCH` format. 
