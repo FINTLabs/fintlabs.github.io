@@ -22,7 +22,6 @@ Additional labels for pre-release and build metadata are available as extensions
 >The version relation between the *FINT Information model* and the *technical implementations* is in the `MAJOR` and `MINOR` versions. `MAJOR` and `MINOR` will always be the same for *FINT Information model* and the *technical implementations*. A `Maven` or `NuGet` package for release `1.1.3` will have the version `1.1.x`. 
 
 
-
 # Relation between Common API and the models
 This table shows which models belongs to which Common API. It also links to the documentation of the model and the technical implementation of the model (GitHub and Maven/NuGet). The version is the version of *FINT Information model*
 
