@@ -66,7 +66,7 @@
 
 <p>This tutorial will lead you through the process of setting up and adapter to communicate with the Play-With-FINT-Adapter service.</p>
 
-<h3 id="setting-up-the-enviornment">Setting up the enviornment</h3>
+<h3 id="setting-up-the-environment">Setting up the environment</h3>
 
 <h4 id="clone-the-skeleton">Clone the skeleton</h4>
 
@@ -79,14 +79,18 @@ $ rm -rf .git
 
 <p>This is a Gradle project so make sure to import the Gradle dependencies. You can either do it in the IDE or in the commandline:</p>
 
-<pre><code class="language-shell">$ ./gradlew --refresh-dependencies
+<pre><code class="language-shell">$ ./gradlew --refresh-dependencies build
 </code></pre>
+
+<blockquote>
+<p><em>Note that this project uses <code>Lombok</code> so you need to enable <code>annotation processing</code> if you use <code>IntelliJ</code>. There is also a <code>Lombok</code>-plugin for <code>IntelliJ</code></em></p>
+</blockquote>
 
 <h3 id="get-an-orgid">Get an OrgId</h3>
 
 <ul>
 <li>Go <a href="https://play-with-fint-adapter.felleskomponent.no/admin/organization/generateOrgId" target="_blank">here</a> to generate an <code>OrgId</code></li>
-<li>Put the <code>OrgId</code> in the <code>application.yml</code> file:</li>
+<li>Replace <code>pwfa.no</code> with your <code>OrgId</code> in the <code>application.yml</code> file:</li>
 </ul>
 
 <pre><code class="language-yaml">fint:
@@ -152,7 +156,7 @@ Breakpoint --&gt;      if (event.isHealthCheck()) {
 <li>
 <ul>
 <li><a href="#introduction">Introduction</a></li>
-<li><a href="#setting-up-the-enviornment">Setting up the enviornment</a>
+<li><a href="#setting-up-the-environment">Setting up the environment</a>
 <ul>
 <li><a href="#clone-the-skeleton">Clone the skeleton</a></li>
 <li><a href="#open-the-project-in-your-favorite-ide">Open the project in your favorite IDE</a></li>
