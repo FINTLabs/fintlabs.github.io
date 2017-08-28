@@ -24,7 +24,7 @@ Additional labels for pre-release and build metadata are available as extensions
 
 
 # Relation between Common API and the models
-This table shows which models belongs to which Common API. It also links to the documentation of the model and the technical implementation of the model (GitHub and Maven/NuGet). The version is the version of *FINT Information model*
+This table shows which models belongs to which Common API. It also links to the documentation of the model and the technical implementation of the model (GitHub and Maven/NuGet). The version is the version of *FINT Information model*.
 
 |  **Common API** | **Model** | **Technical** | **Current release** |
 |  ------ | ------ | ------ | ------ |
