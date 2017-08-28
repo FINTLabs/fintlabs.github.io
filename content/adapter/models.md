@@ -19,6 +19,7 @@ Additional labels for pre-release and build metadata are available as extensions
 
 >After version 1.1.0 the `MINOR` releases will be even numbers.
 
+
 >The version relation between the *FINT Information model* and the *technical implementations* is in the `MAJOR` and `MINOR` versions. `MAJOR` and `MINOR` will always be the same for *FINT Information model* and the *technical implementations*. A `Maven` or `NuGet` package for release `1.1.3` will have the version `1.1.x`. 
 
 
