@@ -64,20 +64,82 @@
 
 <h3 id="introduction">Introduction</h3>
 
-<ul>
-<li><a href="https://github.com/FINTprosjektet/">Github prosject</a> for the .Net SSE Adapter Skeleton</li>
-<li><a href="/adapter/overview/">Overview</a> of the adapter and FINT architecture</li>
-</ul>
+<p>This tutorial will lead you through the process of setting up and adapter to communicate with the Play-With-FINT-Adapter service.</p>
 
 <h3 id="setting-up-the-enviornment">Setting up the enviornment</h3>
 
 <h4 id="clone-the-skeleton">Clone the skeleton</h4>
 
-<pre><code class="language-shell">$ git clone https://github.com/FINTprosjektet/fint-sse-adapter-skeleton.git my-adapter
+<pre><code class="language-shell">$ git clone https://github.com/FINTprosjektet/Fint.Sse.Adapter.Skeleton.git my-adapter
 $ cd my-adapter
+$ rm -rf .git
 </code></pre>
 
 <h4 id="open-the-project-in-our-favorite-ide">Open the project in our favorite IDE</h4>
+
+<p>This is a <code>netcoreapp2.0</code>\<code>netstandard2.0</code> project. You need to import the dependencies. You can either do it in the IDE or in the commandline. This example uses the <code>dotnet</code> CLI:</p>
+
+<pre><code class="language-shell">$ dotnet restore
+</code></pre>
+
+<h3 id="get-an-orgid">Get an OrgId</h3>
+
+<ul>
+<li>Go <a href="https://play-with-fint-adapter.felleskomponent.no/admin/organization/generateOrgId" target="_blank">here</a> to generate an <code>OrgId</code></li>
+<li>Replace <code>pwfa.no</code> with your <code>OrgId</code> in the <code>appsettings.json</code> file in the <code>Fint.Sse.Adapter.Console</code> project:</li>
+</ul>
+
+<pre><code class="language-json">{
+  &quot;Logging&quot;: {
+    &quot;IncludeScopes&quot;: false,
+    &quot;LogLevel&quot;: {
+      &quot;Default&quot;: &quot;Debug&quot;,
+      &quot;System&quot;: &quot;Information&quot;,
+      &quot;Microsoft&quot;: &quot;Information&quot;
+    }
+  },
+  &quot;Configuration&quot;: {
+    &quot;ConsoleTitle&quot;: &quot;FINT Console Boilerplate&quot;,
+    &quot;SseEndpoint&quot;: &quot;https://play-with-fint-adapter.felleskomponent.no/provider/sse&quot;,
+    &quot;StatusEndpoint&quot;: &quot;https://play-with-fint-adapter.felleskomponent.no/provider/status&quot;,
+    &quot;ResponseEndpoint&quot;: &quot;https://play-with-fint-adapter.felleskomponent.no/provider/response&quot;,
+    &quot;Organizations&quot;: &quot;pwfa.no&quot;, &lt;-- HERE
+    &quot;LogLocation&quot;: &quot;logs&quot;
+  }
+}
+</code></pre>
+
+<pre><code class="language-csharp">                public void HandleEvent(Event&lt;object&gt; serverSideEvent)
+                {
+Breakpoint --&gt;      if (serverSideEvent.IsHealthCheck())
+                    {
+                    ...
+                }
+</code></pre>
+
+<ul>
+<li>Start the adapter in debug mode</li>
+<li>Open a browser and hit <a href="https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html">https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html</a></li>
+<li>From the <code>Admin</code> controller, configure the <code>/admin/health</code> with setting the following headers:
+
+<ul>
+<li><code>x-org-id</code> use the generated OrgId</li>
+<li><code>x-client</code> to <code>test</code></li>
+</ul></li>
+<li>Send the health event from the <code>/admin/health</code> endpoint.</li>
+<li>Step through the code to see what happens.</li>
+<li>You can also hit the <code>dog</code> and <code>owner</code> controllers to see how <code>FintResources</code> and <code>Relations</code> are build. See <a href="https://github.com/FINTmodels/Fint.Relation.Model">https://github.com/FINTmodels/Fint.Relation.Model</a> for more information.</li>
+</ul>
+
+<h3 id="links">Links</h3>
+
+<ul>
+<li><a href="https://docs.felleskomponent.no/fint-sse-adapter-skeleton">Javadocs</a> for the Java SSE Adapter Skeleton</li>
+<li><a href="https://github.com/FINTprosjektet/Fint.Sse.Adapter.Skeleton">Github project</a> for the CSharp/.Net SSE Adapter Skeleton</li>
+<li><a href="https://github.com/FINTlibs/Fint.Sse">Fint.Sse</a></li>
+<li><a href="https://github.com/FINTmodels/Fint.Relation.Model]">Fint.Relation.Model</a></li>
+<li><a href="/adapter/overview/">Overview</a> of the adapter and FINT architecture</li>
+</ul>
 
                 </section>
             </article>
@@ -106,6 +168,8 @@ $ cd my-adapter
 <li><a href="#clone-the-skeleton">Clone the skeleton</a></li>
 <li><a href="#open-the-project-in-our-favorite-ide">Open the project in our favorite IDE</a></li>
 </ul></li>
+<li><a href="#get-an-orgid">Get an OrgId</a></li>
+<li><a href="#links">Links</a></li>
 </ul></li>
 </ul></li>
 </ul>

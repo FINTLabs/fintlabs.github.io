@@ -12,7 +12,7 @@ This tutorial will lead you through the process of setting up and adapter to com
 
 
 
-### Setting up the enviornment
+### Setting up the environment
 
 #### Clone the skeleton
 
@@ -26,11 +26,14 @@ $ rm -rf .git
 This is a Gradle project so make sure to import the Gradle dependencies. You can either do it in the IDE or in the commandline:
 
 ```shell
-$ ./gradlew --refresh-dependencies
+$ ./gradlew --refresh-dependencies build
 ```
+
+>*Note that this project uses `Lombok` so you need to enable `annotation processing` if you use `IntelliJ`. There is also a `Lombok`-plugin for `IntelliJ`*
+
 ### Get an OrgId
 * Go <a href="https://play-with-fint-adapter.felleskomponent.no/admin/organization/generateOrgId" target="_blank">here</a> to generate an `OrgId`
-* Put the `OrgId` in the `application.yml` file:
+* Replace `pwfa.no` with your `OrgId` in the `application.yml` file:
 
 ```yaml
 fint:
