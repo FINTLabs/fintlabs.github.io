@@ -5,7 +5,7 @@ weight = 2
 +++
 
 # Introduction
-*FINT Information models* are models used in the *Common API*. The models contains information ressoures the county council use in their day to day tasks. *FINT* aims to develop this model to contain vital information in all the areas the county council operates in. This means that every new version will contain more information and an new areas.
+*FINT Information models* are models used in the *Common API*. The models contains information resoures the county council use in their day to day tasks. *FINT* aims to develop this model to contain vital information in all the areas the county council operates in. This means that every new version will contain more information and an new areas.
 
 # Versioning
 
