@@ -124,6 +124,20 @@ Breakpoint --&gt;      if (event.isHealthCheck()) {
 <li>You can also hit the <code>dog</code> and <code>owner</code> controllers to see how <code>FintResources</code> and <code>Relations</code> are build. See <a href="https://github.com/FINTmodels/fint-relation-model">https://github.com/FINTmodels/fint-relation-model</a> for more information.</li>
 </ul>
 
+<h3 id="security">Security</h3>
+
+<p>The <code>adapter</code> uses <code>OAuth2</code> by default to authenticated to the <code>provider</code> endpoint. This tutorial is set up with at tutorial user. In production one will get a <em>real</em> user. This is the <code>OAuth2</code> config:</p>
+
+<pre><code class="language-yaml">fint:
+ oauth:
+  enabled: true
+  username: pwfatut
+  password: pwfatut
+  client-id: 6e1cf7b4-b107-42b3-9435-8fda70726c6a
+  client-secret: 6y4FUuP9BfAXeVqguNKT0ofToIwN5RdB1PaUvx_nCMiQbH9NeGq3pp0jQB9zOQ0APOxEbodzJXp-8RVux6318A
+  access-token-uri: https://namidp01.rogfk.no/nidp/oauth/nam/token
+</code></pre>
+
 <h3 id="links">Links</h3>
 
 <ul>
@@ -167,6 +181,7 @@ Breakpoint --&gt;      if (event.isHealthCheck()) {
 </ul></li>
 <li><a href="#get-an-orgid">Get an OrgId</a></li>
 <li><a href="#the-first-test">The first test</a></li>
+<li><a href="#security">Security</a></li>
 <li><a href="#links">Links</a></li>
 <li><a href="#contribute">Contribute</a></li>
 </ul></li>
