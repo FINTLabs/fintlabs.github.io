@@ -139,6 +139,21 @@ Breakpoint --&gt;      if (serverSideEvent.IsHealthCheck())
 <li>You can also hit the <code>dog</code> and <code>owner</code> controllers to see how <code>FintResources</code> and <code>Relations</code> are build. See <a href="https://github.com/FINTmodels/Fint.Relation.Model">https://github.com/FINTmodels/Fint.Relation.Model</a> for more information.</li>
 </ul>
 
+<h3 id="security">Security</h3>
+
+<p>The <code>adapter</code> uses <code>OAuth2</code> by default to authenticated to the <code>provider</code> endpoint. This tutorial is set up with at tutorial user. In production one will get a <em>real</em> user. This is the <code>OAuth2</code> config:</p>
+
+<pre><code class="language-json">&quot;OAuthTokenService&quot;: {
+    &quot;AccessTokenUri&quot;: &quot;https://namidp01.rogfk.no/nidp/oauth/nam/token&quot;,
+    &quot;ClientId&quot;: &quot;6e1cf7b4-b107-42b3-9435-8fda70726c6a&quot;,
+    &quot;ClientSecret&quot;: &quot;6y4FUuP9BfAXeVqguNKT0ofToIwN5RdB1PaUvx_nCMiQbH9NeGq3pp0jQB9zOQ0APOxEbodzJXp-8RVux6318A&quot;,
+    &quot;Username&quot;: &quot;pwfatut&quot;,
+    &quot;Password&quot;: &quot;pwfatut&quot;,
+    &quot;Scope&quot;: &quot;fint-client&quot;,
+    &quot;OAuthEnabled&quot;: &quot;true&quot;
+}
+</code></pre>
+
 <h3 id="links">Links</h3>
 
 <ul>
@@ -181,6 +196,7 @@ Breakpoint --&gt;      if (serverSideEvent.IsHealthCheck())
 <li><a href="#open-the-project-in-our-favorite-ide">Open the project in our favorite IDE</a></li>
 </ul></li>
 <li><a href="#get-an-orgid">Get an OrgId</a></li>
+<li><a href="#security">Security</a></li>
 <li><a href="#links">Links</a></li>
 <li><a href="#contribute">Contribute</a></li>
 </ul></li>

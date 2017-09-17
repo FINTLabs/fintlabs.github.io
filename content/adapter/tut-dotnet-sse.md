@@ -74,6 +74,21 @@ Breakpoint -->      if (serverSideEvent.IsHealthCheck())
 * Step through the code to see what happens.
 * You can also hit the `dog` and `owner` controllers to see how `FintResources` and `Relations` are build. See [https://github.com/FINTmodels/Fint.Relation.Model](https://github.com/FINTmodels/Fint.Relation.Model) for more information.
 
+### Security
+The `adapter` uses `OAuth2` by default to authenticated to the `provider` endpoint. This tutorial is set up with at tutorial user. In production one will get a *real* user. This is the `OAuth2` config:
+
+```json
+"OAuthTokenService": {
+    "AccessTokenUri": "https://namidp01.rogfk.no/nidp/oauth/nam/token",
+    "ClientId": "6e1cf7b4-b107-42b3-9435-8fda70726c6a",
+    "ClientSecret": "6y4FUuP9BfAXeVqguNKT0ofToIwN5RdB1PaUvx_nCMiQbH9NeGq3pp0jQB9zOQ0APOxEbodzJXp-8RVux6318A",
+    "Username": "pwfatut",
+    "Password": "pwfatut",
+    "Scope": "fint-client",
+    "OAuthEnabled": "true"
+}
+```
+
 ### Links
 * [Javadocs](https://docs.felleskomponent.no/fint-sse-adapter-skeleton) for the Java SSE Adapter Skeleton
 * [Github project](https://github.com/FINTprosjektet/Fint.Sse.Adapter.Skeleton) for the CSharp/.Net SSE Adapter Skeleton
