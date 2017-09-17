@@ -26,6 +26,11 @@ This is a `netcoreapp2.0`\\`netstandard2.0` project. You need to import the depe
 $ dotnet restore
 ```
 
+This `repo` consists of three projects:
+* FINT.Sse.Adapter - This is the main `adapter` code.
+* FINT.Sse.Adapter.Console - This is a wrapper around `FINT.Sse.Adaper` to make it run using `netcoreapp2.0`. You can create another wrapper for your favorit version/framework.
+* FINT.Sse.Adapter.Tests - This is the `unit test` project.
+
 ### Get an OrgId
 * Go <a href="https://play-with-fint-adapter.felleskomponent.no/admin/organization/generateOrgId" target="_blank">here</a> to generate an `OrgId`
 * Replace `pwfa.no` with your `OrgId` in the `appsettings.json` file in the `Fint.Sse.Adapter.Console` project:
