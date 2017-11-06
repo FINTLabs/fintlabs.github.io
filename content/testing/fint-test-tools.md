@@ -14,7 +14,7 @@ FINT bruker hovedsakelig Postman ([https://www.getpostman.com](https://www.getpo
 
 Test-collection for Postman er tilgjengelig her: 
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/2cb3e170570e30391865#?env%5BFINT%20Personal%20Test%20Suite.template%5D=W3siZW5hYmxlZCI6dHJ1ZSwia2V5Ijoib3JnSWQiLCJ2YWx1ZSI6IiIsInR5cGUiOiJ0ZXh0In0seyJlbmFibGVkIjp0cnVlLCJrZXkiOiJ0b2tlbiIsInZhbHVlIjoiIiwidHlwZSI6InRleHQifV0=)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/2cb3e170570e30391865#?env%5BFINT%20Personal%20Test%20Suite%5D=W3siZW5hYmxlZCI6dHJ1ZSwia2V5Ijoib3JnLWlkIiwidmFsdWUiOiIiLCJ0eXBlIjoidGV4dCJ9LHsiZW5hYmxlZCI6dHJ1ZSwia2V5IjoiY2xpZW50LWlkIiwidmFsdWUiOiIiLCJ0eXBlIjoidGV4dCJ9LHsiZW5hYmxlZCI6dHJ1ZSwia2V5IjoiY2xpZW50LXNlY3JldCIsInZhbHVlIjoiIiwidHlwZSI6InRleHQifSx7ImVuYWJsZWQiOnRydWUsImtleSI6InJlZnJlc2gtdG9rZW4iLCJ2YWx1ZSI6IiIsInR5cGUiOiJ0ZXh0In1d)
 
 Den behøver en Postman Environment som definerer følgende parametre:
 
