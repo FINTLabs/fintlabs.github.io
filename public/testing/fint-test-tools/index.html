@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="alternate" href="/index.xml" type="application/rss+xml" title="FINTLabs Technical Docs">
     <link rel="icon" href="https://fintprosjektet.github.io/favicon.ico">
-    <title>Information Model Documentation Portal - FINTLabs Technical Docs</title>
+    <title>FINT Testverktøy - FINTLabs Technical Docs</title>
     
     <link rel="stylesheet" href="https://fintprosjektet.github.io/css/highlight/github.css">
     <link rel="stylesheet" href="https://fintprosjektet.github.io/css/bootstrap.min.css">
@@ -59,26 +59,108 @@
         <main role="main">
             <article>
                 <a id="title"></a>
-                <h1 class="doc-entry-title">Information Model Documentation Portal</h1>
+                <h1 class="doc-entry-title">FINT Testverktøy</h1>
 
                 <section>
                     
 
-<p><b><a href="https://github.com/FINTprosjektet/fint-informasjonsmodell-documentation">Go directly to the documentation portal</a> <i class="fa fa-book" aria-hidden="true"></i></b></p>
+<p>FINT felleskomponenter er tilgjengelige som <code>REST HATEOAS HAL</code> grensesnitt, som i bunn og grunn betyr <code>JSON-data</code> via <code>HTTP</code>.
+Slik informasjon er i prinsippet mulig å se på i en nettleser, men fordi grensesnittet er <code>OAuth 2.0</code> beskyttet og behøver ekstra parametre i <code>HTTP</code> forespørselen, er verktøy å anbefale.</p>
 
-<h3 id="introduction">Introduction</h3>
+<h2 id="postman">Postman</h2>
 
-<p>The models are designed and documented in <code>Enterprise Architect (EA)</code>. You can find the <code>EA</code> project at <a href="https://github.com/FINTprosjektet/fint-informasjonsmodell">https://github.com/FINTprosjektet/fint-informasjonsmodell</a>.</p>
+<p>FINT bruker hovedsakelig Postman (<a href="https://www.getpostman.com/">https://www.getpostman.com</a>) for å utvikle tester, men de store datavolumene for noen av endepunktene gjør at Postman får ytelsesproblemer.</p>
 
-<h3 id="documentation-portal">Documentation portal</h3>
+<p>Test-collection for Postman er tilgjengelig her:</p>
 
-<p>For a more userfriendly view of the models we developet a frontend to the <code>XMI 2.1</code> export from <code>EA</code>. You can find the documentation portal at <a href="https://informasjonsmodell.felleskomponent.no">https://informasjonsmodell.felleskomponent.no</a>.</p>
+<p><a href="https://app.getpostman.com/run-collection/2cb3e170570e30391865"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman" /></a></p>
 
-<p>The project for the frontend is found <a href="https://github.com/FINTprosjektet/fint-informasjonsmodell-documentation">here</a>.</p>
+<p>Den behøver en Postman Environment som definerer følgende parametre:</p>
 
-<h3 id="contribute">Contribute</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Beskrivelse</th>
+</tr>
+</thead>
 
-<p>If you find bugs or have suggestions for improvement please feel free to submit an <a href="https://github.com/FINTprosjektet/fint-informasjonsmodell/issues">issue</a>.</p>
+<tbody>
+<tr>
+<td>org-id</td>
+<td>OrgId for å hente data</td>
+</tr>
+
+<tr>
+<td>client-id</td>
+<td>OAuth 2.0 Client ID</td>
+</tr>
+
+<tr>
+<td>client-secret</td>
+<td>OAuth 2.0 Client Secret</td>
+</tr>
+
+<tr>
+<td>refresh-token</td>
+<td>OAuth 2.0 Refresh Token</td>
+</tr>
+</tbody>
+</table>
+
+<p>De tre første parametrene er tilgjengelige via <code>kundeportalen</code>. Refresh Token kan hentes ved å gjøre en OAuth 2.0 Token Request i Postman, eller ved hjelp av FINTs hjelpeverktøy fint-token som er beskrevet nedenfor.</p>
+
+<blockquote>
+<p><strong>Kundeportalen</strong> er ikke tilgjengelig enda. Informasjonen fåes ved å kontakte FINTProsjektet.</p>
+</blockquote>
+
+<p>Etter at collection er importert og environment satt opp, kan de forskjellige testene kjøres separat. Husk å kalle Refresh Access Token dersom det er mer enn en time siden siste forespørsel, da OAuth token har en times gyldighet.</p>
+
+<p>Alle testene kan også kjøres under ett ved å åpne Runner-vinduet i Postman. Pass også her på å velge riktig collection og environment.</p>
+
+<h2 id="fint-test-client-cli">FINT Test Client CLI</h2>
+
+<p>Dette er en Go kommandolinje-applikasjon som henter data fra en felleskomponent og skriver på fil. Denne anbefales for å hente ut alle data for en felleskomponent.</p>
+
+<p>Applikasjonen finnes <a href="https://github.com/FINTprosjektet/fint-test-client/releases">her</a>. Verktøyet finnes både for <code>MacOS</code> og <code>Windows</code>.</p>
+
+<p>Før applikasjonen startes, må filen <code>config.yml</code> opprettes på samme sted som programmet ligger.  Denne filen har følgende format:</p>
+
+<pre><code class="language-yml">orgid: AAAAA
+auth:
+    clientid: XXXXX
+    clientsecret: YYYYY
+    refreshtoken: ZZZZZ
+</code></pre>
+
+<p>Informasjonen er den samme som behøves for Postman.</p>
+
+<p>Når dette er klart, kan den kjøres på følgende måte:</p>
+
+<pre><code class="language-shell">fint-test-client-windows.exe administrasjon/personal/arbeidsforhold arbeidsforhold.json
+Requesting https://beta.felleskomponent.no/administrasjon/personal/arbeidsforhold ...
+Response: 200
+Wrote 13830622 bytes to arbeidsforhold.json
+</code></pre>
+
+<p>Deretter kan arbeidsforhold.json åpnes i en teksteditor.</p>
+
+<blockquote>
+<p>NB! På grunn av størrelsen (13 MB) anbefales Sublime Text eller en annen teksteditor som takler store filer effektivt.</p>
+</blockquote>
+
+<h2 id="oauth-2-0-access-token">OAuth 2.0 Access Token</h2>
+
+<p>For tilgang til felleskomponenter kreves autentisering. Her brukes OAuth 2.0 tokens. FINT har utviklet et verktøy som kan brukes til å hente nytt token for testing.  Dette finnes <a href="https://github.com/FINTprosjektet/fint-token/releases">her</a>. Verktøyet finnes både for <code>MacOS</code> og <code>Windows</code>.</p>
+
+<p>Før bruk må du ha tilgang til brukernavn, passord, client-id og client secret fra FINT adminportalen.</p>
+
+<p>Verktøyet brukes slik:</p>
+
+<pre><code class="language-shell">fint-token-windows.exe -u BRUKERNAVN -p PASSORD -i CLIENT_ID -s SECRET
+</code></pre>
+
+<p>I terminalvinduet får du skrevet ut både et gyldig access token, og et refresh token.</p>
 
                 </section>
             </article>
@@ -93,18 +175,15 @@
             <div class="sidebar-toc">
                 <h4 class="sidebar-heading">Table of Contents</h4>
                 <ul>
-                    <li><strong><a href="#title">Information Model Documentation Portal</a></strong></li>
+                    <li><strong><a href="#title">FINT Testverktøy</a></strong></li>
                 </ul>
                 <nav id="TableOfContents">
 <ul>
 <li>
 <ul>
-<li>
-<ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#documentation-portal">Documentation portal</a></li>
-<li><a href="#contribute">Contribute</a></li>
-</ul></li>
+<li><a href="#postman">Postman</a></li>
+<li><a href="#fint-test-client-cli">FINT Test Client CLI</a></li>
+<li><a href="#oauth-2-0-access-token">OAuth 2.0 Access Token</a></li>
 </ul></li>
 </ul>
 </nav>
