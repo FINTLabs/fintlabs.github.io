@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Testings on FINTLabs Technical Docs</title>
+    <link>https://fintprosjektet.github.io/testing/</link>
+    <description>Recent content in Testings on FINTLabs Technical Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://fintprosjektet.github.io/testing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>FINT Testverktøy</title>
+      <link>https://fintprosjektet.github.io/testing/fint-test-tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/testing/fint-test-tools/</guid>
+      <description>FINT felleskomponenter er tilgjengelige som REST HATEOAS HAL grensesnitt, som i bunn og grunn betyr JSON-data via HTTP. Slik informasjon er i prinsippet mulig å se på i en nettleser, men fordi grensesnittet er OAuth 2.0 beskyttet og behøver ekstra parametre i HTTP forespørselen, er verktøy å anbefale.
+Postman FINT bruker hovedsakelig Postman (https://www.getpostman.com) for å utvikle tester, men de store datavolumene for noen av endepunktene gjør at Postman får ytelsesproblemer.</description>
+    </item>
+    
+  </channel>
+</rss>
