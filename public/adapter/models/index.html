@@ -70,273 +70,119 @@
 
 <h1 id="versioning">Versioning</h1>
 
-<p>FINT is using <a href="http://semver.org/">semantic versioning</a> for it&rsquo;s models:</p>
+<p>FINT is using <a href="http://semver.org/">semantic versioning</a> for its models:</p>
 
 <ul>
-<li><code>MAJOR</code> version when you make <strong>incompatible changes</strong></li>
-<li><code>MINOR</code> <em>(feature release)</em> version when you add functionality in a <strong>backwards-compatible manner</strong>, and</li>
-<li><code>PATCH</code> <em>(bug fixes)</em> version when you make <strong>backwards-compatible bug fixes</strong>.</li>
+<li><code>MAJOR</code> version have <strong>backwards incompatible changes</strong></li>
+<li><code>MINOR</code> <em>(feature release)</em> versions add functionality in a <strong>backwards-compatible manner</strong>, and</li>
+<li><code>PATCH</code> <em>(bug fixes)</em> versions add <strong>backwards-compatible bug fixes</strong>.</li>
 </ul>
 
 <p>Additional labels for pre-release and build metadata are available as extensions to the <code>MAJOR.MINOR.PATCH</code> format.</p>
 
-<p><em>After version 1.1.0 the <code>MINOR</code> releases will be even numbers.</em></p>
+<ul>
+<li><code>MINOR</code> versions are generally even numbers: 0, 2, 4, &hellip;</li>
+<li><code>PATCH</code> numbers are released in increments of 10: 0, 10, 20, &hellip;</li>
+</ul>
 
 <blockquote>
-<p>The version relation between the <em>FINT Information model</em> and the <em>technical implementations</em> is in the <code>MAJOR</code> and <code>MINOR</code> versions. <code>MAJOR</code> and <code>MINOR</code> will always be the same for <em>FINT Information model</em> and the <em>technical implementations</em>. A <code>Maven</code> or <code>NuGet</code> package for release <code>1.1.3</code> will have the version <code>1.1.x</code>.</p>
+<p>The version relation between the <em>FINT Information model</em> and the <em>technical implementations</em> is that they start with the same <code>MAJOR.MINOR.PATCH</code> versions.  Additional releases of <em>technical implementations</em> based on the <strong>same</strong> <em>FINT Information model</em> will increment the <code>PATCH</code> number by <code>1</code>.</p>
 </blockquote>
 
-<h1 id="relation-between-common-api-and-the-models">Relation between Common API and the models</h1>
-
-<p>This table shows which models belongs to which Common API. It also links to the documentation of the model and the technical implementation of the model (GitHub and Maven/NuGet). The version is the version of <em>FINT Information model</em>.</p>
+<h1 id="latest-versions">Latest versions</h1>
 
 <table>
 <thead>
 <tr>
-<th><strong>Common API</strong></th>
-<th><strong>Model</strong></th>
-<th><strong>Technical</strong></th>
-<th><strong>Current release</strong></th>
+<th><strong>Component</strong></th>
+<th><strong>GitHub Release</strong></th>
+<th></th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>Personal</td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/felles_person">Person</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-administrasjon-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
+<td>Information Model</td>
+<td><a href="https://github.com/FINTprosjektet/fint-informasjonsmodell"><img src="https://img.shields.io/github/release/FINTprosjektet/fint-informasjonsmodell.svg" alt="GitHub release" /></a></td>
+<td><a href="https://informasjonsmodell.felleskomponent.no/"><img src="https://img.shields.io/badge/read-documentation-brightgreen.svg" alt="Documentation" /></a></td>
 </tr>
 
 <tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/personal_personalressurs">Personalressurs</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-administrasjon-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
+<td><strong>Java</strong></td>
+<td><strong>GitHub Release</strong></td>
+<td><strong>Package Version</strong></td>
 </tr>
 
 <tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/personal_arbeidsforhold">Arbeidsforhold</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-administrasjon-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
+<td>Event Model</td>
+<td><a href="https://github.com/FINTmodels/fint-event-model"><img src="https://img.shields.io/github/release/FINTmodels/fint-event-model.svg" alt="GitHub release" /></a></td>
+<td><a href="https://bintray.com/fint/maven/fint-event-model"><img src="https://img.shields.io/bintray/v/fint/maven/fint-event-model.svg" alt="Bintray" /></a></td>
 </tr>
 
 <tr>
-<td>Organisasjon</td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/organisasjon_organisasjonselement">Organisasjonselement</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-administrasjon-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
+<td>Relation Model</td>
+<td><a href="https://github.com/FINTmodels/fint-relation-model"><img src="https://img.shields.io/github/release/FINTmodels/fint-relation-model.svg" alt="GitHub release" /></a></td>
+<td><a href="https://bintray.com/fint/maven/fint-relation-model"><img src="https://img.shields.io/bintray/v/fint/maven/fint-relation-model.svg" alt="Bintray" /></a></td>
 </tr>
 
 <tr>
-<td>Kodeverk</td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/kodeverk_ansvar">Ansvar</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-administrasjon-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
+<td>Common</td>
+<td><a href="https://github.com/FINTmodels/fint-felles-model-java"><img src="https://img.shields.io/github/release/FINTmodels/fint-felles-model-java.svg" alt="GitHub release" /></a></td>
+<td><a href="https://bintray.com/fint/maven/fint-felles-model-java"><img src="https://img.shields.io/bintray/v/fint/maven/fint-felles-model-java.svg" alt="Bintray" /></a></td>
 </tr>
 
 <tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/kodeverk_art">Art</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-administrasjon-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
+<td>Administration</td>
+<td><a href="https://github.com/FINTmodels/fint-administrasjon-model-java"><img src="https://img.shields.io/github/release/FINTmodels/fint-administrasjon-model-java.svg" alt="GitHub release" /></a></td>
+<td><a href="https://bintray.com/fint/maven/fint-administrasjon-model-java"><img src="https://img.shields.io/bintray/v/fint/maven/fint-administrasjon-model-java.svg" alt="Bintray" /></a></td>
 </tr>
 
 <tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/kodeverk_funksjon">Funksjon</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-administrasjon-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
+<td>Education</td>
+<td><a href="https://github.com/FINTmodels/fint-utdanning-model-java"><img src="https://img.shields.io/github/release/FINTmodels/fint-utdanning-model-java.svg" alt="GitHub release" /></a></td>
+<td><a href="https://bintray.com/fint/maven/fint-utdanning-model-java"><img src="https://img.shields.io/bintray/v/fint/maven/fint-utdanning-model-java.svg" alt="Bintray" /></a></td>
 </tr>
 
 <tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/kodeverk_prosjekt">Prosjekt</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-administrasjon-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
+<td>Vigo Code Lists</td>
+<td><a href="https://github.com/FINTmodels/fint-vigokv-model"><img src="https://img.shields.io/github/release/FINTmodels/fint-vigokv-model.svg" alt="GitHub release" /></a></td>
+<td><a href="https://bintray.com/fint/maven/fint-vigokv-model"><img src="https://img.shields.io/bintray/v/fint/maven/fint-vigokv-model.svg" alt="Bintray" /></a></td>
 </tr>
 
 <tr>
-<td>Utdanning</td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/basisklasser_undervisningsforhold">Undervisningsforhold</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
+<td><strong>.NET</strong></td>
+<td><strong>GitHub Release</strong></td>
+<td><strong>Package Version</strong></td>
 </tr>
 
 <tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/gruppe_basisgruppe">Basisgruppe</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
+<td>Event Model</td>
+<td><a href="https://github.com/FINTmodels/Fint.Event.Model"><img src="https://img.shields.io/github/release/FINTmodels/Fint.Event.Model.svg" alt="GitHub release" /></a></td>
+<td><a href="https://bintray.com/fint/nuget/FINT.Event.Model"><img src="https://img.shields.io/bintray/v/fint/nuget/FINT.Event.Model.svg" alt="Bintray" /></a></td>
 </tr>
 
 <tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/gruppe_eksamengruppe">Eksamengruppe</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
+<td>Relation Model</td>
+<td><a href="https://github.com/FINTmodels/Fint.Relation.Model"><img src="https://img.shields.io/github/release/FINTmodels/Fint.Relation.Model.svg" alt="GitHub release" /></a></td>
+<td><a href="https://bintray.com/fint/nuget/FINT.Relation.Model"><img src="https://img.shields.io/bintray/v/fint/nuget/FINT.Relation.Model.svg" alt="Bintray" /></a></td>
 </tr>
 
 <tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/gruppe_fag">Fag</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
+<td>Common</td>
+<td><a href="https://github.com/FINTmodels/FINT.Model.Felles"><img src="https://img.shields.io/github/release/FINTmodels/FINT.Model.Felles.svg" alt="GitHub release" /></a></td>
+<td><a href="https://bintray.com/fint/nuget/FINT.Model.Felles"><img src="https://img.shields.io/bintray/v/fint/nuget/FINT.Model.Felles.svg" alt="Bintray" /></a></td>
 </tr>
 
 <tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/gruppe_kontaktlarergruppe">Kontaktlærergruppe</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
+<td>Administration</td>
+<td><a href="https://github.com/FINTmodels/FINT.Model.Administrasjon"><img src="https://img.shields.io/github/release/FINTmodels/FINT.Model.Administrasjon.svg" alt="GitHub release" /></a></td>
+<td><a href="https://bintray.com/fint/nuget/FINT.Model.Administrasjon"><img src="https://img.shields.io/bintray/v/fint/nuget/FINT.Model.Administrasjon.svg" alt="Bintray" /></a></td>
 </tr>
 
 <tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/gruppe_programomrade">Programområde</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
-</tr>
-
-<tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/gruppe_trinn">Trinn</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
-</tr>
-
-<tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/gruppe_undervisningsgruppe">Undervisningsgruppe</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
-</tr>
-
-<tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/gruppe_utdannigsprogram">Utdannigsprogram</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
-</tr>
-
-<tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/komplekse_datatyper_fravar">Fravær</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
-</tr>
-
-<tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/komplekse_datatyper_resultat">Resultat</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
-</tr>
-
-<tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/utdanning_medlemskap">Medlemskap</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
-</tr>
-
-<tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/kodeverk_elevkategori">Elevkategori</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
-</tr>
-
-<tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/kodeverk_grepkode">Skole</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
-</tr>
-
-<tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/kodeverk_vigokode">Grepkode</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
-</tr>
-
-<tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/kodeverk_karakterskala">Vigokode</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
-</tr>
-
-<tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/kodeverk_karakterverdi">Karakterskala</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
-</tr>
-
-<tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/organisasjon_skole">Karakterverdi</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
-</tr>
-
-<tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/ressurser_elevforhold">Elevforhold</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
-</tr>
-
-<tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/ressurser_elevressurs">Elevressurs</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
-</tr>
-
-<tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/ressurser_rom">Rom</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
-</tr>
-
-<tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/timeplan_time">Time</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>v1.1.0-rc2</td>
-</tr>
-
-<tr>
-<td></td>
-<td><a href="https://informasjonsmodell.felleskomponent.no/docs/package_vigo_kodeverk">Vigokodeverk</a></td>
-<td><a href="https://docs.felleskomponent.no/java/fint-utdanning-model-java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>September (v1.2.0)</td>
-</tr>
-
-<tr>
-<td>Lønnsmelding</td>
-<td></td>
-<td><a href="https://docs.felleskomponent.no/java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>Oktober (v1.4.0)</td>
-</tr>
-
-<tr>
-<td>Variabel lønn</td>
-<td></td>
-<td><a href="https://docs.felleskomponent.no/java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>Oktober (v1.6.0)</td>
-</tr>
-
-<tr>
-<td>Faktura</td>
-<td></td>
-<td><a href="https://docs.felleskomponent.no/java">Java</a> / <a href="https://docs.felleskomponent.no/net">.NET</a></td>
-<td>Oktober (v1.8.0)</td>
+<td>Education</td>
+<td><a href="https://github.com/FINTmodels/FINT.Model.Utdanning"><img src="https://img.shields.io/github/release/FINTmodels/FINT.Model.Utdanning.svg" alt="GitHub release" /></a></td>
+<td><a href="https://bintray.com/fint/nuget/FINT.Model.Utdanning"><img src="https://img.shields.io/bintray/v/fint/nuget/FINT.Model.Utdanning.svg" alt="Bintray" /></a></td>
 </tr>
 </tbody>
 </table>
@@ -360,7 +206,7 @@
 <ul>
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#versioning">Versioning</a></li>
-<li><a href="#relation-between-common-api-and-the-models">Relation between Common API and the models</a></li>
+<li><a href="#latest-versions">Latest versions</a></li>
 </ul>
 </nav>
             </div>
