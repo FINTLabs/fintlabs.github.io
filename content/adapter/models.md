@@ -9,30 +9,36 @@ weight = 2
 
 # Versioning
 
-FINT is using [semantic versioning](http://semver.org/) for it's models:
+FINT is using [semantic versioning](http://semver.org/) for its models:
 
-- `MAJOR` version when you make **incompatible changes**
-- `MINOR` *(feature release)* version when you add functionality in a **backwards-compatible manner**, and
-- `PATCH` *(bug fixes)* version when you make **backwards-compatible bug fixes**.
+- `MAJOR` version have **backwards incompatible changes**
+- `MINOR` *(feature release)* versions add functionality in a **backwards-compatible manner**, and
+- `PATCH` *(bug fixes)* versions add **backwards-compatible bug fixes**. 
 
 Additional labels for pre-release and build metadata are available as extensions to the `MAJOR.MINOR.PATCH` format. 
 
-*After version 1.1.0 the `MINOR` releases will be even numbers.*
+- `MINOR` versions are generally even numbers: 0, 2, 4, ...
+- `PATCH` numbers are released in increments of 10: 0, 10, 20, ...
+
+>The version relation between the *FINT Information model* and the *technical implementations* is that they start with the same `MAJOR.MINOR.PATCH` versions.  Additional releases of *technical implementations* based on the **same** *FINT Information model* will increment the `PATCH` number by `1`. 
 
 
->The version relation between the *FINT Information model* and the *technical implementations* is in the `MAJOR` and `MINOR` versions. `MAJOR` and `MINOR` will always be the same for *FINT Information model* and the *technical implementations*. A `Maven` or `NuGet` package for release `1.1.3` will have the version `1.1.x`. 
+# Latest versions
 
+| **Component**     | **GitHub Release** |                     |
+|-------------------|--------------------|---------------------|
+| Information Model | [![GitHub release](https://img.shields.io/github/release/FINTprosjektet/fint-informasjonsmodell.svg)](https://github.com/FINTprosjektet/fint-informasjonsmodell) | [![Documentation](https://img.shields.io/badge/read-documentation-brightgreen.svg)](https://informasjonsmodell.felleskomponent.no/) |
+| **Java**          | **GitHub Release** | **Package Version** |
+| Event Model       | [![GitHub release](https://img.shields.io/github/release/FINTmodels/fint-event-model.svg)](https://github.com/FINTmodels/fint-event-model) | [![Bintray](https://img.shields.io/bintray/v/fint/maven/fint-event-model.svg)](https://bintray.com/fint/maven/fint-event-model) |
+| Relation Model    | [![GitHub release](https://img.shields.io/github/release/FINTmodels/fint-relation-model.svg)](https://github.com/FINTmodels/fint-relation-model) | [![Bintray](https://img.shields.io/bintray/v/fint/maven/fint-relation-model.svg)](https://bintray.com/fint/maven/fint-relation-model) |
+| Common            | [![GitHub release](https://img.shields.io/github/release/FINTmodels/fint-felles-model-java.svg)](https://github.com/FINTmodels/fint-felles-model-java) | [![Bintray](https://img.shields.io/bintray/v/fint/maven/fint-felles-model-java.svg)](https://bintray.com/fint/maven/fint-felles-model-java) |
+| Administration    | [![GitHub release](https://img.shields.io/github/release/FINTmodels/fint-administrasjon-model-java.svg)](https://github.com/FINTmodels/fint-administrasjon-model-java) | [![Bintray](https://img.shields.io/bintray/v/fint/maven/fint-administrasjon-model-java.svg)](https://bintray.com/fint/maven/fint-administrasjon-model-java) |
+| Education         | [![GitHub release](https://img.shields.io/github/release/FINTmodels/fint-utdanning-model-java.svg)](https://github.com/FINTmodels/fint-utdanning-model-java) | [![Bintray](https://img.shields.io/bintray/v/fint/maven/fint-utdanning-model-java.svg)](https://bintray.com/fint/maven/fint-utdanning-model-java) |
+| Vigo Code Lists   | [![GitHub release](https://img.shields.io/github/release/FINTmodels/fint-vigokv-model.svg)](https://github.com/FINTmodels/fint-vigokv-model) | [![Bintray](https://img.shields.io/bintray/v/fint/maven/fint-vigokv-model.svg)](https://bintray.com/fint/maven/fint-vigokv-model) |
+| **.NET**          | **GitHub Release** | **Package Version** |
+| Event Model       | [![GitHub release](https://img.shields.io/github/release/FINTmodels/Fint.Event.Model.svg)](https://github.com/FINTmodels/Fint.Event.Model) | [![Bintray](https://img.shields.io/bintray/v/fint/nuget/FINT.Event.Model.svg)](https://bintray.com/fint/nuget/FINT.Event.Model) |
+| Relation Model    | [![GitHub release](https://img.shields.io/github/release/FINTmodels/Fint.Relation.Model.svg)](https://github.com/FINTmodels/Fint.Relation.Model) | [![Bintray](https://img.shields.io/bintray/v/fint/nuget/FINT.Relation.Model.svg)](https://bintray.com/fint/nuget/FINT.Relation.Model) | 
+| Common            | [![GitHub release](https://img.shields.io/github/release/FINTmodels/FINT.Model.Felles.svg)](https://github.com/FINTmodels/FINT.Model.Felles) | [![Bintray](https://img.shields.io/bintray/v/fint/nuget/FINT.Model.Felles.svg)](https://bintray.com/fint/nuget/FINT.Model.Felles) |
+| Administration    | [![GitHub release](https://img.shields.io/github/release/FINTmodels/FINT.Model.Administrasjon.svg)](https://github.com/FINTmodels/FINT.Model.Administrasjon) | [![Bintray](https://img.shields.io/bintray/v/fint/nuget/FINT.Model.Administrasjon.svg)](https://bintray.com/fint/nuget/FINT.Model.Administrasjon) |
+| Education         | [![GitHub release](https://img.shields.io/github/release/FINTmodels/FINT.Model.Utdanning.svg)](https://github.com/FINTmodels/FINT.Model.Utdanning) | [![Bintray](https://img.shields.io/bintray/v/fint/nuget/FINT.Model.Utdanning.svg)](https://bintray.com/fint/nuget/FINT.Model.Utdanning) |
 
-# Relation between Common API and the models
-This table shows which models belongs to which Common API. It also links to the documentation of the model and the technical implementation of the model (GitHub and Maven/NuGet). The version is the version of *FINT Information model*.
-
-| **Common API** |                                                       **Technical**                                                       |                                                                                      **Current release**                                                                                      |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Personal       | [Java](https://docs.felleskomponent.no/java/fint-administrasjon-model-java) / [.NET](https://docs.felleskomponent.no/net) | [ ![Download](https://api.bintray.com/packages/fint/maven/fint-administrasjon-model-java/images/download.svg) ](https://bintray.com/fint/maven/fint-administrasjon-model-java/_latestVersion) |
-| Organisasjon   | [Java](https://docs.felleskomponent.no/java/fint-administrasjon-model-java) / [.NET](https://docs.felleskomponent.no/net) | [ ![Download](https://api.bintray.com/packages/fint/maven/fint-administrasjon-model-java/images/download.svg) ](https://bintray.com/fint/maven/fint-administrasjon-model-java/_latestVersion) |
-| Kodeverk       | [Java](https://docs.felleskomponent.no/java/fint-administrasjon-model-java) / [.NET](https://docs.felleskomponent.no/net) | [ ![Download](https://api.bintray.com/packages/fint/maven/fint-administrasjon-model-java/images/download.svg) ](https://bintray.com/fint/maven/fint-administrasjon-model-java/_latestVersion) |
-| Utdanning      | [Java](https://docs.felleskomponent.no/java/fint-utdanning-model-java) / [.NET](https://docs.felleskomponent.no/net)      | [ ![Download](https://api.bintray.com/packages/fint/maven/fint-utdanning-model-java/images/download.svg) ](https://bintray.com/fint/maven/fint-utdanning-model-java/_latestVersion)           |
-| Vigo kodeverk  | [Java](https://docs.felleskomponent.no/java/fint-vigokv-model) / [.NET](https://docs.felleskomponent.no/net)              | [ ![Download](https://api.bintray.com/packages/fint/maven/fint-vigokv-model/images/download.svg) ](https://bintray.com/fint/maven/fint-vigokv-model/_latestVersion)                           |
-| Lønnsmelding   | [Java](https://docs.felleskomponent.no/java) / [.NET](https://docs.felleskomponent.no/net)                                | Q1 2018                                                                                                                                                                                       |
-| Variabel lønn  | [Java](https://docs.felleskomponent.no/java) / [.NET](https://docs.felleskomponent.no/net)                                | Q1 2018                                                                                                                                                                                       |
-| Faktura        | [Java](https://docs.felleskomponent.no/java) / [.NET](https://docs.felleskomponent.no/net)                                | Q1 2018                                                                                                                                                                                       |
