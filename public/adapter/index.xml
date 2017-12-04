@@ -22,6 +22,15 @@ Architectural overview - Common API Information Models The Common API consist of
     </item>
     
     <item>
+      <title>Develop adapters</title>
+      <link>https://fintprosjektet.github.io/adapter/guidelines/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/adapter/guidelines/</guid>
+      <description> Introduction </description>
+    </item>
+    
+    <item>
       <title>Models and Common API</title>
       <link>https://fintprosjektet.github.io/adapter/models/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

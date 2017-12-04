@@ -5,34 +5,23 @@
         <main role="main">
             <div class="doc-list-header">
                 <h3>{{ .Title }}</h3>
-                <!--
-                <div class="alert alert-info" role="alert">
-                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> The <code>Provider API</code> is the same for all services so they will look the same
-                </div>
-                -->
-
             </div>
             <div class="doc-list-entry">
-
-                <!-- Play-With-FINT-Adapter -->
-                <!--
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        Environment: Play-With-FINT-Adapter
-                    </div>
+                <div class="panel panel-default">
                     <div class="panel-body">
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>API</th>
+                                    <th>Document</th>
                                     <th>Description</th>
                                 </tr>
                             </thead>
-                            {{ range where .Site.Pages ".Params.env" "eq" "pwfa" }}
+                            {{ range .Data.Pages }}
                             <tr>
                                 <td>
                                     <a class="doc-entry" href="{{ .RelPermalink }}">
                                         <span class="doc-entry-title">{{ .Title }}{{ if .Draft }} #Draft{{ end }}</span>
+
                                     </a>
                                 </td>
                                 <td>
@@ -43,123 +32,6 @@
                         </table>
                     </div>
                 </div>
-                -->
-
-                <!-- Play-With-FINT -->
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        Environment: Play-With-FINT
-                    </div>
-                    <div class="panel-body">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
-                                    </th>
-                                    <th>API</th>
-                                    <th>Description</th>
-                                    <th>Base URL</th>
-                                </tr>
-                            </thead>
-                            {{ range where .Site.Pages ".Params.env" "eq" "pwf" }}
-                            <tr>
-                                <td>
-                                    <a class="doc-entry" href="{{ .RelPermalink }}" target="_blank">
-                                        <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
-                                    </a>
-                                </td>
-                                <td>
-                                        <span class="doc-entry-title">{{ .Title }}{{ if .Draft }} #Draft{{ end }}</span>
-                                </td>
-                                <td>
-                                    {{ .Params.description }}
-                                </td>
-                                <td><small><code>{{ .Params.baseUrl }}</code></small></td>
-                            </tr>
-                            {{ end }}
-                        </table>
-                    </div>
-                </div>
-
-                <!-- Beta -->
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        Environment: Beta
-                    </div>
-                    <div class="panel-body">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
-                                    </th>
-                                    <th>API</th>
-                                    <th>Description</th>
-                                    <th>Base URL</th>
-                                </tr>
-                            </thead>
-                            {{ range where .Site.Pages ".Params.env" "eq" "beta" }}
-                            <tr>
-                                <td>
-                                    <a class="doc-entry" href="{{ .RelPermalink }}" target="_blank">
-                                        <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a class="doc-entry" href="{{ .RelPermalink }}">
-                                        <span class="doc-entry-title">{{ .Title }}{{ if .Draft }} #Draft{{ end }}</span>
-                                    </a>
-                                </td>
-                                <td>
-                                    {{ .Params.description }}
-                                </td>
-                                <td><small><code>{{ .Params.baseUrl }}</code></small></td>
-                            </tr>
-                            {{ end }}
-                        </table>
-                    </div>
-                </div>
-
-                <!-- Prod -->
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        Environment: Production<
-                    </div>
-                    <div class="panel-body">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
-                                    </th>
-                                    <th>API</th>
-                                    <th>Description</th>
-                                    <th>Base URL</th>
-                                </tr>
-                            </thead>
-                            {{ range where .Site.Pages ".Params.env" "eq" "prod" }}
-                            <tr>
-                                <td>
-                                    <a class="doc-entry" href="{{ .RelPermalink }}" target="_blank">
-                                        <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a class="doc-entry" href="{{ .RelPermalink }}">
-                                        <span class="doc-entry-title">{{ .Title }}{{ if .Draft }} #Draft{{ end }}</span>
-                                    </a>
-                                </td>
-                                <td>
-                                    {{ .Params.description }}
-                                </td>
-                                <td><small><code>{{ .Params.baseUrl }}</code></small></td>
-                            </tr>
-                            {{ end }}
-                        </table>
-                    </div>
-                </div>
-
         </main>
         </div>
         <!-- /.doc-main -->
