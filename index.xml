@@ -31,6 +31,15 @@ Architectural overview - Common API Information Models The Common API consist of
     </item>
     
     <item>
+      <title>Develop adapters</title>
+      <link>https://fintprosjektet.github.io/adapter/guidelines/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/adapter/guidelines/</guid>
+      <description> Introduction </description>
+    </item>
+    
+    <item>
       <title>Models and Common API</title>
       <link>https://fintprosjektet.github.io/adapter/models/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -39,6 +48,15 @@ Architectural overview - Common API Information Models The Common API consist of
       <description>Introduction FINT Information models are models used in the Common API. The models contains information resoures the county council use in their day to day tasks. FINT aims to develop this model to contain vital information in all the areas the county council operates in. This means that every new version will contain more information and an new areas.
 Versioning FINT is using semantic versioning for it&amp;rsquo;s models:
  MAJOR version when you make incompatible changes MINOR (feature release) version when you add functionality in a backwards-compatible manner, and PATCH (bug fixes) version when you make backwards-compatible bug fixes.</description>
+    </item>
+    
+    <item>
+      <title>Using FINT API </title>
+      <link>https://fintprosjektet.github.io/api/guidelines/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fintprosjektet.github.io/api/guidelines/</guid>
+      <description> Introduction </description>
     </item>
     
     <item>
@@ -62,25 +80,6 @@ Setting up the enviornment Clone the skeleton $ git clone https://github.com/FIN
     </item>
     
     <item>
-      <title>Common code list</title>
-      <link>https://fintprosjektet.github.io/api/common-code-list/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/common-code-list/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>FINT Testverktøy</title>
-      <link>https://fintprosjektet.github.io/testing/fint-test-tools/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/testing/fint-test-tools/</guid>
-      <description>FINT felleskomponenter er tilgjengelige som REST HATEOAS HAL grensesnitt, som i bunn og grunn betyr JSON-data via HTTP. Slik informasjon er i prinsippet mulig å se på i en nettleser, men fordi grensesnittet er OAuth 2.0 beskyttet og behøver ekstra parametre i HTTP forespørselen, er verktøy å anbefale.
-Postman FINT bruker hovedsakelig Postman (https://www.getpostman.com) for å utvikle tester, men de store datavolumene for noen av endepunktene gjør at Postman får ytelsesproblemer.</description>
-    </item>
-    
-    <item>
       <title>Information Model Documentation Portal</title>
       <link>https://fintprosjektet.github.io/models/documentation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -91,87 +90,6 @@ Introduction The models are designed and documented in Enterprise Architect (EA)
 Documentation portal For a more userfriendly view of the models we developet a frontend to the XMI 2.1 export from EA. You can find the documentation portal at https://informasjonsmodell.felleskomponent.no.
 The project for the frontend is found here.
 Contribute If you find bugs or have suggestions for improvement please feel free to submit an issue.</description>
-    </item>
-    
-    <item>
-      <title>Kodeverk</title>
-      <link>https://fintprosjektet.github.io/api/beta-consumer-kodeverk/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/beta-consumer-kodeverk/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kodeverk</title>
-      <link>https://fintprosjektet.github.io/api/pfw-consumer-kodeverk/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/pfw-consumer-kodeverk/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kodeverk</title>
-      <link>https://fintprosjektet.github.io/api/prod-consumer-kodeverk/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/prod-consumer-kodeverk/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Organisasjon</title>
-      <link>https://fintprosjektet.github.io/api/beta-consumer-organisasjon/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/beta-consumer-organisasjon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Organisasjon</title>
-      <link>https://fintprosjektet.github.io/api/pfw-consumer-organisasjon/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/pfw-consumer-organisasjon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Organisasjon</title>
-      <link>https://fintprosjektet.github.io/api/prod-consumer-organisasjon/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/prod-consumer-organisasjon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Personal</title>
-      <link>https://fintprosjektet.github.io/api/beta-consumer-personal/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/beta-consumer-personal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Personal</title>
-      <link>https://fintprosjektet.github.io/api/pfw-consumer-personal/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/pfw-consumer-personal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Personal</title>
-      <link>https://fintprosjektet.github.io/api/prod-consumer-personal/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/prod-consumer-personal/</guid>
-      <description></description>
     </item>
     
   </channel>
