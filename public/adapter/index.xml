@@ -27,7 +27,11 @@ Architectural overview - Common API Information Models The Common API consist of
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fintprosjektet.github.io/adapter/guidelines/</guid>
-      <description> Introduction </description>
+      <description>Introduction This articel amins to make you able to develop a FINT adapter.
+Getting started A good startingpoint for developing an adapter is to go throug our quick tutorial:
+ tut-java-sse tut-dotnet-sse  After that you can setup your adapter skeleton of choice:
+ https://github.com/FINTprosjektet/fint-sse-adapter-skeleton https://github.com/FINTprosjektet/Fint.Sse.Adapter.Skeleton  What does the skeleton do and what do you need to do? The skeletons has all the code to:
+ Connect to FINT Authentiacte to FINT (OAuth2) All the communication with FINT  Your task as a adapter developer is to:</description>
     </item>
     
     <item>

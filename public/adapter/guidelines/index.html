@@ -64,6 +64,43 @@
 
 <h1 id="introduction">Introduction</h1>
 
+<p>This articel amins to make you able to develop a FINT adapter.</p>
+
+<h1 id="getting-started">Getting started</h1>
+
+<p>A good startingpoint for developing an adapter is to go throug our quick tutorial:</p>
+
+<ul>
+<li><a href="Java">tut-java-sse</a></li>
+<li><a href="C#">tut-dotnet-sse</a></li>
+</ul>
+
+<p>After that you can setup your adapter skeleton of choice:</p>
+
+<ul>
+<li><a href="Java skeleton">https://github.com/FINTprosjektet/fint-sse-adapter-skeleton</a></li>
+<li><a href="C# (.NET core) skeleton">https://github.com/FINTprosjektet/Fint.Sse.Adapter.Skeleton</a></li>
+</ul>
+
+<h1 id="what-does-the-skeleton-do-and-what-do-you-need-to-do">What does the skeleton do and what do you need to do?</h1>
+
+<p>The skeletons has all the code to:</p>
+
+<ul>
+<li>Connect to FINT</li>
+<li>Authentiacte to FINT (OAuth2)</li>
+<li>All the communication with FINT</li>
+</ul>
+
+<p>Your task as a adapter developer is to:</p>
+
+<ol>
+<li>Reponde to <code>events</code> sent from FINT</li>
+<li>Interact with you backend system</li>
+<li>Map you data to FINT</li>
+<li>Send back the information asked for in the <code>event</code></li>
+</ol>
+
                 </section>
             </article>
         </main>
@@ -82,6 +119,8 @@
                 <nav id="TableOfContents">
 <ul>
 <li><a href="#introduction">Introduction</a></li>
+<li><a href="#getting-started">Getting started</a></li>
+<li><a href="#what-does-the-skeleton-do-and-what-do-you-need-to-do">What does the skeleton do and what do you need to do?</a></li>
 </ul>
 </nav>
             </div>
