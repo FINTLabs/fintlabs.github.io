@@ -10,8 +10,8 @@ This articel amins to make you able to develop a FINT adapter.
 # Getting started
 A good startingpoint for developing an adapter is to go throug our quick tutorial:
 
-* [Java](tut-java-sse)
-* [C#](tut-dotnet-sse)
+* [Java](../tut-java-sse)
+* [C#](../tut-dotnet-sse)
 
 After that you can setup your adapter skeleton of choice:
 
