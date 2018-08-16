@@ -23,7 +23,3 @@ publishdir = "public"
   name   = "Information models"
   url    = "/models"
   weight = 40
-[[menu.main]]
-  name   = "Testing"
-  url    = "/testing/fint-test-tools"
-  weight = 40

@@ -11,93 +11,12 @@
     
     
     <item>
-      <title>Common code list</title>
-      <link>https://fintprosjektet.github.io/api/common-code-list/</link>
+      <title>Using FINT API </title>
+      <link>https://fintprosjektet.github.io/api/guidelines/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fintprosjektet.github.io/api/common-code-list/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kodeverk</title>
-      <link>https://fintprosjektet.github.io/api/beta-consumer-kodeverk/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/beta-consumer-kodeverk/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kodeverk</title>
-      <link>https://fintprosjektet.github.io/api/pfw-consumer-kodeverk/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/pfw-consumer-kodeverk/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kodeverk</title>
-      <link>https://fintprosjektet.github.io/api/prod-consumer-kodeverk/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/prod-consumer-kodeverk/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Organisasjon</title>
-      <link>https://fintprosjektet.github.io/api/beta-consumer-organisasjon/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/beta-consumer-organisasjon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Organisasjon</title>
-      <link>https://fintprosjektet.github.io/api/pfw-consumer-organisasjon/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/pfw-consumer-organisasjon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Organisasjon</title>
-      <link>https://fintprosjektet.github.io/api/prod-consumer-organisasjon/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/prod-consumer-organisasjon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Personal</title>
-      <link>https://fintprosjektet.github.io/api/beta-consumer-personal/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/beta-consumer-personal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Personal</title>
-      <link>https://fintprosjektet.github.io/api/pfw-consumer-personal/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/pfw-consumer-personal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Personal</title>
-      <link>https://fintprosjektet.github.io/api/prod-consumer-personal/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintprosjektet.github.io/api/prod-consumer-personal/</guid>
-      <description></description>
+      <guid>https://fintprosjektet.github.io/api/guidelines/</guid>
+      <description> Introduction </description>
     </item>
     
   </channel>
