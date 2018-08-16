@@ -1,0 +1,198 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/index.xml" type="application/rss+xml" title="FINTLabs Technical Docs">
+    <link rel="icon" href="https://fintprosjektet.github.io/favicon.ico">
+    <title>Adapter Update Event Flow - FINTLabs Technical Docs</title>
+    
+    <link rel="stylesheet" href="https://fintprosjektet.github.io/css/highlight/github.css">
+    <link rel="stylesheet" href="https://fintprosjektet.github.io/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fintprosjektet.github.io/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://fintprosjektet.github.io/css/theme.css">
+    <link rel="stylesheet" href="https://fintprosjektet.github.io/css/bootie-docs.css">
+    <link rel="stylesheet" href="https://fintprosjektet.github.io/css/site.css">
+    <link rel="stylesheet" href="https://fintprosjektet.github.io/stylesheets/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body role="document">
+
+    
+    <nav class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+                <a class="navbar-brand" href="https://fintprosjektet.github.io/">FINTLabs Technical Docs</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    
+                      
+                    <li ><a href="/adapter">Adapter</a></li>
+                    
+                    <li ><a href="/api">Api</a></li>
+                    
+                    <li ><a href="/models">Information models</a></li>
+                      
+                </ul>
+                
+            </div>
+            
+        </div>
+    </nav>
+
+    <div class="container">
+
+<div class="row">
+    <div class="col-sm-8 doc-main">
+        <main role="main">
+            <article>
+                <a id="title"></a>
+                <h1 class="doc-entry-title">Adapter Update Event Flow</h1>
+
+                <section>
+                    
+
+<h1 id="fint-adapter-event-flow-for-updates">FINT Adapter Event Flow for Updates</h1>
+
+<p>The general flow between FINT and adapters are:</p>
+
+<ol>
+<li>Adapter subscribes to events using the SSE endpoint</li>
+<li>FINT delivers events on the SSE stream</li>
+<li>Adapter accepts the event by POSTing to the status endpoint.  There is a 2-minute timeout on accepting events. If you use the adapter skeleton this is already handled.</li>
+<li>Adapter responds to the event by POSTing to the response endpoint.  There is a 15-minute timeout on responding to events.</li>
+</ol>
+
+<p>FINT components produce events for two reasons:
+- Periodic cache update events every 15 minutes, triggering <code>GET_ALL_*</code> events.
+- Incoming POST / PUT requests from clients.  Every request produces exactly one event.</p>
+
+<p>FINT expects one status and one response to every event delivered.  Multiple responses will be rejected with <code>410 GONE</code></p>
+
+<p>Every event has an <code>Operation</code> attribute indicating the kind of event.</p>
+
+<p>Periodic cache update events produce <code>READ</code> operations.
+PUT requests produce <code>UPDATE</code> operations
+POST requests produce <code>CREATE</code> operations unless the validate request parameter is set.
+POST with the validate request parameter set creates <code>VALIDATE</code> operations.</p>
+
+<p>The intended behavior for these operations is as follows:
+- <code>VALIDATE</code>: Data validation
+- <code>CREATE</code>: Data creation
+- <code>READ</code>: Data request
+- <code>UPDATE</code>: Data modification, modifying existing data
+- <code>DELETE</code>: Data deletion, removing existing data</p>
+
+<p>For <code>VALIDATE</code> operations, no information should be stored or modified.
+It is intended for semantic validation only.
+Validation is requested by the client by POSTing the same payload that it intends to submit, but with the <code>?validate=true</code> request parameter.
+This changes the metadata of the event sent to the adapter.
+The adapter is supposed to perform validation, and respond with <code>ACCEPTED</code>, <code>REJECTED</code>, <code>ERROR</code> or <code>CONFLICT</code>, but not store the content.
+There is also no need to return any payload in the response event, as it will be ignored.</p>
+
+<p>To store the information after validation, the POST needs to be repeated without the validate flag.
+This is a new event delivered to the adapter.
+The validation event and the subsequent <code>CREATE</code> event are treated independently.</p>
+
+<p>When adapters respond to events, the ResponseStatus attribute indicates the result of the event.</p>
+
+<p>The response payload is handled according to the following, depending on ResponseStatus:</p>
+
+<ul>
+<li><code>ACCEPTED</code>: The payload is added to the cache</li>
+<li><code>REJECTED</code>: The payload is ignored.</li>
+<li><code>ERROR</code>: The payload is ignored.</li>
+<li><code>CONFLICT</code>: The payload is added to the cache.</li>
+</ul>
+
+<p>Note the last clause.  For CONFLICT the adapter is supposed to deliver the most recent version of the information, so clients and the FINT cache can be updated.</p>
+
+                </section>
+            </article>
+        </main>
+    </div>
+    
+
+     
+<div class="col-sm-3 col-sm-offset-1 doc-sidebar">
+    <div id="sidebar">
+        <div class="sidebar-module">
+            <div class="sidebar-toc">
+                <h4 class="sidebar-heading">Table of Contents</h4>
+                <ul>
+                    <li><strong><a href="#title">Adapter Update Event Flow</a></strong></li>
+                </ul>
+                <nav id="TableOfContents">
+<ul>
+<li><a href="#fint-adapter-event-flow-for-updates">FINT Adapter Event Flow for Updates</a></li>
+</ul>
+</nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+<hr />
+<footer>
+     
+    <a class="btn btn-link" href="https://www.fintprosjektet.no" target="_blank" aria-label="FINTProsjektet">
+        <i class="fa fa-home" aria-hidden="true"></i> FINTProsjektet website
+    </a>
+    |
+    <a class="btn btn-link" href="https://github.com/FINTprosjektet/" target="_blank" aria-label="FINTProsjektet">
+        <i class="fa fa-github" aria-hidden="true"></i> FINTProsjektet
+    </a>
+    |
+    <a class="btn btn-link" href="https://github.com/FINTmodels" target="_blank" aria-label="FINTmodels">
+        <i class="fa fa-github" aria-hidden="true"></i> FINTModels
+    </a>
+    |
+    <a class="btn btn-link" href="https://github.com/FINTlibs" target="_blank" aria-label="FINTlibs">
+        <i class="fa fa-github" aria-hidden="true"></i> FINTLibs
+    </a>
+    |
+    <a class="btn btn-link" href="https://informasjonsmodell.felleskomponent.no" target="_blank" aria-label="FIDP">
+        <i class="fa fa-book" aria-hidden="true"></i> Information Model Documentation Portal
+    </a>
+    |
+    <a class="btn btn-link" href="https://docs.felleskomponent.no" target="_blank" aria-label="FTDS">
+        <i class="fa fa-book" aria-hidden="true"></i> Java/.Net docs
+    </a>
+</footer>
+
+
+
+<script src="https://fintprosjektet.github.io/js/jquery.min.js"></script>
+<script src="https://fintprosjektet.github.io/js/bootstrap.min.js"></script>
+
+<script src="https://fintprosjektet.github.io/js/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://fintprosjektet.github.io/js/ie10-viewport-bug-workaround.js"></script>
+<script src="https://fintprosjektet.github.io/js/bootie-docs.js"></script>
+
+</body>
+
+</html>
