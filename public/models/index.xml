@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Models on FINTLabs Technical Docs</title>
-    <link>https://fintprosjektet.github.io/models/</link>
+    <link>https://fintlabs.github.io/models/</link>
     <description>Recent content in Models on FINTLabs Technical Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://fintprosjektet.github.io/models/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fintlabs.github.io/models/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A Overview Of the FINT Information Models</title>
-      <link>https://fintprosjektet.github.io/models/overview/</link>
+      <link>https://fintlabs.github.io/models/overview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fintprosjektet.github.io/models/overview/</guid>
+      <guid>https://fintlabs.github.io/models/overview/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Information Model Documentation Portal</title>
-      <link>https://fintprosjektet.github.io/models/documentation/</link>
+      <link>https://fintlabs.github.io/models/documentation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fintprosjektet.github.io/models/documentation/</guid>
+      <guid>https://fintlabs.github.io/models/documentation/</guid>
       <description>Go directly to the documentation portal 
 Introduction The models are designed and documented in Enterprise Architect (EA). You can find the EA project at https://github.com/FINTprosjektet/fint-informasjonsmodell.
 Documentation portal For a more userfriendly view of the models we developet a frontend to the XMI 2.1 export from EA. You can find the documentation portal at https://informasjonsmodell.felleskomponent.no.
