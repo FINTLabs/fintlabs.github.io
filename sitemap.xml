@@ -3,71 +3,71 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://fintprosjektet.github.io/adapter/overview/</loc>
+    <loc>https://fintlabs.github.io/adapter/overview/</loc>
     <lastmod>2017-04-26T11:49:04+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fintprosjektet.github.io/models/overview/</loc>
+    <loc>https://fintlabs.github.io/models/overview/</loc>
   </url>
   
   <url>
-    <loc>https://fintprosjektet.github.io/adapter/guidelines/</loc>
+    <loc>https://fintlabs.github.io/adapter/guidelines/</loc>
   </url>
   
   <url>
-    <loc>https://fintprosjektet.github.io/adapter/models/</loc>
+    <loc>https://fintlabs.github.io/adapter/models/</loc>
   </url>
   
   <url>
-    <loc>https://fintprosjektet.github.io/api/guidelines/</loc>
+    <loc>https://fintlabs.github.io/api/guidelines/</loc>
   </url>
   
   <url>
-    <loc>https://fintprosjektet.github.io/adapter/event-flow/</loc>
+    <loc>https://fintlabs.github.io/adapter/event-flow/</loc>
   </url>
   
   <url>
-    <loc>https://fintprosjektet.github.io/adapter/tut-java-sse/</loc>
+    <loc>https://fintlabs.github.io/adapter/tut-java-sse/</loc>
   </url>
   
   <url>
-    <loc>https://fintprosjektet.github.io/adapter/tut-dotnet-sse/</loc>
+    <loc>https://fintlabs.github.io/adapter/tut-dotnet-sse/</loc>
   </url>
   
   <url>
-    <loc>https://fintprosjektet.github.io/adapter/</loc>
-    <lastmod>2017-04-26T11:49:04+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://fintprosjektet.github.io/api/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://fintprosjektet.github.io/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://fintprosjektet.github.io/</loc>
+    <loc>https://fintlabs.github.io/adapter/</loc>
     <lastmod>2017-04-26T11:49:04+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://fintprosjektet.github.io/models/documentation/</loc>
-  </url>
-  
-  <url>
-    <loc>https://fintprosjektet.github.io/models/</loc>
+    <loc>https://fintlabs.github.io/api/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://fintprosjektet.github.io/tags/</loc>
+    <loc>https://fintlabs.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://fintlabs.github.io/</loc>
+    <lastmod>2017-04-26T11:49:04+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://fintlabs.github.io/models/documentation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fintlabs.github.io/models/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://fintlabs.github.io/tags/</loc>
     <priority>0</priority>
   </url>
   
