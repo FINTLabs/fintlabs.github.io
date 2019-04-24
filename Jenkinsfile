@@ -5,7 +5,8 @@ pipeline {
             agent {
                 docker {
                     label 'docker'
-                    image 'klakegg/hugo:0.55.3'
+                    image 'klakegg/hugo:alpine'
+                    args '--entrypoint=""'
                 }
             }
             when {
@@ -38,7 +39,7 @@ pipeline {
                     sh "git add ."
                     sh 'git config user.email "jenkins@fintlabs.no"'
                     sh 'git config user.name "FINT Jenkins"'
-                    sh "git commit -m '${BUILD_ID}'"
+                    sh "git commit -m '${BUILD_TAG}'"
                     sh "git push https://${GITHUB}@github.com/FINTLabs/fintlabs.github.io.git master:master"
                 }
             }
