@@ -1,10 +1,10 @@
 +++
-title = "Adapter Event Types"
-description = "Overview over the different types of events adapters must handle."
+title = "Adapter Events"
+description = "Overview over the different events adapters must handle."
 weight = 3
 +++
 
-# FINT Adapter Event Types
+# FINT Adapter Events
 
 FINT Adapters must be able to handle three different kinds of events:
 
@@ -27,13 +27,13 @@ Any adapter instance registered with the asset ID can handle events in three way
   1. Reject the event.  The consumer ignores any data from the response.  Other adapters attempting to respond will receive a `410` status from the Provider.
   1. Ignore the event, assuming another instance is handling it.  If no other adapter is handling the events, the provider will expire the event after 120 seconds.
 
-## Get all instances of a class (`GET_ALL_`_`type`_)
+## Get all instances of a class (`GET_ALL_`_type_)
 
 The FINT Consumer Cache Service issues these events every 15 minutes to update the consumer in-memory cache with all elements of the type.
 
 Adapters are expected to retrieve all active elements from the back-end system and insert the data in the response event.
 
-## Get a single instance of a class by ID (`GET_`_`type`_)
+## Get a single instance of a class by ID (`GET_`_type_)
 
 FINT Consumer APIs issue these events in cases where clients want the most recent version of a given element, and waits for the adapter to respond before returning data to the client.
 
@@ -52,7 +52,7 @@ For error situations, the adapter can control the HTTP response returned to the 
 | `REJECTED`       | `"NOT_FOUND"`  | `404`       |
 | `REJECTED`       | (other values) | `400`       |
 
-## Create a new element, or update an existing element by ID (`UPDATE_`_`type`_)
+## Create a new element, or update an existing element by ID (`UPDATE_`_type_)
 
 FINT Consumer APIs issue these events for `POST`, `PUT`, and `DELETE` requests for a given type, according to the following:
 

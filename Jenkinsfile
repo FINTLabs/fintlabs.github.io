@@ -25,14 +25,14 @@ pipeline {
                 }
             }
             environment {
-                GITHUB = credentials('github_fint_jenkins')
+                GITHUB = credentials('github_fsjovatsen')
             }
             when {
                 branch 'source'
             }
             steps {
                 dir('public') {
-                    git branch: 'master', credentialsId: 'github_fint_jenkins', url: 'https://github.com/FINTLabs/fintlabs.github.io'
+                    git branch: 'master', credentialsId: 'github_fsjovatsen', url: 'https://github.com/FINTLabs/fintlabs.github.io'
                 }
                 unstash 'public'
                 dir('public') {
