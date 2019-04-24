@@ -45,6 +45,16 @@ Versioning FINT is using semantic versioning for its models:
     </item>
     
     <item>
+      <title>Adapter Event Types</title>
+      <link>https://fintlabs.github.io/adapter/event-types/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fintlabs.github.io/adapter/event-types/</guid>
+      <description>FINT Adapter Event Types FINT Adapters must be able to handle three different kinds of events:
+ Requests to get all instances of a class from the FINT Consumer Cache Service Requests to get a single element of a class from the FINT Consumer API. Requests to update (create, modify or delete) a single element of a class from the FINT Consumer API.  The FINT Consumer will be issuing the events to the FINT Provider for the relevant assetID, and the FINT Provider will dispatch the event to all adapters connected and registered for this assetID.</description>
+    </item>
+    
+    <item>
       <title>Adapter Update Event Flow</title>
       <link>https://fintlabs.github.io/adapter/event-flow/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

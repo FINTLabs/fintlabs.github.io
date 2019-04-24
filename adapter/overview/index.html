@@ -154,14 +154,14 @@ Keeps track of which data has changed since the last time the cache was populate
 <td>/provider/status</td>
 <td>POST</td>
 <td>3</td>
-<td>When the adapter receives an event it should post back a status to tell the provider if the event can be handled.</td>
+<td>When the adapter receives an event it should post back a status to tell the provider if the event can be handled.  Adapters must accept or reject events with <code>/status</code> within 120 seconds.</td>
 </tr>
 
 <tr>
 <td>/provider/response</td>
 <td>POST</td>
 <td>4</td>
-<td>This is where the adapter sends back the response.</td>
+<td>This is where the adapter sends back the response.  Adapters must respond to events within 20 minutes.</td>
 </tr>
 </tbody>
 </table>

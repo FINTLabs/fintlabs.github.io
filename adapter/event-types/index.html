@@ -1,0 +1,270 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/index.xml" type="application/rss+xml" title="FINTLabs Technical Docs">
+    <link rel="icon" href="https://fintlabs.github.io/favicon.ico">
+    <title>Adapter Event Types - FINTLabs Technical Docs</title>
+    
+    <link rel="stylesheet" href="https://fintlabs.github.io/css/highlight/github.css">
+    <link rel="stylesheet" href="https://fintlabs.github.io/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fintlabs.github.io/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://fintlabs.github.io/css/theme.css">
+    <link rel="stylesheet" href="https://fintlabs.github.io/css/bootie-docs.css">
+    <link rel="stylesheet" href="https://fintlabs.github.io/css/site.css">
+    <link rel="stylesheet" href="https://fintlabs.github.io/stylesheets/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body role="document">
+
+    
+    <nav class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+                <a class="navbar-brand" href="https://fintlabs.github.io/">FINTLabs Technical Docs</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    
+                      
+                    <li ><a href="/adapter">Adapter</a></li>
+                    
+                    <li ><a href="/api">Api</a></li>
+                    
+                    <li ><a href="/models">Information models</a></li>
+                      
+                </ul>
+                
+            </div>
+            
+        </div>
+    </nav>
+
+    <div class="container">
+
+<div class="row">
+    <div class="col-sm-8 doc-main">
+        <main role="main">
+            <article>
+                <a id="title"></a>
+                <h1 class="doc-entry-title">Adapter Event Types</h1>
+
+                <section>
+                    
+
+<h1 id="fint-adapter-event-types">FINT Adapter Event Types</h1>
+
+<p>FINT Adapters must be able to handle three different kinds of events:</p>
+
+<ol>
+<li>Requests to get all instances of a class from the FINT Consumer Cache Service</li>
+<li>Requests to get a single element of a class from the FINT Consumer API.</li>
+<li>Requests to update (create, modify or delete) a single element of a class from the FINT Consumer API.</li>
+</ol>
+
+<p>The FINT Consumer will be issuing the events to the FINT Provider for the relevant <code>assetID</code>, and the FINT Provider will dispatch the event to all adapters connected and registered for this <code>assetID</code>.</p>
+
+<p>This enables scenarios with distributed or redundant adapters where several adapters share the workload of handling events.  The adapter run-time instances must coordinate between themselves which instance responds to an event, since the provider will only accept a single set of responses for any given event.</p>
+
+<p>Workloads can be distributed using two different strategies, which also could be combined:</p>
+
+<ol>
+<li>Divide and conquer: Different adapters handle different classes for a given component.  For instance, for <code>/administrasjon/personal</code>, one adapter could handle <code>Personalressurs</code> and <code>Arbeidsforhold</code>, and a different adapter could handle <code>Fastlonn</code>, <code>Variabellonn</code>, etc.</li>
+<li>Active and passive:  Several adapters are configured to respond to the same event, but coordinates internally to determine which of the instances respond.</li>
+</ol>
+
+<p>Any adapter instance registered with the asset ID can handle events in three ways:</p>
+
+<ol>
+<li>Accept the event and respond with data.  The consumer handles the data from the response.  Other adapters attempting to respond will receive a <code>410</code> status from the Provider.</li>
+<li>Reject the event.  The consumer ignores any data from the response.  Other adapters attempting to respond will receive a <code>410</code> status from the Provider.</li>
+<li>Ignore the event, assuming another instance is handling it.  If no other adapter is handling the events, the provider will expire the event after 120 seconds.</li>
+</ol>
+
+<h2 id="get-all-instances-of-a-class-get-all-type">Get all instances of a class (<code>GET_ALL_</code><em><code>type</code></em>)</h2>
+
+<p>The FINT Consumer Cache Service issues these events every 15 minutes to update the consumer in-memory cache with all elements of the type.</p>
+
+<p>Adapters are expected to retrieve all active elements from the back-end system and insert the data in the response event.</p>
+
+<h2 id="get-a-single-instance-of-a-class-by-id-get-type">Get a single instance of a class by ID (<code>GET_</code><em><code>type</code></em>)</h2>
+
+<p>FINT Consumer APIs issue these events in cases where clients want the most recent version of a given element, and waits for the adapter to respond before returning data to the client.</p>
+
+<p>The event&rsquo;s <code>query</code> attribute contains the <code>Identifikator</code> field name and field value to identify the element in the form <em><code>field/value</code></em>, exactly as the URI of the element in the Consumer API.</p>
+
+<p>For instance, for <code>Personalressurs</code> with an <code>ansattnummer</code> ID of <code>12345</code>, the URI would be <code>/administrasjon/personal/personalressurs/ansattnummer/12345</code>, and the <code>query</code> attribute would then be <code>ansattnummer/12345</code>.</p>
+
+<p>Adapters are expected to extract the <code>query</code> attribute, search the back-end system for the most recent version of the requested element.</p>
+
+<p>For error situations, the adapter can control the HTTP response returned to the client using the following:</p>
+
+<table>
+<thead>
+<tr>
+<th><code>responseStatus</code></th>
+<th><code>statusCode</code></th>
+<th>HTTP result</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>ERROR</code></td>
+<td>(any)</td>
+<td><code>500</code></td>
+</tr>
+
+<tr>
+<td><code>REJECTED</code></td>
+<td><code>&quot;GONE&quot;</code></td>
+<td><code>410</code></td>
+</tr>
+
+<tr>
+<td><code>REJECTED</code></td>
+<td><code>&quot;NOT_FOUND&quot;</code></td>
+<td><code>404</code></td>
+</tr>
+
+<tr>
+<td><code>REJECTED</code></td>
+<td>(other values)</td>
+<td><code>400</code></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="create-a-new-element-or-update-an-existing-element-by-id-update-type">Create a new element, or update an existing element by ID (<code>UPDATE_</code><em><code>type</code></em>)</h2>
+
+<p>FINT Consumer APIs issue these events for <code>POST</code>, <code>PUT</code>, and <code>DELETE</code> requests for a given type, according to the following:</p>
+
+<table>
+<thead>
+<tr>
+<th>REST Operation</th>
+<th><code>operation</code></th>
+<th><code>query</code></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>POST /path/to/type</code></td>
+<td><code>CREATE</code></td>
+<td>(empty)</td>
+</tr>
+
+<tr>
+<td><code>POST /path/to/type?validate=true</code></td>
+<td><code>VALIDATE</code></td>
+<td>(empty)</td>
+</tr>
+
+<tr>
+<td><code>PUT /path/to/type/field/value</code></td>
+<td><code>UPDATE</code></td>
+<td><code>field/value</code></td>
+</tr>
+
+<tr>
+<td><code>DELETE /path/to/type/field/value</code></td>
+<td><code>DELETE</code></td>
+<td><code>field/value</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>The adapters are expected to handle the various operations according to the following:</p>
+
+<ul>
+<li><code>VALIDATE</code>: The payload must be subjected to a semantic validation according to business rules, but not stored in the back-end system.  The response must either be <code>ACCEPTED</code> or <code>REJECTED</code> to indicate whether the payload is valid or not, or <code>ERROR</code> if the validation cannot be performed and should be retried.</li>
+<li><code>CREATE</code>: The payload must be subjected to a semantic validation according to business rules, supplied with a <code>systemId</code> <code>Indentifikator</code> (if relevant), and stored in the back-end system.  The response payload must be updated to correspond to the final version stored in the back-end system.  The response status must be <code>ACCEPTED</code>, <code>REJECTED</code>, or <code>CONFLICT</code> to indicate if the payload was valid or not, or if the creation conflicts with any other data in the system.  The <code>ERROR</code> response indicates a transient error, and that the creation can be retried.</li>
+<li><code>UPDATE</code>: The existing element, identified by the <code>query</code> field, should be updated with the payload according to business rules and which fields are <code>writable</code> in the FINT information model.  The response payload must include the final version stored in the back-end system.  Response status as above.</li>
+<li><code>DELETE</code>: The existing element, identified by the <code>query</code> field, should be removed from the back-end system if this is valid according to the business rules.  No response payload is expected, response status as above.</li>
+</ul>
+
+<p>If write operations are not supported or permitted, the event must be rejected by posting <code>ADAPTER_REJECTED</code> at the <code>/status</code> phase.</p>
+
+                </section>
+            </article>
+        </main>
+    </div>
+    
+
+     
+<div class="col-sm-3 col-sm-offset-1 doc-sidebar">
+    <div id="sidebar">
+        <div class="sidebar-module">
+            <div class="sidebar-toc">
+                <h4 class="sidebar-heading">Table of Contents</h4>
+                <ul>
+                    <li><strong><a href="#title">Adapter Event Types</a></strong></li>
+                </ul>
+                <nav id="TableOfContents">
+<ul>
+<li><a href="#fint-adapter-event-types">FINT Adapter Event Types</a>
+<ul>
+<li><a href="#get-all-instances-of-a-class-get-all-type">Get all instances of a class (<code>GET_ALL_</code><em><code>type</code></em>)</a></li>
+<li><a href="#get-a-single-instance-of-a-class-by-id-get-type">Get a single instance of a class by ID (<code>GET_</code><em><code>type</code></em>)</a></li>
+<li><a href="#create-a-new-element-or-update-an-existing-element-by-id-update-type">Create a new element, or update an existing element by ID (<code>UPDATE_</code><em><code>type</code></em>)</a></li>
+</ul></li>
+</ul>
+</nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+<hr />
+<footer>
+     
+    <a class="btn btn-link" href="https://www.fintlabs.no" target="_blank" aria-label="FINTProsjektet">
+        <i class="fa fa-home" aria-hidden="true"></i> FINTLabs website
+    </a>
+    |
+    <a class="btn btn-link" href="https://github.com/FINTlabs/" target="_blank" aria-label="FINTProsjektet">
+        <i class="fa fa-github" aria-hidden="true"></i> FINTLabs
+    </a>
+    |
+    <a class="btn btn-link" href="https://informasjonsmodell.felleskomponent.no" target="_blank" aria-label="FIDP">
+        <i class="fa fa-book" aria-hidden="true"></i> Information Model Documentation Portal
+    </a>
+</footer>
+
+
+
+<script src="https://fintlabs.github.io/js/jquery.min.js"></script>
+<script src="https://fintlabs.github.io/js/bootstrap.min.js"></script>
+
+<script src="https://fintlabs.github.io/js/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://fintlabs.github.io/js/ie10-viewport-bug-workaround.js"></script>
+<script src="https://fintlabs.github.io/js/bootie-docs.js"></script>
+
+</body>
+
+</html>
