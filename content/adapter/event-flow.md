@@ -1,7 +1,7 @@
 +++
 title = "Adapter Update Event Flow"
 description = "How information is exchanged between FINT APIs and adapters in the form of events."
-weight = 3
+weight = 4
 +++
 
 # FINT Adapter Event Flow for Updates
@@ -27,6 +27,7 @@ POST requests produce `CREATE` operations unless the validate request parameter 
 POST with the validate request parameter set creates `VALIDATE` operations.
 
 The intended behavior for these operations is as follows:
+
 - `VALIDATE`: Data validation
 - `CREATE`: Data creation
 - `READ`: Data request

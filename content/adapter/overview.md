@@ -68,8 +68,8 @@ The provider API makes use of SSE (Server-Sent-Events) (https://en.wikipedia.org
 | Endpoint           | Method | Flow# | Description                                                                                                                               |
 |--------------------|--------|-------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | /provider/sse/:id  | GET    | 1     | The adapter registers on this endpoint. Id should be an UUID. If the adapter supports several orgId’s each orgId must have it’s own UUID. |
-| /provider/status   | POST   | 3     | When the adapter receives an event it should post back a status to tell the provider if the event can be handled.                         |
-| /provider/response | POST   | 4     | This is where the adapter sends back the response.                                                                                        |
+| /provider/status   | POST   | 3     | When the adapter receives an event it should post back a status to tell the provider if the event can be handled.  Adapters must accept or reject events with `/status` within 120 seconds. |
+| /provider/response | POST   | 4     | This is where the adapter sends back the response.  Adapters must respond to events within 20 minutes. |
 
 # Authentication
 
