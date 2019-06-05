@@ -1,0 +1,362 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/index.xml" type="application/rss+xml" title="FINTLabs Technical Docs">
+    <link rel="icon" href="https://fintlabs.github.io/favicon.ico">
+    <title>Overview of FINT&#39;s APIs - FINTLabs Technical Docs</title>
+    
+    <link rel="stylesheet" href="https://fintlabs.github.io/css/highlight/github.css">
+    <link rel="stylesheet" href="https://fintlabs.github.io/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fintlabs.github.io/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://fintlabs.github.io/css/theme.css">
+    <link rel="stylesheet" href="https://fintlabs.github.io/css/bootie-docs.css">
+    <link rel="stylesheet" href="https://fintlabs.github.io/css/site.css">
+    <link rel="stylesheet" href="https://fintlabs.github.io/stylesheets/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body role="document">
+
+    
+    <nav class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+                <a class="navbar-brand" href="https://fintlabs.github.io/">FINTLabs Technical Docs</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    
+                      
+                    <li ><a href="/adapter">Adapter</a></li>
+                    
+                    <li ><a href="/api">Api</a></li>
+                    
+                    <li ><a href="/models">Information models</a></li>
+                      
+                </ul>
+                
+            </div>
+            
+        </div>
+    </nav>
+
+    <div class="container">
+
+<div class="row">
+    <div class="col-sm-8 doc-main">
+        <main role="main">
+            <article>
+                <a id="title"></a>
+                <h1 class="doc-entry-title">Overview of FINT&#39;s APIs</h1>
+
+                <section>
+                    
+
+<h1 id="information-model-at-the-center">Information Model at the Center</h1>
+
+<p>In FINT APIs, the information model defines how the APIs are structured and how they function.</p>
+
+<h2 id="types-of-classes">Types of classes</h2>
+
+<p>The FINT information model has four types of classes:</p>
+
+<ol>
+<li>Main classes (<code>hovedklasse</code>)</li>
+<li>Abstract classes</li>
+<li>Complex datatypes</li>
+<li>References</li>
+</ol>
+
+<p>Only main classes are directly accessible from FINT APIs, and every main class in the model has an API endpoint.</p>
+
+<p>All other types are used to construct the main classes, either by abstraction of common fields, or to represent fields in the classes.</p>
+
+<h2 id="identity">Identity</h2>
+
+<p>Main classes have identity, and can be referred to using an identifier value.  This is represented by attributes of the type <code>Identifikator</code>.  All main classes have at least one attribute of this type, but it&rsquo;s perfectly legal to have more than one identifying attribute.</p>
+
+<p>If the class has multiple identifying attributes, any of the identifying attributes can be used to reference it, and the FINT API exposes endpoints to refer to the class by all of the identifying attributes.</p>
+
+<p>For instance, <code>Personalressurs</code> can be identified by both <code>ansattnummer</code>, <code>brukernavn</code> and <code>systemId</code>.</p>
+
+<h2 id="relations">Relations</h2>
+
+<p>Relations can be added to main classes, either directly or in an abstract base class.  In addition, attributes of the class can be comples datatypes, which also can have relations.</p>
+
+<p>The name of the relation represents the relationship from the source to the target, and is often the name as the class of the target.</p>
+
+<p>Relations can be optional or mandatory, single-valued or multi-value.  In any case, they are always represented in the same form.</p>
+
+<p>All relations are in the <code>_links</code> attribute on the class it links from.  Remember, this can be an inner complex datatype.</p>
+
+<p>The <code>_links</code> attribute is an object where the name of the relation is used as the property name.  The property is an array of objects with a <code>href</code> attribute containing the URI to the target resource.</p>
+
+<p>All relations to other resources in the information model <em>always</em> refer to a main class using one of the identifiable fields.</p>
+
+<p>The FINT model also includes references to resources outside the model.  These are represented by a special type of relation called <code>Referanse</code>.  They are also represented as URIs.</p>
+
+<h2 id="attributes">Attributes</h2>
+
+<p>Attributes in the resources can either be complex datatypes or any of the primitive types:</p>
+
+<ul>
+<li>string</li>
+<li>integer</li>
+<li>float</li>
+<li>dateTime</li>
+</ul>
+
+<p>Attributes can be optional or mandatory, single-valued or multi-value.  Multi-value attributes are always represented as an array, even if there is only a single value.</p>
+
+<p>Dates are represented in ISO 8601 form with UTC time zone: <code>2019-06-05T09:48:23Z</code>.</p>
+
+<h1 id="naming-convention">Naming convention</h1>
+
+<p>FINT information objects are named based on the packaging structure in the information model:</p>
+
+<ul>
+<li>Administrasjon <code>/administrasjon</code>
+
+<ul>
+<li>Fullmakt <code>/administrasjon/fullmakt</code></li>
+<li>Kodeverk <code>/administrasjon/kodeverk</code></li>
+<li>Organisasjon <code>/administrasjon/organisasjon</code></li>
+<li>Personal <code>/administrasjon/personal</code></li>
+</ul></li>
+<li>Utdanning <code>/utdanning</code>
+
+<ul>
+<li>Elev <code>/utdanning/elev</code></li>
+<li>Kodeverk <code>/utdanning/kodeverk</code></li>
+<li>Timeplan <code>/utdanning/timeplan</code></li>
+<li>Utdanningsprogram <code>/utdanning/utdanningsprogram</code></li>
+<li>Vurdering <code>/utdanning/vurdering</code></li>
+</ul></li>
+</ul>
+
+<p>For every package, classes of the stereotype <code>hovedklasse</code> are accessible through the FINT API.
+As an example, for the package <em>Personal</em> within the domain <em>Administrasjon</em>, the following classes
+are currently <code>hovedklasse</code>:</p>
+
+<ul>
+<li>Personalressurs <code>/personalressurs</code></li>
+<li>Arbeidsforhold <code>/arbeidsforhold</code></li>
+<li>Fravær <code>/fravar</code></li>
+<li>Fastlønn <code>/fastlonn</code></li>
+<li>Fasttillegg <code>/fasttillegg</code></li>
+<li>Variabellønn <code>/variabellonn</code></li>
+</ul>
+
+<p>Norwegian characters are translated according to the following scheme:</p>
+
+<table>
+<thead>
+<tr>
+<th>Original</th>
+<th>Replacement</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>æ</td>
+<td>a</td>
+</tr>
+
+<tr>
+<td>ø</td>
+<td>o</td>
+</tr>
+
+<tr>
+<td>å</td>
+<td>a</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="common-operations">Common operations</h1>
+
+<p>These operations are available for all classes in the FINT information model.</p>
+
+<h2 id="get-all-objects-of-a-given-class">Get all objects of a given class</h2>
+
+<p><code>/domain/package/class</code>, i.e. <code>/administrasjon/personal/personalressurs</code></p>
+
+<p>This operation fetches all objects of a given class from the FINT cache.  The response looks
+like this:</p>
+
+<pre><code class="language-json">{
+    &quot;_embedded&quot;: {
+        &quot;_entries&quot;: [
+            {
+                
+            },
+            {
+                
+            }
+        ]
+    },
+    &quot;_links&quot;: {
+        &quot;self&quot;: [
+            {
+                &quot;href&quot;: &quot;...&quot;
+            }
+        ]
+    },
+    &quot;total_items&quot;: 111
+}
+</code></pre>
+
+<h2 id="fetch-individual-item-by-identifier">Fetch individual item by identifier</h2>
+
+<p><code>/domain/package/class/field/value</code>, i.e. <code>/administrasjon/personal/personalressurs/ansattnummer/123456</code></p>
+
+<p>Given an identifier field name (any field of type <code>Identifikator</code>) and the identifier value, try
+fetching the individual item.</p>
+
+<h2 id="size-of-cache-for-a-given-class">Size of cache for a given class</h2>
+
+<p><code>/domain/package/class/cache/size</code>, i.e. <code>/administrasjon/personal/personalressurs/cache/size</code></p>
+
+<p>Return the size of the cache for a given class.  The response looks like this:</p>
+
+<pre><code class="language-json">{
+  &quot;size&quot;: 10632
+}
+</code></pre>
+
+<h2 id="timestamp-for-when-cache-was-last-updated">Timestamp for when cache was last updated</h2>
+
+<p><code>/domain/package/class/last-updated</code>, i.e. <code>/administrasjon/personal/personalressurs/last-updated</code></p>
+
+<p>Return a timestamp indicating when the cache was last updated.  The response looks like this:</p>
+
+<pre><code class="language-json">{
+  &quot;lastUpdated&quot;: &quot;1559551091034&quot;
+}
+</code></pre>
+
+<h2 id="get-objects-updated-since-timestamp">Get objects updated since timestamp</h2>
+
+<p><code>/domain/package/class?sinceTimeStamp=&lt;time&gt;</code>, i.e. <code>/administrasjon/personal/personalressurs?sinceTimeStamp=1559551091034</code></p>
+
+<p>Returns a collection of all objects that have been updated (added or modified) later than the
+provided timestamp.  The response looks like this:</p>
+
+<pre><code class="language-json">{
+    &quot;_embedded&quot;: {
+        &quot;_entries&quot;: [
+            {
+                
+            },
+            {
+                
+            }
+        ]
+    },
+    &quot;_links&quot;: {
+        &quot;self&quot;: [
+            {
+                &quot;href&quot;: &quot;...&quot;
+            }
+        ]
+    },
+    &quot;total_items&quot;: 2
+}
+</code></pre>
+
+<p>If <code>total_items</code> is <code>0</code>, this indicates that there are no new updates since the given timestamp.</p>
+
+                </section>
+            </article>
+        </main>
+    </div>
+    
+
+     
+<div class="col-sm-3 col-sm-offset-1 doc-sidebar">
+    <div id="sidebar">
+        <div class="sidebar-module">
+            <div class="sidebar-toc">
+                <h4 class="sidebar-heading">Table of Contents</h4>
+                <ul>
+                    <li><strong><a href="#title">Overview of FINT&#39;s APIs</a></strong></li>
+                </ul>
+                <nav id="TableOfContents">
+<ul>
+<li><a href="#information-model-at-the-center">Information Model at the Center</a>
+<ul>
+<li><a href="#types-of-classes">Types of classes</a></li>
+<li><a href="#identity">Identity</a></li>
+<li><a href="#relations">Relations</a></li>
+<li><a href="#attributes">Attributes</a></li>
+</ul></li>
+<li><a href="#naming-convention">Naming convention</a></li>
+<li><a href="#common-operations">Common operations</a>
+<ul>
+<li><a href="#get-all-objects-of-a-given-class">Get all objects of a given class</a></li>
+<li><a href="#fetch-individual-item-by-identifier">Fetch individual item by identifier</a></li>
+<li><a href="#size-of-cache-for-a-given-class">Size of cache for a given class</a></li>
+<li><a href="#timestamp-for-when-cache-was-last-updated">Timestamp for when cache was last updated</a></li>
+<li><a href="#get-objects-updated-since-timestamp">Get objects updated since timestamp</a></li>
+</ul></li>
+</ul>
+</nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+<hr />
+<footer>
+     
+    <a class="btn btn-link" href="https://www.fintlabs.no" target="_blank" aria-label="FINTProsjektet">
+        <i class="fa fa-home" aria-hidden="true"></i> FINTLabs website
+    </a>
+    |
+    <a class="btn btn-link" href="https://github.com/FINTlabs/" target="_blank" aria-label="FINTProsjektet">
+        <i class="fa fa-github" aria-hidden="true"></i> FINTLabs
+    </a>
+    |
+    <a class="btn btn-link" href="https://informasjonsmodell.felleskomponent.no" target="_blank" aria-label="FIDP">
+        <i class="fa fa-book" aria-hidden="true"></i> Information Model Documentation Portal
+    </a>
+</footer>
+
+
+
+<script src="https://fintlabs.github.io/js/jquery.min.js"></script>
+<script src="https://fintlabs.github.io/js/bootstrap.min.js"></script>
+
+<script src="https://fintlabs.github.io/js/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://fintlabs.github.io/js/ie10-viewport-bug-workaround.js"></script>
+<script src="https://fintlabs.github.io/js/bootie-docs.js"></script>
+
+</body>
+
+</html>

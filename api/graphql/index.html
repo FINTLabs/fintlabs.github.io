@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="alternate" href="/index.xml" type="application/rss+xml" title="FINTLabs Technical Docs">
     <link rel="icon" href="https://fintlabs.github.io/favicon.ico">
-    <title>Using FINT APIs - FINTLabs Technical Docs</title>
+    <title>GraphQL API - FINTLabs Technical Docs</title>
     
     <link rel="stylesheet" href="https://fintlabs.github.io/css/highlight/github.css">
     <link rel="stylesheet" href="https://fintlabs.github.io/css/bootstrap.min.css">
@@ -57,37 +57,112 @@
         <main role="main">
             <article>
                 <a id="title"></a>
-                <h1 class="doc-entry-title">Using FINT APIs</h1>
+                <h1 class="doc-entry-title">GraphQL API</h1>
 
                 <section>
                     
 
-<h1 id="general-guidelines">General guidelines</h1>
+<p>FINT also offers an experimental <a href="https://graphql.org/">GraphQL</a> API for accessing data as a graph.</p>
 
-<p>To get the most value from FINT APIs, some guidelines to follow.</p>
+<p>The GraphQL endpoint is at <code>/graphql/graphql</code>.  It requires the same Bearer token as the rest of the FINT APIs.</p>
 
-<h1 id="information-is-a-graph">Information is a Graph</h1>
+<p>Our recommended client to test GrapqQL is <a href="https://insomnia.rest">https://insomnia.rest</a> - using this the OAuth credentials from the customer portal can be used directly as an Environment.</p>
 
-<p>FINT&rsquo;s resources have relatively few attributes, but more relations.  Every resource only has the attributes that are
-directly relevant for the resource.  Everything else is represented as relations (links) to other resources.
-As an example, the class <code>Personalressurs</code>, representing an employee, does not have the employee&rsquo;s name.  Instead there is
-a link to <code>Person</code>, representing a private person, where you find the properties of the employee as a private person.</p>
+<p>Create a <code>POST</code> request to the GraphQL endpoint, configure OAuth 2, and Insomnia fetches the GraphQL schema so you can validate the query and see the results.</p>
 
-<h2 id="refer-not-replicate">Refer, not Replicate</h2>
+<h1 id="fint-graphql-schema">FINT GraphQL Schema</h1>
 
-<p>Information always changes.  Stale data is often worse than not having any data at all.  The FINT API is based on the principle that information should be fetched from the source when needed, not replicated beforehand.</p>
+<p>The GraphQL schema for FINT follow the information model exactly.  The root schema defines query endpoints for all resources by an identifier.  It is not possible to get all resources for a class for performance reasons.</p>
 
-<h2 id="references-are-stable">References are Stable</h2>
+<h1 id="example-queries">Example queries</h1>
 
-<p>Resources in FINT are represented using URIs.  These URIs are constructed by the API based on attributes that can be used to identify the resource, represented by the type <code>Identifikator</code>.</p>
+<p>Here are some examples to get you started.</p>
 
-<p>As long as the identifiable attribute does not change, neither does the URI representing the resource.</p>
+<h1 id="employee-information">Employee information</h1>
 
-<h1 id="everything-is-a-resource">Everything is a Resource</h1>
+<p>Given an employee ID, find person&rsquo;s name and National Identity Number, all positions with size and place of employment:</p>
 
-<p>All classes in the FINT information model is represented in the exact same way, as resources with URIs and references using URIs to other classes it refers to.</p>
+<pre><code class="language-graphql">query ($ansattnummer: String) {
+  personalressurs(ansattnummer: $ansattnummer) {
+    person {
+      fodselsnummer {
+        identifikatorverdi
+      }
+      navn {
+        fornavn
+        etternavn
+      }
+    }
+    arbeidsforhold {
+      ansettelsesprosent
+      arbeidssted {
+        organisasjonsKode {
+          identifikatorverdi
+        }
+        organisasjonsnavn
+      }
+    }
+  }
+}
+</code></pre>
 
-<p>The type of the resource is explicit from the URI of the resource.  For instance, from the URI <code>/administrasjon/personal/personalressurs</code>, the type of the resource is always <code>Personalressurs</code>.</p>
+<h1 id="student-information">Student information</h1>
+
+<p>Given a student&rsquo;s FEIDE name, find student&rsquo;s contact information, school and home address.</p>
+
+<pre><code class="language-graphql">query ($feidenavn: String) {
+  elev(feidenavn: $feidenavn) {
+    kontaktinformasjon {
+      epostadresse
+      mobiltelefonnummer
+    }
+    elevforhold {
+      skole {
+        navn
+        organisasjon {
+          organisasjonsnavn
+        }
+      }
+    }
+    person {
+      navn {
+        fornavn
+        etternavn
+      }
+      bostedsadresse {
+        adresselinje
+        postnummer
+        poststed
+      }
+    }
+  }
+}
+</code></pre>
+
+<h1 id="class-membership">Class membership</h1>
+
+<p>Given a teaching group&rsquo;s systemId, find names and contact information for all students in that group:</p>
+
+<pre><code class="language-graphql">query ($systemId: String) {
+  undervisningsgruppe(systemId: $systemId) {
+    navn
+    beskrivelse
+    elevforhold {
+      elev {
+        kontaktinformasjon { 
+          mobiltelefonnummer
+        }
+        person {
+          navn {
+            fornavn
+            etternavn
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre>
 
                 </section>
             </article>
@@ -102,17 +177,15 @@ a link to <code>Person</code>, representing a private person, where you find the
             <div class="sidebar-toc">
                 <h4 class="sidebar-heading">Table of Contents</h4>
                 <ul>
-                    <li><strong><a href="#title">Using FINT APIs</a></strong></li>
+                    <li><strong><a href="#title">GraphQL API</a></strong></li>
                 </ul>
                 <nav id="TableOfContents">
 <ul>
-<li><a href="#general-guidelines">General guidelines</a></li>
-<li><a href="#information-is-a-graph">Information is a Graph</a>
-<ul>
-<li><a href="#refer-not-replicate">Refer, not Replicate</a></li>
-<li><a href="#references-are-stable">References are Stable</a></li>
-</ul></li>
-<li><a href="#everything-is-a-resource">Everything is a Resource</a></li>
+<li><a href="#fint-graphql-schema">FINT GraphQL Schema</a></li>
+<li><a href="#example-queries">Example queries</a></li>
+<li><a href="#employee-information">Employee information</a></li>
+<li><a href="#student-information">Student information</a></li>
+<li><a href="#class-membership">Class membership</a></li>
 </ul>
 </nav>
             </div>

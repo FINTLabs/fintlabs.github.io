@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="alternate" href="/index.xml" type="application/rss+xml" title="FINTLabs Technical Docs">
     <link rel="icon" href="https://fintlabs.github.io/favicon.ico">
-    <title>Using FINT APIs - FINTLabs Technical Docs</title>
+    <title>Updating information using FINT APIs - FINTLabs Technical Docs</title>
     
     <link rel="stylesheet" href="https://fintlabs.github.io/css/highlight/github.css">
     <link rel="stylesheet" href="https://fintlabs.github.io/css/bootstrap.min.css">
@@ -57,37 +57,71 @@
         <main role="main">
             <article>
                 <a id="title"></a>
-                <h1 class="doc-entry-title">Using FINT APIs</h1>
+                <h1 class="doc-entry-title">Updating information using FINT APIs</h1>
 
                 <section>
                     
 
-<h1 id="general-guidelines">General guidelines</h1>
+<h1 id="updating-information-using-fint">Updating information using FINT</h1>
 
-<p>To get the most value from FINT APIs, some guidelines to follow.</p>
+<p>Updates use HTTP operations to create, modify and delete information.  It builds upon the &ldquo;everything
+is a resource&rdquo; principle, so when updating information the resource URI is central.</p>
 
-<h1 id="information-is-a-graph">Information is a Graph</h1>
+<h2 id="asynchronous-operations">Asynchronous operations</h2>
 
-<p>FINT&rsquo;s resources have relatively few attributes, but more relations.  Every resource only has the attributes that are
-directly relevant for the resource.  Everything else is represented as relations (links) to other resources.
-As an example, the class <code>Personalressurs</code>, representing an employee, does not have the employee&rsquo;s name.  Instead there is
-a link to <code>Person</code>, representing a private person, where you find the properties of the employee as a private person.</p>
+<p>Since the updates must propagate via the FINT component and an adapter before being processed by the
+back end system, updates might take some time to complete.  For this, FINT APIs use asynchronous
+operations as described in <a href="http://restcookbook.com/Resources/asynchroneous-operations/">http://restcookbook.com/Resources/asynchroneous-operations/</a>.</p>
 
-<h2 id="refer-not-replicate">Refer, not Replicate</h2>
+<p>The process is as follows:</p>
 
-<p>Information always changes.  Stale data is often worse than not having any data at all.  The FINT API is based on the principle that information should be fetched from the source when needed, not replicated beforehand.</p>
+<ol>
+<li>The client initiates an update operation.</li>
+<li>The FINT API validates the syntax of the operation and responds with status code <code>202</code> and a <code>Location</code>
+header referring to a <code>/status/&lt;uuid&gt;</code> resource</li>
+<li>The client fetches the <em>Status</em> resource.
 
-<h2 id="references-are-stable">References are Stable</h2>
+<ul>
+<li>If the operation is still pending, the FINT API keeps responding with status code <code>202</code>.</li>
+</ul></li>
+<li>If the operation has completed, the FINT API responds with the final status of the update:
 
-<p>Resources in FINT are represented using URIs.  These URIs are constructed by the API based on attributes that can be used to identify the resource, represented by the type <code>Identifikator</code>.</p>
+<ul>
+<li>If successful, status <code>302</code> with a <code>Location</code> referring to the resource that has been created or updated.</li>
+<li><em>Note:</em> If the operation is a deletion, the status code is <code>410</code> instead.</li>
+<li>If rejected by the back-end system, status <code>400</code> with a response body indicating the error.</li>
+<li>If there was a temporary failure processing the request, status <code>500</code> with the error message.
+In this case the client can re-try the request.</li>
+</ul></li>
+</ol>
 
-<p>As long as the identifiable attribute does not change, neither does the URI representing the resource.</p>
+<p>The <em>Status</em> resource is valid for 30 minutes after initiating the original request.</p>
 
-<h1 id="everything-is-a-resource">Everything is a Resource</h1>
+<h2 id="creating-new-objects">Creating new objects</h2>
 
-<p>All classes in the FINT information model is represented in the exact same way, as resources with URIs and references using URIs to other classes it refers to.</p>
+<p><code>POST /domain/package/class</code>, i.e.
+<code>POST /administrasjon/personal/fravar</code></p>
 
-<p>The type of the resource is explicit from the URI of the resource.  For instance, from the URI <code>/administrasjon/personal/personalressurs</code>, the type of the resource is always <code>Personalressurs</code>.</p>
+<p>The body must be a complete resource to be created, including <code>_links</code> to other resources it refers to.</p>
+
+<p>Internal identifiers controlled by the back-end system can be omitted.</p>
+
+<h2 id="modifying-existing-objects">Modifying existing objects</h2>
+
+<p><code>PUT /domain/package/class/field/value</code>, i.e. <code>PUT /administrasjon/personal/personalressurs/ansattnummer/123456</code></p>
+
+<p>The resource to be modified is identified by the identifiable field and value.
+Any field of type <code>Identifikator</code> can be used to identify the resource.</p>
+
+<p>The body must be the complete resource after modification.
+Attributes that can be modified are indicated in the information model.</p>
+
+<h2 id="deleting-objects">Deleting objects</h2>
+
+<p><code>DELETE /domain/package/class/field/value</code>, i.e. <code>PUT /administrasjon/personal/fravar/systemid/abcdef1234</code></p>
+
+<p>Not all information classes support deletion.
+If deletion is not supported, the operation is rejected with status <code>400</code>.</p>
 
                 </section>
             </article>
@@ -102,17 +136,17 @@ a link to <code>Person</code>, representing a private person, where you find the
             <div class="sidebar-toc">
                 <h4 class="sidebar-heading">Table of Contents</h4>
                 <ul>
-                    <li><strong><a href="#title">Using FINT APIs</a></strong></li>
+                    <li><strong><a href="#title">Updating information using FINT APIs</a></strong></li>
                 </ul>
                 <nav id="TableOfContents">
 <ul>
-<li><a href="#general-guidelines">General guidelines</a></li>
-<li><a href="#information-is-a-graph">Information is a Graph</a>
+<li><a href="#updating-information-using-fint">Updating information using FINT</a>
 <ul>
-<li><a href="#refer-not-replicate">Refer, not Replicate</a></li>
-<li><a href="#references-are-stable">References are Stable</a></li>
+<li><a href="#asynchronous-operations">Asynchronous operations</a></li>
+<li><a href="#creating-new-objects">Creating new objects</a></li>
+<li><a href="#modifying-existing-objects">Modifying existing objects</a></li>
+<li><a href="#deleting-objects">Deleting objects</a></li>
 </ul></li>
-<li><a href="#everything-is-a-resource">Everything is a Resource</a></li>
 </ul>
 </nav>
             </div>

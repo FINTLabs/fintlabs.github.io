@@ -12,6 +12,10 @@
   </url>
   
   <url>
+    <loc>https://fintlabs.github.io/api/rest/</loc>
+  </url>
+  
+  <url>
     <loc>https://fintlabs.github.io/adapter/guidelines/</loc>
   </url>
   
@@ -20,7 +24,7 @@
   </url>
   
   <url>
-    <loc>https://fintlabs.github.io/api/guidelines/</loc>
+    <loc>https://fintlabs.github.io/api/overview/</loc>
   </url>
   
   <url>
@@ -28,7 +32,19 @@
   </url>
   
   <url>
+    <loc>https://fintlabs.github.io/api/guidelines/</loc>
+  </url>
+  
+  <url>
     <loc>https://fintlabs.github.io/adapter/event-flow/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fintlabs.github.io/api/updating/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fintlabs.github.io/api/accessing/</loc>
   </url>
   
   <url>
@@ -37,6 +53,18 @@
   
   <url>
     <loc>https://fintlabs.github.io/adapter/tut-dotnet-sse/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fintlabs.github.io/api/schema/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fintlabs.github.io/api/graphql/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fintlabs.github.io/api/tools/</loc>
   </url>
   
   <url>

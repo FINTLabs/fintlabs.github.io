@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="alternate" href="/index.xml" type="application/rss+xml" title="FINTLabs Technical Docs">
     <link rel="icon" href="https://fintlabs.github.io/favicon.ico">
-    <title>Using FINT APIs - FINTLabs Technical Docs</title>
+    <title>Tools - FINTLabs Technical Docs</title>
     
     <link rel="stylesheet" href="https://fintlabs.github.io/css/highlight/github.css">
     <link rel="stylesheet" href="https://fintlabs.github.io/css/bootstrap.min.css">
@@ -57,37 +57,95 @@
         <main role="main">
             <article>
                 <a id="title"></a>
-                <h1 class="doc-entry-title">Using FINT APIs</h1>
+                <h1 class="doc-entry-title">Tools</h1>
 
                 <section>
                     
 
-<h1 id="general-guidelines">General guidelines</h1>
+<h1 id="fint-curl"><code>fint-curl</code></h1>
 
-<p>To get the most value from FINT APIs, some guidelines to follow.</p>
+<p>This script can be used to fetch a protected FINT resource, fetching a bearer token when needed.</p>
 
-<h1 id="information-is-a-graph">Information is a Graph</h1>
+<p>To use it, copy the client authorization details from <a href="https://kunde.felleskomponent.no">https://kunde.felleskomponent.no</a> to a file called <code>client.json</code> in the current directory.  The name and location of this file can be overridden using the environment variable <code>CLIENT</code>.</p>
 
-<p>FINT&rsquo;s resources have relatively few attributes, but more relations.  Every resource only has the attributes that are
-directly relevant for the resource.  Everything else is represented as relations (links) to other resources.
-As an example, the class <code>Personalressurs</code>, representing an employee, does not have the employee&rsquo;s name.  Instead there is
-a link to <code>Person</code>, representing a private person, where you find the properties of the employee as a private person.</p>
+<pre><code class="language-sh">#!/bin/bash
 
-<h2 id="refer-not-replicate">Refer, not Replicate</h2>
+#set -x
 
-<p>Information always changes.  Stale data is often worse than not having any data at all.  The FINT API is based on the principle that information should be fetched from the source when needed, not replicated beforehand.</p>
+if [[ ! -x /usr/bin/curl ]] || [[ ! -x /usr/bin/jq ]]
+then
+	echo &quot;Required tools curl and jq not installed&quot;
+	exit 1
+fi
 
-<h2 id="references-are-stable">References are Stable</h2>
+CLIENT=${CLIENT:-client.json}
+TOKEN=${CLIENT}.token
 
-<p>Resources in FINT are represented using URIs.  These URIs are constructed by the API based on attributes that can be used to identify the resource, represented by the type <code>Identifikator</code>.</p>
+if [[ ! -e $CLIENT ]]
+then
+    echo &quot;Client settings missing&quot;
+    exit 1
+fi
 
-<p>As long as the identifiable attribute does not change, neither does the URI representing the resource.</p>
+eval $(cat $CLIENT | jq -r  &quot;\&quot;OAUTH_ID=\&quot;+.clientId, \&quot;OAUTH_SECRET=\&quot;+.openIdSecret, \&quot;OAUTH_USER=\&quot;+.username, \&quot;OAUTH_PWD=\&quot;+.password, \&quot;SCOPE=\&quot;+.scope, \&quot;IDP_URL=\&quot;+.idpUri, \&quot;ASSET_ID=\&quot;+.assetId&quot;)
 
-<h1 id="everything-is-a-resource">Everything is a Resource</h1>
+if [[ ! ( -e $TOKEN ) || $(stat -c %s $TOKEN) -lt 10 || ( $(( $(date +%s) - $(stat -c %Y $TOKEN) )) -gt 3500 ) ]]
+then
+    curl -s ${IDP_URL:-https://idp.felleskomponent.no/nidp/oauth/nam/token} -u &quot;${OAUTH_ID}:${OAUTH_SECRET}&quot; -d grant_type=password -d username=&quot;${OAUTH_USER}&quot; -d password=&quot;${OAUTH_PWD}&quot; -d scope=&quot;${SCOPE:-fint-client}&quot; | jq -r '.access_token' &gt; $TOKEN
+fi
 
-<p>All classes in the FINT information model is represented in the exact same way, as resources with URIs and references using URIs to other classes it refers to.</p>
+if [[ $(stat -c %s $TOKEN) -lt 10 ]]
+then
+	echo &quot;Authorization failure&quot;
+	exit 1
+fi
 
-<p>The type of the resource is explicit from the URI of the resource.  For instance, from the URI <code>/administrasjon/personal/personalressurs</code>, the type of the resource is always <code>Personalressurs</code>.</p>
+curl -H &quot;Authorization: Bearer $(cat $TOKEN)&quot; -H  &quot;accept: application/json;charset=UTF-8&quot; -H &quot;Content-Type: application/json&quot; -H  &quot;x-org-id: ${ASSET_ID:-fintlabs.no}&quot; -H  &quot;x-client: ${OAUTH_USER}&quot; $*
+
+</code></pre>
+
+<h1 id="jsonvalidate"><code>jsonvalidate</code></h1>
+
+<p>This Python 2.7 script performs JSON schema validation on a collection of resources.  The schema to use is provided as an URI on the command line.  It reads the resources from standard input, so it can be piped with <code>fint-curl</code> above to retrieve the data, i.e.</p>
+
+<pre><code class="language-sh">fint-curl https://beta.felleskomponent.no/administrasjon/personal/personalressurs | \
+jsonvalidate https://fintlabs.no/schema/administrasjon/personalressurs.json
+</code></pre>
+
+<p>Make sure the libraries are the most recent ones from PyPI, the versions supplied with Debian / Ubuntu are too old.</p>
+
+<pre><code class="language-python">#!/usr/bin/python
+
+import jsonschema
+import requests
+import sys
+import json
+from tqdm import tqdm
+
+r = requests.get(sys.argv[1])
+
+schema = r.json()
+
+data = json.load(sys.stdin)
+
+validator = jsonschema.Draft7Validator(schema)
+
+print &quot;Validating&quot;, data[&quot;total_items&quot;], &quot;items...&quot;
+
+errors = 0
+
+with open(&quot;errors.log&quot;, &quot;a&quot;) as logfile:
+	for item in tqdm(data[&quot;_embedded&quot;][&quot;_entries&quot;]):
+		try:
+			validator.validate(item)
+		except Exception as e:
+			errors += 1
+			print &gt;&gt; logfile, item
+			print &gt;&gt; logfile, e
+	
+print &quot;Validation completed with&quot;, errors, &quot;errors.&quot;
+
+</code></pre>
 
                 </section>
             </article>
@@ -102,17 +160,12 @@ a link to <code>Person</code>, representing a private person, where you find the
             <div class="sidebar-toc">
                 <h4 class="sidebar-heading">Table of Contents</h4>
                 <ul>
-                    <li><strong><a href="#title">Using FINT APIs</a></strong></li>
+                    <li><strong><a href="#title">Tools</a></strong></li>
                 </ul>
                 <nav id="TableOfContents">
 <ul>
-<li><a href="#general-guidelines">General guidelines</a></li>
-<li><a href="#information-is-a-graph">Information is a Graph</a>
-<ul>
-<li><a href="#refer-not-replicate">Refer, not Replicate</a></li>
-<li><a href="#references-are-stable">References are Stable</a></li>
-</ul></li>
-<li><a href="#everything-is-a-resource">Everything is a Resource</a></li>
+<li><a href="#fint-curl"><code>fint-curl</code></a></li>
+<li><a href="#jsonvalidate"><code>jsonvalidate</code></a></li>
 </ul>
 </nav>
             </div>
