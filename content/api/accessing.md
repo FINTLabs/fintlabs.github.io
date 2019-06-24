@@ -10,7 +10,21 @@ All FINT APIs are protected, and require Bearer token authorization.
 
 To access FINT resources, a valid Bearer token must be obtained from the FINT IDP.  Authorization details are available from the FINT customer portal, https://kunde.felleskomponent.no
 
-There are libraries supporting OAuth 2.0 available in all programming languages, but the token can also be obtained using `curl`:
+## Example projects for accessing FINT data
+
+- Java, using Spring Boot: https://github.com/FINTLabs/client-example-spring
+- Java, using Google HTTP and OAuth libraries: https://github.com/FINTLabs/client-example-plain-java
+- Node.JS: https://github.com/FINTLabs/client-example-node
+- Kotlin, using Spring Boot: https://github.com/FINTLabs/client-example-kotlin-spring
+- Elm: https://github.com/FINTLabs/fint-api-client-demo
+- BizTalk: https://github.com/FINTLabs/Fint.BizTalk.Example
+- C#: https://github.com/FINTLabs/Fint.DotNet.Example
+
+## Libraries for accessing OAuth protected resources
+
+- Spring Boot OAuthRestTemplate: https://github.com/FINTLabs/fint-oauth-token-service
+
+## Obtaining a valid Bearer token using `curl`
 
 ```sh
 curl -s ${IDP_URL} \
@@ -18,7 +32,7 @@ curl -s ${IDP_URL} \
 -d grant_type=password \
 -d username="${OAUTH_USER}" \
 -d password="${OAUTH_PWD}" \
--d scope="${SCOPE" | \
+-d scope="${SCOPE}" | \
 jq -r '.access_token'
 ```
 
