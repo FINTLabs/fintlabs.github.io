@@ -68,14 +68,32 @@
 
 <p>To access FINT resources, a valid Bearer token must be obtained from the FINT IDP.  Authorization details are available from the FINT customer portal, <a href="https://kunde.felleskomponent.no">https://kunde.felleskomponent.no</a></p>
 
-<p>There are libraries supporting OAuth 2.0 available in all programming languages, but the token can also be obtained using <code>curl</code>:</p>
+<h2 id="example-projects-for-accessing-fint-data">Example projects for accessing FINT data</h2>
+
+<ul>
+<li>Java, using Spring Boot: <a href="https://github.com/FINTLabs/client-example-spring">https://github.com/FINTLabs/client-example-spring</a></li>
+<li>Java, using Google HTTP and OAuth libraries: <a href="https://github.com/FINTLabs/client-example-plain-java">https://github.com/FINTLabs/client-example-plain-java</a></li>
+<li>Node.JS: <a href="https://github.com/FINTLabs/client-example-node">https://github.com/FINTLabs/client-example-node</a></li>
+<li>Kotlin, using Spring Boot: <a href="https://github.com/FINTLabs/client-example-kotlin-spring">https://github.com/FINTLabs/client-example-kotlin-spring</a></li>
+<li>Elm: <a href="https://github.com/FINTLabs/fint-api-client-demo">https://github.com/FINTLabs/fint-api-client-demo</a></li>
+<li>BizTalk: <a href="https://github.com/FINTLabs/Fint.BizTalk.Example">https://github.com/FINTLabs/Fint.BizTalk.Example</a></li>
+<li>C#: <a href="https://github.com/FINTLabs/Fint.DotNet.Example">https://github.com/FINTLabs/Fint.DotNet.Example</a></li>
+</ul>
+
+<h2 id="libraries-for-accessing-oauth-protected-resources">Libraries for accessing OAuth protected resources</h2>
+
+<ul>
+<li>Spring Boot OAuthRestTemplate: <a href="https://github.com/FINTLabs/fint-oauth-token-service">https://github.com/FINTLabs/fint-oauth-token-service</a></li>
+</ul>
+
+<h2 id="obtaining-a-valid-bearer-token-using-curl">Obtaining a valid Bearer token using <code>curl</code></h2>
 
 <pre><code class="language-sh">curl -s ${IDP_URL} \
 -u &quot;${OAUTH_ID}:${OAUTH_SECRET}&quot; \
 -d grant_type=password \
 -d username=&quot;${OAUTH_USER}&quot; \
 -d password=&quot;${OAUTH_PWD}&quot; \
--d scope=&quot;${SCOPE&quot; | \
+-d scope=&quot;${SCOPE}&quot; | \
 jq -r '.access_token'
 </code></pre>
 
@@ -113,7 +131,12 @@ jq -r '.access_token'
                 </ul>
                 <nav id="TableOfContents">
 <ul>
-<li><a href="#oauth-2-0-resource-owner-credentials-flow">OAuth 2.0 Resource Owner Credentials Flow</a></li>
+<li><a href="#oauth-2-0-resource-owner-credentials-flow">OAuth 2.0 Resource Owner Credentials Flow</a>
+<ul>
+<li><a href="#example-projects-for-accessing-fint-data">Example projects for accessing FINT data</a></li>
+<li><a href="#libraries-for-accessing-oauth-protected-resources">Libraries for accessing OAuth protected resources</a></li>
+<li><a href="#obtaining-a-valid-bearer-token-using-curl">Obtaining a valid Bearer token using <code>curl</code></a></li>
+</ul></li>
 <li><a href="#fint-environments">FINT environments</a></li>
 </ul>
 </nav>

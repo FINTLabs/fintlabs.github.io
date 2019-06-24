@@ -62,8 +62,7 @@ Asynchronous operations Since the updates must propagate via the FINT component 
       <guid>https://fintlabs.github.io/api/accessing/</guid>
       <description>All FINT APIs are protected, and require Bearer token authorization.
 OAuth 2.0 Resource Owner Credentials Flow To access FINT resources, a valid Bearer token must be obtained from the FINT IDP. Authorization details are available from the FINT customer portal, https://kunde.felleskomponent.no
-There are libraries supporting OAuth 2.0 available in all programming languages, but the token can also be obtained using curl:
-curl -s ${IDP_URL} \ -u &amp;quot;${OAUTH_ID}:${OAUTH_SECRET}&amp;quot; \ -d grant_type=password \ -d username=&amp;quot;${OAUTH_USER}&amp;quot; \ -d password=&amp;quot;${OAUTH_PWD}&amp;quot; \ -d scope=&amp;quot;${SCOPE&amp;quot; | \ jq -r &#39;.</description>
+Example projects for accessing FINT data  Java, using Spring Boot: https://github.com/FINTLabs/client-example-spring Java, using Google HTTP and OAuth libraries: https://github.com/FINTLabs/client-example-plain-java Node.JS: https://github.com/FINTLabs/client-example-node Kotlin, using Spring Boot: https://github.com/FINTLabs/client-example-kotlin-spring Elm: https://github.</description>
     </item>
     
     <item>
