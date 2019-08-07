@@ -19,7 +19,13 @@ publishdir = "public"
   name   = "Api"
   url    = "/api"
   weight = 20
+
 [[menu.main]]
   name   = "Information models"
   url    = "/models"
   weight = 40
+
+[[menu.main]]
+  name   = "Troubleshooting"
+  url    = "/troubleshooting"
+  weight = 50
