@@ -4,6 +4,24 @@ description = "To add to your toolchest"
 weight = 100
 +++
 
+# FINT Test Client
+
+FINT has a web-based test client for accessing and inspecting data available through FINT.
+
+This test client is available under the URL `/test-client/` for each environment, i.e.:
+
+- https://play-with-fint.felleskomponent.no/test-client/
+- https://beta.felleskomponent.no/test-client/
+- https://api.felleskomponent.no/test-client/
+
+For Play-with-FINT the test client immediately presents you with the welcome page where you can
+enter the URI for a resource to access.  The other two requires authentication, so you'll need to provide
+valid authorization details for a client from FINT's customer portal.
+
+On the welcome page, enter the URI for a resource, i.e. `/administrasjon/organisasjon/organisasjonselement`
+and hit the button.  Results are presented as JSON, and all the URLs can be clicked to follow links to
+other resources from within the test client.
+
 # `fint-curl`
 
 This script can be used to fetch a protected FINT resource, fetching a bearer token when needed.

@@ -191,3 +191,9 @@ provided timestamp.  The response looks like this:
 ```
 
 If `total_items` is `0`, this indicates that there are no new updates since the given timestamp.
+
+## Health Check
+
+`/domain/package/admin/health`, i.e. `/administrasjon/personal/admin/health`
+
+Triggers a health check towards the adapter providing data.  The response indicates whether the adapter is connected and responding.
