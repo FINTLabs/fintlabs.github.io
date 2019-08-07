@@ -278,6 +278,12 @@ provided timestamp.  The response looks like this:</p>
 
 <p>If <code>total_items</code> is <code>0</code>, this indicates that there are no new updates since the given timestamp.</p>
 
+<h2 id="health-check">Health Check</h2>
+
+<p><code>/domain/package/admin/health</code>, i.e. <code>/administrasjon/personal/admin/health</code></p>
+
+<p>Triggers a health check towards the adapter providing data.  The response indicates whether the adapter is connected and responding.</p>
+
                 </section>
             </article>
         </main>
@@ -310,6 +316,7 @@ provided timestamp.  The response looks like this:</p>
 <li><a href="#size-of-cache-for-a-given-class">Size of cache for a given class</a></li>
 <li><a href="#timestamp-for-when-cache-was-last-updated">Timestamp for when cache was last updated</a></li>
 <li><a href="#get-objects-updated-since-timestamp">Get objects updated since timestamp</a></li>
+<li><a href="#health-check">Health Check</a></li>
 </ul></li>
 </ul>
 </nav>

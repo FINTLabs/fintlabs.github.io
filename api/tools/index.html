@@ -62,6 +62,26 @@
                 <section>
                     
 
+<h1 id="fint-test-client">FINT Test Client</h1>
+
+<p>FINT has a web-based test client for accessing and inspecting data available through FINT.</p>
+
+<p>This test client is available under the URL <code>/test-client/</code> for each environment, i.e.:</p>
+
+<ul>
+<li><a href="https://play-with-fint.felleskomponent.no/test-client/">https://play-with-fint.felleskomponent.no/test-client/</a></li>
+<li><a href="https://beta.felleskomponent.no/test-client/">https://beta.felleskomponent.no/test-client/</a></li>
+<li><a href="https://api.felleskomponent.no/test-client/">https://api.felleskomponent.no/test-client/</a></li>
+</ul>
+
+<p>For Play-with-FINT the test client immediately presents you with the welcome page where you can
+enter the URI for a resource to access.  The other two requires authentication, so you&rsquo;ll need to provide
+valid authorization details for a client from FINT&rsquo;s customer portal.</p>
+
+<p>On the welcome page, enter the URI for a resource, i.e. <code>/administrasjon/organisasjon/organisasjonselement</code>
+and hit the button.  Results are presented as JSON, and all the URLs can be clicked to follow links to
+other resources from within the test client.</p>
+
 <h1 id="fint-curl"><code>fint-curl</code></h1>
 
 <p>This script can be used to fetch a protected FINT resource, fetching a bearer token when needed.</p>
@@ -164,6 +184,7 @@ print &quot;Validation completed with&quot;, errors, &quot;errors.&quot;
                 </ul>
                 <nav id="TableOfContents">
 <ul>
+<li><a href="#fint-test-client">FINT Test Client</a></li>
 <li><a href="#fint-curl"><code>fint-curl</code></a></li>
 <li><a href="#jsonvalidate"><code>jsonvalidate</code></a></li>
 </ul>

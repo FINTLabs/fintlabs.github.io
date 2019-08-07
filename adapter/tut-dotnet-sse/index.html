@@ -101,49 +101,52 @@ $ rm -rf .git
 </blockquote>
 
 <ul>
-<li>Replace <code>pwfa.no</code> with your <code>OrgId</code> in the <code>appsettings.json</code> file in the <code>Fint.Sse.Adapter.Console</code> project:</li>
-</ul>
+<li><p>Replace <code>pwfa.no</code> with your <code>OrgId</code> in the <code>appsettings.json</code> file in the <code>Fint.Sse.Adapter.Console</code> project:</p>
 
 <pre><code class="language-json">{
-  &quot;Logging&quot;: {
-    &quot;IncludeScopes&quot;: false,
-    &quot;LogLevel&quot;: {
-      &quot;Default&quot;: &quot;Debug&quot;,
-      &quot;System&quot;: &quot;Information&quot;,
-      &quot;Microsoft&quot;: &quot;Information&quot;
-    }
-  },
-  &quot;Configuration&quot;: {
-    &quot;ConsoleTitle&quot;: &quot;FINT Console Boilerplate&quot;,
-    &quot;SseEndpoint&quot;: &quot;https://play-with-fint-adapter.felleskomponent.no/provider/sse&quot;,
-    &quot;StatusEndpoint&quot;: &quot;https://play-with-fint-adapter.felleskomponent.no/provider/status&quot;,
-    &quot;ResponseEndpoint&quot;: &quot;https://play-with-fint-adapter.felleskomponent.no/provider/response&quot;,
-    &quot;Organizations&quot;: &quot;pwfa.no&quot;, &lt;-- HERE
-    &quot;LogLocation&quot;: &quot;logs&quot;
-  }
+&quot;Logging&quot;: {
+&quot;IncludeScopes&quot;: false,
+&quot;LogLevel&quot;: {
+  &quot;Default&quot;: &quot;Debug&quot;,
+  &quot;System&quot;: &quot;Information&quot;,
+  &quot;Microsoft&quot;: &quot;Information&quot;
+}
+},
+&quot;Configuration&quot;: {
+&quot;ConsoleTitle&quot;: &quot;FINT Console Boilerplate&quot;,
+&quot;SseEndpoint&quot;: &quot;https://play-with-fint-adapter.felleskomponent.no/provider/sse&quot;,
+&quot;StatusEndpoint&quot;: &quot;https://play-with-fint-adapter.felleskomponent.no/provider/status&quot;,
+&quot;ResponseEndpoint&quot;: &quot;https://play-with-fint-adapter.felleskomponent.no/provider/response&quot;,
+&quot;Organizations&quot;: &quot;pwfa.no&quot;, &lt;-- HERE
+&quot;LogLocation&quot;: &quot;logs&quot;
+}
 }
 </code></pre>
 
-<pre><code class="language-csharp">                public void HandleEvent(Event&lt;object&gt; serverSideEvent)
-                {
+<pre><code class="language-csharp">            public void HandleEvent(Event&lt;object&gt; serverSideEvent)
+            {
 Breakpoint --&gt;      if (serverSideEvent.IsHealthCheck())
-                    {
-                    ...
-                }
-</code></pre>
+                {
+                ...
+            }
+</code></pre></li>
 
-<ul>
-<li>Start the adapter in debug mode</li>
-<li>Open a browser and hit <a href="https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html">https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html</a></li>
-<li>From the <code>Admin</code> controller, configure the <code>/admin/health</code> with setting the following headers:
+<li><p>Start the adapter in debug mode</p></li>
+
+<li><p>Open a browser and hit <a href="https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html">https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html</a></p></li>
+
+<li><p>From the <code>Admin</code> controller, configure the <code>/admin/health</code> with setting the following headers:</p>
 
 <ul>
 <li><code>x-org-id</code> use the generated OrgId</li>
 <li><code>x-client</code> to <code>test</code></li>
 </ul></li>
-<li>Send the health event from the <code>/admin/health</code> endpoint.</li>
-<li>Step through the code to see what happens.</li>
-<li>You can also hit the <code>dog</code> and <code>owner</code> controllers to see how <code>FintResources</code> and <code>Relations</code> are build. See <a href="https://github.com/FINTmodels/Fint.Relation.Model">https://github.com/FINTmodels/Fint.Relation.Model</a> for more information.</li>
+
+<li><p>Send the health event from the <code>/admin/health</code> endpoint.</p></li>
+
+<li><p>Step through the code to see what happens.</p></li>
+
+<li><p>You can also hit the <code>dog</code> and <code>owner</code> controllers to see how <code>FintResources</code> and <code>Relations</code> are build. See <a href="https://github.com/FINTmodels/Fint.Relation.Model">https://github.com/FINTmodels/Fint.Relation.Model</a> for more information.</p></li>
 </ul>
 
 <h3 id="security">Security</h3>

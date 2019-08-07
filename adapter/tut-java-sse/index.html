@@ -97,38 +97,41 @@ $ rm -rf .git
 </blockquote>
 
 <ul>
-<li>Replace <code>pwfa.no</code> with your <code>OrgId</code> in the <code>application.yml</code> file:</li>
-</ul>
+<li><p>Replace <code>pwfa.no</code> with your <code>OrgId</code> in the <code>application.yml</code> file:</p>
 
 <pre><code class="language-yaml">fint:
- adapter:
-  organizations: OrgId
-</code></pre>
+adapter:
+organizations: OrgId
+</code></pre></li>
+</ul>
 
 <h3 id="the-first-test">The first test</h3>
 
 <ul>
-<li>Set a breakpoint at the start of the handleEvent method in the <code>EventHandlerService</code> class.</li>
-</ul>
+<li><p>Set a breakpoint at the start of the handleEvent method in the <code>EventHandlerService</code> class.</p>
 
-<pre><code class="language-java">                public void handleEvent(Event event) {
+<pre><code class="language-java">            public void handleEvent(Event event) {
 Breakpoint --&gt;      if (event.isHealthCheck()) {
-                    ...
-                }
-</code></pre>
+                ...
+            }
+</code></pre></li>
 
-<ul>
-<li>Start the adapter in debug mode</li>
-<li>Open a browser and hit <a href="https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html">https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html</a></li>
-<li>From the <code>Admin</code> controller, configure the <code>/admin/health</code> with setting the following headers:
+<li><p>Start the adapter in debug mode</p></li>
+
+<li><p>Open a browser and hit <a href="https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html">https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html</a></p></li>
+
+<li><p>From the <code>Admin</code> controller, configure the <code>/admin/health</code> with setting the following headers:</p>
 
 <ul>
 <li><code>x-org-id</code> use the generated OrgId</li>
 <li><code>x-client</code> to <code>test</code></li>
 </ul></li>
-<li>Send the health event from the <code>/admin/health</code> endpoint.</li>
-<li>Step through the code to see what happens.</li>
-<li>You can also hit the <code>dog</code> and <code>owner</code> controllers to see how <code>FintResources</code> and <code>Relations</code> are build. See <a href="https://github.com/FINTmodels/fint-relation-model">https://github.com/FINTmodels/fint-relation-model</a> for more information.</li>
+
+<li><p>Send the health event from the <code>/admin/health</code> endpoint.</p></li>
+
+<li><p>Step through the code to see what happens.</p></li>
+
+<li><p>You can also hit the <code>dog</code> and <code>owner</code> controllers to see how <code>FintResources</code> and <code>Relations</code> are build. See <a href="https://github.com/FINTmodels/fint-relation-model">https://github.com/FINTmodels/fint-relation-model</a> for more information.</p></li>
 </ul>
 
 <h3 id="security">Security</h3>
