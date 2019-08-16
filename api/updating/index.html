@@ -87,7 +87,8 @@ header referring to a <code>/status/&lt;uuid&gt;</code> resource</li>
 <li>If the operation has completed, the FINT API responds with the final status of the update:
 
 <ul>
-<li>If successful, status <code>302</code> with a <code>Location</code> referring to the resource that has been created or updated.</li>
+<li>If successful, status <code>303</code> with a <code>Location</code> referring to the resource that has been
+created or updated.</li>
 <li><em>Note:</em> If the operation is a deletion, the status code is <code>410</code> instead.</li>
 <li>If rejected by the back-end system, status <code>400</code> with a response body indicating the error.</li>
 <li>If there was a temporary failure processing the request, status <code>500</code> with the error message.
