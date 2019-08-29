@@ -92,11 +92,28 @@ other resources from within the test client.</p>
 
 #set -x
 
-if [[ ! -x /usr/bin/curl ]] || [[ ! -x /usr/bin/jq ]]
+if ! ( curl --version &gt; /dev/null &amp;&amp; jq --version &gt; /dev/null)
 then
 	echo &quot;Required tools curl and jq not installed&quot;
 	exit 1
 fi
+
+case $(uname -s) in
+	Linux)
+		STATSZ=&quot;stat -c %s&quot;
+		STATMT=&quot;stat -c %Y&quot;
+		;;
+
+	Darwin)
+		STATSZ=&quot;stat -f %z&quot;
+		STATMT=&quot;stat -f %m&quot;
+		;;
+
+	*)
+		echo &quot;Unknown OS $(uname -s)&quot;
+		exit 1
+		;;
+esac
 
 CLIENT=${CLIENT:-client.json}
 TOKEN=${CLIENT}.token
@@ -109,12 +126,12 @@ fi
 
 eval $(cat $CLIENT | jq -r  &quot;\&quot;OAUTH_ID=\&quot;+.clientId, \&quot;OAUTH_SECRET=\&quot;+.openIdSecret, \&quot;OAUTH_USER=\&quot;+.username, \&quot;OAUTH_PWD=\&quot;+.password, \&quot;SCOPE=\&quot;+.scope, \&quot;IDP_URL=\&quot;+.idpUri, \&quot;ASSET_ID=\&quot;+.assetId&quot;)
 
-if [[ ! ( -e $TOKEN ) || $(stat -c %s $TOKEN) -lt 10 || ( $(( $(date +%s) - $(stat -c %Y $TOKEN) )) -gt 3500 ) ]]
+if [[ ! ( -e $TOKEN ) || $($STATSZ $TOKEN) -lt 10 || ( $(( $(date +%s) - $($STATMT $TOKEN) )) -gt 3500 ) ]]
 then
-    curl -s ${IDP_URL:-https://idp.felleskomponent.no/nidp/oauth/nam/token} -u &quot;${OAUTH_ID}:${OAUTH_SECRET}&quot; -d grant_type=password -d username=&quot;${OAUTH_USER}&quot; -d password=&quot;${OAUTH_PWD}&quot; -d scope=&quot;${SCOPE:-fint-client}&quot; | jq -r '.access_token' &gt; $TOKEN
+    curl -f -s ${IDP_URL:-https://idp.felleskomponent.no/nidp/oauth/nam/token} -u &quot;${OAUTH_ID}:${OAUTH_SECRET}&quot; -d grant_type=password -d username=&quot;${OAUTH_USER}&quot; -d password=&quot;${OAUTH_PWD}&quot; -d scope=&quot;${SCOPE:-fint-client}&quot; | jq -r '.access_token' &gt; $TOKEN
 fi
 
-if [[ $(stat -c %s $TOKEN) -lt 10 ]]
+if [[ $($STATSZ $TOKEN) -lt 10 ]]
 then
 	echo &quot;Authorization failure&quot;
 	exit 1
