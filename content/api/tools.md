@@ -33,11 +33,28 @@ To use it, copy the client authorization details from https://kunde.felleskompon
 
 #set -x
 
-if [[ ! -x /usr/bin/curl ]] || [[ ! -x /usr/bin/jq ]]
+if ! ( curl --version > /dev/null && jq --version > /dev/null)
 then
 	echo "Required tools curl and jq not installed"
 	exit 1
 fi
+
+case $(uname -s) in
+	Linux)
+		STATSZ="stat -c %s"
+		STATMT="stat -c %Y"
+		;;
+
+	Darwin)
+		STATSZ="stat -f %z"
+		STATMT="stat -f %m"
+		;;
+
+	*)
+		echo "Unknown OS $(uname -s)"
+		exit 1
+		;;
+esac
 
 CLIENT=${CLIENT:-client.json}
 TOKEN=${CLIENT}.token
@@ -50,12 +67,12 @@ fi
 
 eval $(cat $CLIENT | jq -r  "\"OAUTH_ID=\"+.clientId, \"OAUTH_SECRET=\"+.openIdSecret, \"OAUTH_USER=\"+.username, \"OAUTH_PWD=\"+.password, \"SCOPE=\"+.scope, \"IDP_URL=\"+.idpUri, \"ASSET_ID=\"+.assetId")
 
-if [[ ! ( -e $TOKEN ) || $(stat -c %s $TOKEN) -lt 10 || ( $(( $(date +%s) - $(stat -c %Y $TOKEN) )) -gt 3500 ) ]]
+if [[ ! ( -e $TOKEN ) || $($STATSZ $TOKEN) -lt 10 || ( $(( $(date +%s) - $($STATMT $TOKEN) )) -gt 3500 ) ]]
 then
-    curl -s ${IDP_URL:-https://idp.felleskomponent.no/nidp/oauth/nam/token} -u "${OAUTH_ID}:${OAUTH_SECRET}" -d grant_type=password -d username="${OAUTH_USER}" -d password="${OAUTH_PWD}" -d scope="${SCOPE:-fint-client}" | jq -r '.access_token' > $TOKEN
+    curl -f -s ${IDP_URL:-https://idp.felleskomponent.no/nidp/oauth/nam/token} -u "${OAUTH_ID}:${OAUTH_SECRET}" -d grant_type=password -d username="${OAUTH_USER}" -d password="${OAUTH_PWD}" -d scope="${SCOPE:-fint-client}" | jq -r '.access_token' > $TOKEN
 fi
 
-if [[ $(stat -c %s $TOKEN) -lt 10 ]]
+if [[ $($STATSZ $TOKEN) -lt 10 ]]
 then
 	echo "Authorization failure"
 	exit 1
