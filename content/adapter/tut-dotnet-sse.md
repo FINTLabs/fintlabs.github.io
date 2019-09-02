@@ -82,9 +82,9 @@ The `adapter` uses `OAuth2` by default to authenticated to the `provider` endpoi
 
 ```json
 "OAuthTokenService": {
-    "AccessTokenUri": "https://namidp01.rogfk.no/nidp/oauth/nam/token",
-    "ClientId": "6e1cf7b4-b107-42b3-9435-8fda70726c6a",
-    "ClientSecret": "6y4FUuP9BfAXeVqguNKT0ofToIwN5RdB1PaUvx_nCMiQbH9NeGq3pp0jQB9zOQ0APOxEbodzJXp-8RVux6318A",
+    "AccessTokenUri": "https://idp.felleskomponent.no/nidp/oauth/nam/token",
+    "ClientId": "2d0ed372-53fb-4d0a-9e7f-d546c5cf2d71",
+    "ClientSecret": "kgaiww60LjjNh0iyfv0KSjMZMbv04L6YZfYq5iYpu6IhIyxo6UFdslQMw_BBmZeVOuUCl75f3dE6FaDTVxgYjg",
     "Username": "pwfatut",
     "Password": "pwfatut",
     "Scope": "fint-client",
