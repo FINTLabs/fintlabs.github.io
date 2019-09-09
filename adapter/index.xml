@@ -50,8 +50,8 @@ Versioning FINT is using semantic versioning for its models:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fintlabs.github.io/adapter/events/</guid>
-      <description>FINT Adapter Events FINT Adapters must be able to handle three different kinds of events:
- Requests to get all instances of a class from the FINT Consumer Cache Service Requests to get a single element of a class from the FINT Consumer API. Requests to update (create, modify or delete) a single element of a class from the FINT Consumer API.  The FINT Consumer will be issuing the events to the FINT Provider for the relevant assetID, and the FINT Provider will dispatch the event to all adapters connected and registered for this assetID.</description>
+      <description>FINT Adapter Events The general flow between FINT and adapters are:
+ Adapter subscribes to events using the SSE endpoint FINT delivers events on the SSE stream Adapter accepts the event by POSTing to the status endpoint. There is a 2-minute timeout on accepting events. If you use the adapter skeleton this is already handled. Adapter responds to the event by POSTing to the response endpoint. There is a 15-minute timeout on responding to events.</description>
     </item>
     
     <item>

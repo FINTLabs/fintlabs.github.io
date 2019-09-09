@@ -64,6 +64,25 @@
 
 <h1 id="fint-adapter-events">FINT Adapter Events</h1>
 
+<p>The general flow between FINT and adapters are:</p>
+
+<ol>
+<li>Adapter subscribes to events using the SSE endpoint</li>
+<li>FINT delivers events on the SSE stream</li>
+<li>Adapter accepts the event by POSTing to the status endpoint.  There is a 2-minute timeout on accepting events. If you use the adapter skeleton this is already handled.</li>
+<li>Adapter responds to the event by POSTing to the response endpoint.  There is a 15-minute timeout on responding to events.</li>
+</ol>
+
+<h2 id="causes-for-events">Causes for events</h2>
+
+<p>FINT components produce events for two reasons:
+- Periodic cache update events every 15 minutes, triggering <code>GET_ALL_*</code> events.
+- Incoming POST / PUT requests from clients.  Every request produces exactly one event.</p>
+
+<p>FINT expects one status and one response to every event delivered.  Multiple responses will be rejected with <code>410 GONE</code></p>
+
+<h2 id="event-kinds">Event kinds</h2>
+
 <p>FINT Adapters must be able to handle three different kinds of events:</p>
 
 <ol>
@@ -215,6 +234,8 @@
 <ul>
 <li><a href="#fint-adapter-events">FINT Adapter Events</a>
 <ul>
+<li><a href="#causes-for-events">Causes for events</a></li>
+<li><a href="#event-kinds">Event kinds</a></li>
 <li><a href="#get-all-instances-of-a-class-get-all-type">Get all instances of a class (<code>GET_ALL_</code><em>type</em>)</a></li>
 <li><a href="#get-a-single-instance-of-a-class-by-id-get-type">Get a single instance of a class by ID (<code>GET_</code><em>type</em>)</a></li>
 <li><a href="#create-a-new-element-or-update-an-existing-element-by-id-update-type">Create a new element, or update an existing element by ID (<code>UPDATE_</code><em>type</em>)</a></li>
