@@ -19,7 +19,7 @@ FINT components produce events for two reasons:
 - Periodic cache update events every 15 minutes, triggering `GET_ALL_*` events.
 - Incoming POST / PUT requests from clients.  Every request produces exactly one event.
 
-FINT expects one status and one response to every event delivered.  Additional responses will be rejected with `410 GONE`
+FINT expects exactly one status and one response to every event delivered.  Additional responses will be rejected with `410 GONE`.
 
 ## Event kinds
 
@@ -35,8 +35,8 @@ This enables scenarios with distributed or redundant adapters where several adap
 
 Workloads can be distributed using two different strategies, which also could be combined:
 
-  1. Divide and conquer: Different adapters handle different classes for a given component.  For instance, for `/administrasjon/personal`, one adapter could handle `Personalressurs` and `Arbeidsforhold`, and a different adapter could handle `Fastlonn`, `Variabellonn`, etc.
-  1. Active and passive:  Several adapters are configured to respond to the same event, but coordinates internally to determine which of the instances respond.
+  1. Divide and conquer: Different adapters handle different actions for a given component.  For instance, for `/administrasjon/personal`, one adapter could handle `Personalressurs` and `Arbeidsforhold`, and a different adapter could handle `Fastlonn`, `Variabellonn`, etc.
+  1. Active and passive:  Several adapters are configured to respond to the same event, but coordinate internally to determine which of the instances should respond.
 
 Any adapter instance registered with the asset ID can handle events in three ways:
 
@@ -87,4 +87,4 @@ The adapters are expected to handle the various operations according to the foll
   - `UPDATE`: The existing element, identified by the `query` field, should be updated with the payload according to business rules and which fields are `writable` in the FINT information model.  The response payload must include the final version stored in the back-end system.  Response status as above.
   - `DELETE`: The existing element, identified by the `query` field, should be removed from the back-end system if this is valid according to the business rules.  No response payload is expected, response status as above.
 
-  If write operations are not supported or permitted, the event must be rejected by posting `ADAPTER_REJECTED` at the `/status` phase.
+If write operations are not supported or permitted, the event must be rejected by posting `ADAPTER_REJECTED` at the `/status` phase.
