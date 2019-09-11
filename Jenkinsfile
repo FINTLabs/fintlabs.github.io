@@ -5,7 +5,7 @@ pipeline {
             agent {
                 docker {
                     label 'docker'
-                    image 'klakegg/hugo:alpine'
+                    image 'klakegg/hugo:0.54.0-alpine'
                     args '--entrypoint=""'
                 }
             }
