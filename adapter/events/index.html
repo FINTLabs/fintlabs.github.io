@@ -69,8 +69,8 @@
 <ol>
 <li>Adapter subscribes to events using the SSE endpoint</li>
 <li>FINT delivers events on the SSE stream</li>
-<li>Adapter accepts the event by POSTing to the status endpoint.  There is a 2-minute timeout on accepting events. If you use the adapter skeleton this is already handled.</li>
-<li>Adapter responds to the event by POSTing to the response endpoint.  There is a 15-minute timeout on responding to events.</li>
+<li>Adapter accepts the event by <code>POST</code>ing to the status endpoint.  There is a 2-minute timeout on accepting events. If you use the adapter skeleton this is already handled.</li>
+<li>Adapter responds to the event by <code>POST</code>ing to the response endpoint.  There is a 15-minute timeout on responding to events.</li>
 </ol>
 
 <h2 id="causes-for-events">Causes for events</h2>
@@ -79,7 +79,7 @@
 - Periodic cache update events every 15 minutes, triggering <code>GET_ALL_*</code> events.
 - Incoming POST / PUT requests from clients.  Every request produces exactly one event.</p>
 
-<p>FINT expects one status and one response to every event delivered.  Multiple responses will be rejected with <code>410 GONE</code></p>
+<p>FINT expects exactly one status and one response to every event delivered.  Additional responses will be rejected with <code>410 GONE</code>.</p>
 
 <h2 id="event-kinds">Event kinds</h2>
 
@@ -98,8 +98,8 @@
 <p>Workloads can be distributed using two different strategies, which also could be combined:</p>
 
 <ol>
-<li>Divide and conquer: Different adapters handle different classes for a given component.  For instance, for <code>/administrasjon/personal</code>, one adapter could handle <code>Personalressurs</code> and <code>Arbeidsforhold</code>, and a different adapter could handle <code>Fastlonn</code>, <code>Variabellonn</code>, etc.</li>
-<li>Active and passive:  Several adapters are configured to respond to the same event, but coordinates internally to determine which of the instances respond.</li>
+<li>Divide and conquer: Different adapters handle different actions for a given component.  For instance, for <code>/administrasjon/personal</code>, one adapter could handle <code>Personalressurs</code> and <code>Arbeidsforhold</code>, and a different adapter could handle <code>Fastlonn</code>, <code>Variabellonn</code>, etc.</li>
+<li>Active and passive:  Several adapters are configured to respond to the same event, but coordinate internally to determine which of the instances should respond.</li>
 </ol>
 
 <p>Any adapter instance registered with the asset ID can handle events in three ways:</p>
@@ -214,6 +214,17 @@
 </ul>
 
 <p>If write operations are not supported or permitted, the event must be rejected by posting <code>ADAPTER_REJECTED</code> at the <code>/status</code> phase.</p>
+
+<p>The response payload is handled according to the following, depending on ResponseStatus:</p>
+
+<ul>
+<li><code>ACCEPTED</code>: The payload is added to the cache</li>
+<li><code>REJECTED</code>: The payload is ignored.</li>
+<li><code>ERROR</code>: The payload is ignored.</li>
+<li><code>CONFLICT</code>: The payload is added to the cache.</li>
+</ul>
+
+<p>Note the last clause.  For CONFLICT the adapter is supposed to deliver the most recent version of the information, so clients and the FINT cache can be updated.</p>
 
                 </section>
             </article>
