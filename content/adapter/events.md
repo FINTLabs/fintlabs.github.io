@@ -10,8 +10,8 @@ The general flow between FINT and adapters are:
 
 1. Adapter subscribes to events using the SSE endpoint
 1. FINT delivers events on the SSE stream
-1. Adapter accepts the event by POSTing to the status endpoint.  There is a 2-minute timeout on accepting events. If you use the adapter skeleton this is already handled.
-1. Adapter responds to the event by POSTing to the response endpoint.  There is a 15-minute timeout on responding to events.
+1. Adapter accepts the event by `POST`ing to the status endpoint.  There is a 2-minute timeout on accepting events. If you use the adapter skeleton this is already handled.
+1. Adapter responds to the event by `POST`ing to the response endpoint.  There is a 15-minute timeout on responding to events.
 
 ## Causes for events
 
@@ -19,7 +19,7 @@ FINT components produce events for two reasons:
 - Periodic cache update events every 15 minutes, triggering `GET_ALL_*` events.
 - Incoming POST / PUT requests from clients.  Every request produces exactly one event.
 
-FINT expects one status and one response to every event delivered.  Multiple responses will be rejected with `410 GONE`
+FINT expects one status and one response to every event delivered.  Additional responses will be rejected with `410 GONE`
 
 ## Event kinds
 
