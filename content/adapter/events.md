@@ -88,3 +88,12 @@ The adapters are expected to handle the various operations according to the foll
   - `DELETE`: The existing element, identified by the `query` field, should be removed from the back-end system if this is valid according to the business rules.  No response payload is expected, response status as above.
 
 If write operations are not supported or permitted, the event must be rejected by posting `ADAPTER_REJECTED` at the `/status` phase.
+
+The response payload is handled according to the following, depending on ResponseStatus:
+
+- `ACCEPTED`: The payload is added to the cache
+- `REJECTED`: The payload is ignored.
+- `ERROR`: The payload is ignored.
+- `CONFLICT`: The payload is added to the cache.
+
+Note the last clause.  For CONFLICT the adapter is supposed to deliver the most recent version of the information, so clients and the FINT cache can be updated.
