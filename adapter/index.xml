@@ -45,16 +45,6 @@ Versioning FINT is using semantic versioning for its models:
     </item>
     
     <item>
-      <title>Adapter Events</title>
-      <link>https://fintlabs.github.io/adapter/events/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fintlabs.github.io/adapter/events/</guid>
-      <description>FINT Adapter Events The general flow between FINT and adapters are:
- Adapter subscribes to events using the SSE endpoint FINT delivers events on the SSE stream Adapter accepts the event by POSTing to the status endpoint. There is a 2-minute timeout on accepting events. If you use the adapter skeleton this is already handled. Adapter responds to the event by POSTing to the response endpoint. There is a 15-minute timeout on responding to events.</description>
-    </item>
-    
-    <item>
       <title>Adapter Update Event Flow</title>
       <link>https://fintlabs.github.io/adapter/event-flow/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

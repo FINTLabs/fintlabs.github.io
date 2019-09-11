@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="alternate" href="/index.xml" type="application/rss+xml" title="FINTLabs Technical Docs">
     <link rel="icon" href="https://fintlabs.github.io/favicon.ico">
-    <title>Using FINT APIs - FINTLabs Technical Docs</title>
+    <title>Using FINT API  - FINTLabs Technical Docs</title>
     
     <link rel="stylesheet" href="https://fintlabs.github.io/css/highlight/github.css">
     <link rel="stylesheet" href="https://fintlabs.github.io/css/bootstrap.min.css">
@@ -57,37 +57,12 @@
         <main role="main">
             <article>
                 <a id="title"></a>
-                <h1 class="doc-entry-title">Using FINT APIs</h1>
+                <h1 class="doc-entry-title">Using FINT API </h1>
 
                 <section>
                     
 
-<h1 id="general-guidelines">General guidelines</h1>
-
-<p>To get the most value from FINT APIs, some guidelines to follow.</p>
-
-<h1 id="information-is-a-graph">Information is a Graph</h1>
-
-<p>FINT&rsquo;s resources have relatively few attributes, but more relations.  Every resource only has the attributes that are
-directly relevant for the resource.  Everything else is represented as relations (links) to other resources.
-As an example, the class <code>Personalressurs</code>, representing an employee, does not have the employee&rsquo;s name.  Instead there is
-a link to <code>Person</code>, representing a private person, where you find the properties of the employee as a private person.</p>
-
-<h2 id="refer-not-replicate">Refer, not Replicate</h2>
-
-<p>Information always changes.  Stale data is often worse than not having any data at all.  The FINT API is based on the principle that information should be fetched from the source when needed, not replicated beforehand.</p>
-
-<h2 id="references-are-stable">References are Stable</h2>
-
-<p>Resources in FINT are represented using URIs.  These URIs are constructed by the API based on attributes that can be used to identify the resource, represented by the type <code>Identifikator</code>.</p>
-
-<p>As long as the identifiable attribute does not change, neither does the URI representing the resource.</p>
-
-<h1 id="everything-is-a-resource">Everything is a Resource</h1>
-
-<p>All classes in the FINT information model is represented in the exact same way, as resources with URIs and references using URIs to other classes it refers to.</p>
-
-<p>The type of the resource is explicit from the URI of the resource.  For instance, from the URI <code>/administrasjon/personal/personalressurs</code>, the type of the resource is always <code>Personalressurs</code>.</p>
+<h1 id="introduction">Introduction</h1>
 
                 </section>
             </article>
@@ -102,17 +77,11 @@ a link to <code>Person</code>, representing a private person, where you find the
             <div class="sidebar-toc">
                 <h4 class="sidebar-heading">Table of Contents</h4>
                 <ul>
-                    <li><strong><a href="#title">Using FINT APIs</a></strong></li>
+                    <li><strong><a href="#title">Using FINT API </a></strong></li>
                 </ul>
                 <nav id="TableOfContents">
 <ul>
-<li><a href="#general-guidelines">General guidelines</a></li>
-<li><a href="#information-is-a-graph">Information is a Graph</a>
-<ul>
-<li><a href="#refer-not-replicate">Refer, not Replicate</a></li>
-<li><a href="#references-are-stable">References are Stable</a></li>
-</ul></li>
-<li><a href="#everything-is-a-resource">Everything is a Resource</a></li>
+<li><a href="#introduction">Introduction</a></li>
 </ul>
 </nav>
             </div>

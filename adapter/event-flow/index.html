@@ -86,15 +86,12 @@ PUT requests produce <code>UPDATE</code> operations
 POST requests produce <code>CREATE</code> operations unless the validate request parameter is set.
 POST with the validate request parameter set creates <code>VALIDATE</code> operations.</p>
 
-<p>The intended behavior for these operations is as follows:</p>
-
-<ul>
-<li><code>VALIDATE</code>: Data validation</li>
-<li><code>CREATE</code>: Data creation</li>
-<li><code>READ</code>: Data request</li>
-<li><code>UPDATE</code>: Data modification, modifying existing data</li>
-<li><code>DELETE</code>: Data deletion, removing existing data</li>
-</ul>
+<p>The intended behavior for these operations is as follows:
+- <code>VALIDATE</code>: Data validation
+- <code>CREATE</code>: Data creation
+- <code>READ</code>: Data request
+- <code>UPDATE</code>: Data modification, modifying existing data
+- <code>DELETE</code>: Data deletion, removing existing data</p>
 
 <p>For <code>VALIDATE</code> operations, no information should be stored or modified.
 It is intended for semantic validation only.

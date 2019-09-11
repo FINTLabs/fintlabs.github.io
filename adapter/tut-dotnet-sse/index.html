@@ -101,52 +101,49 @@ $ rm -rf .git
 </blockquote>
 
 <ul>
-<li><p>Replace <code>pwfa.no</code> with your <code>OrgId</code> in the <code>appsettings.json</code> file in the <code>Fint.Sse.Adapter.Console</code> project:</p>
+<li>Replace <code>pwfa.no</code> with your <code>OrgId</code> in the <code>appsettings.json</code> file in the <code>Fint.Sse.Adapter.Console</code> project:</li>
+</ul>
 
 <pre><code class="language-json">{
-&quot;Logging&quot;: {
-&quot;IncludeScopes&quot;: false,
-&quot;LogLevel&quot;: {
-  &quot;Default&quot;: &quot;Debug&quot;,
-  &quot;System&quot;: &quot;Information&quot;,
-  &quot;Microsoft&quot;: &quot;Information&quot;
-}
-},
-&quot;Configuration&quot;: {
-&quot;ConsoleTitle&quot;: &quot;FINT Console Boilerplate&quot;,
-&quot;SseEndpoint&quot;: &quot;https://play-with-fint-adapter.felleskomponent.no/provider/sse&quot;,
-&quot;StatusEndpoint&quot;: &quot;https://play-with-fint-adapter.felleskomponent.no/provider/status&quot;,
-&quot;ResponseEndpoint&quot;: &quot;https://play-with-fint-adapter.felleskomponent.no/provider/response&quot;,
-&quot;Organizations&quot;: &quot;pwfa.no&quot;, &lt;-- HERE
-&quot;LogLocation&quot;: &quot;logs&quot;
-}
+  &quot;Logging&quot;: {
+    &quot;IncludeScopes&quot;: false,
+    &quot;LogLevel&quot;: {
+      &quot;Default&quot;: &quot;Debug&quot;,
+      &quot;System&quot;: &quot;Information&quot;,
+      &quot;Microsoft&quot;: &quot;Information&quot;
+    }
+  },
+  &quot;Configuration&quot;: {
+    &quot;ConsoleTitle&quot;: &quot;FINT Console Boilerplate&quot;,
+    &quot;SseEndpoint&quot;: &quot;https://play-with-fint-adapter.felleskomponent.no/provider/sse&quot;,
+    &quot;StatusEndpoint&quot;: &quot;https://play-with-fint-adapter.felleskomponent.no/provider/status&quot;,
+    &quot;ResponseEndpoint&quot;: &quot;https://play-with-fint-adapter.felleskomponent.no/provider/response&quot;,
+    &quot;Organizations&quot;: &quot;pwfa.no&quot;, &lt;-- HERE
+    &quot;LogLocation&quot;: &quot;logs&quot;
+  }
 }
 </code></pre>
 
-<pre><code class="language-csharp">            public void HandleEvent(Event&lt;object&gt; serverSideEvent)
-            {
-Breakpoint --&gt;      if (serverSideEvent.IsHealthCheck())
+<pre><code class="language-csharp">                public void HandleEvent(Event&lt;object&gt; serverSideEvent)
                 {
-                ...
-            }
-</code></pre></li>
+Breakpoint --&gt;      if (serverSideEvent.IsHealthCheck())
+                    {
+                    ...
+                }
+</code></pre>
 
-<li><p>Start the adapter in debug mode</p></li>
-
-<li><p>Open a browser and hit <a href="https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html">https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html</a></p></li>
-
-<li><p>From the <code>Admin</code> controller, configure the <code>/admin/health</code> with setting the following headers:</p>
+<ul>
+<li>Start the adapter in debug mode</li>
+<li>Open a browser and hit <a href="https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html">https://play-with-fint-adapter.felleskomponent.no/swagger-ui.html</a></li>
+<li>From the <code>Admin</code> controller, configure the <code>/admin/health</code> with setting the following headers:
 
 <ul>
 <li><code>x-org-id</code> use the generated OrgId</li>
 <li><code>x-client</code> to <code>test</code></li>
 </ul></li>
-
-<li><p>Send the health event from the <code>/admin/health</code> endpoint.</p></li>
-
-<li><p>Step through the code to see what happens.</p></li>
-
-<li><p>You can also hit the <code>dog</code> and <code>owner</code> controllers to see how <code>FintResources</code> and <code>Relations</code> are build. See <a href="https://github.com/FINTmodels/Fint.Relation.Model">https://github.com/FINTmodels/Fint.Relation.Model</a> for more information.</p></li>
+<li>Send the health event from the <code>/admin/health</code> endpoint.</li>
+<li>Step through the code to see what happens.</li>
+<li>You can also hit the <code>dog</code> and <code>owner</code> controllers to see how <code>FintResources</code> and <code>Relations</code> are build. See <a href="https://github.com/FINTmodels/Fint.Relation.Model">https://github.com/FINTmodels/Fint.Relation.Model</a> for more information.</li>
 </ul>
 
 <h3 id="security">Security</h3>
@@ -154,9 +151,9 @@ Breakpoint --&gt;      if (serverSideEvent.IsHealthCheck())
 <p>The <code>adapter</code> uses <code>OAuth2</code> by default to authenticated to the <code>provider</code> endpoint. This tutorial is set up with at tutorial user. In production one will get a <em>real</em> user. This is the <code>OAuth2</code> config:</p>
 
 <pre><code class="language-json">&quot;OAuthTokenService&quot;: {
-    &quot;AccessTokenUri&quot;: &quot;https://idp.felleskomponent.no/nidp/oauth/nam/token&quot;,
-    &quot;ClientId&quot;: &quot;2d0ed372-53fb-4d0a-9e7f-d546c5cf2d71&quot;,
-    &quot;ClientSecret&quot;: &quot;kgaiww60LjjNh0iyfv0KSjMZMbv04L6YZfYq5iYpu6IhIyxo6UFdslQMw_BBmZeVOuUCl75f3dE6FaDTVxgYjg&quot;,
+    &quot;AccessTokenUri&quot;: &quot;https://namidp01.rogfk.no/nidp/oauth/nam/token&quot;,
+    &quot;ClientId&quot;: &quot;6e1cf7b4-b107-42b3-9435-8fda70726c6a&quot;,
+    &quot;ClientSecret&quot;: &quot;6y4FUuP9BfAXeVqguNKT0ofToIwN5RdB1PaUvx_nCMiQbH9NeGq3pp0jQB9zOQ0APOxEbodzJXp-8RVux6318A&quot;,
     &quot;Username&quot;: &quot;pwfatut&quot;,
     &quot;Password&quot;: &quot;pwfatut&quot;,
     &quot;Scope&quot;: &quot;fint-client&quot;,
