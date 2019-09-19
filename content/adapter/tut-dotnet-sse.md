@@ -33,7 +33,7 @@ This `repo` consists of three projects:
 - **FINT.Sse.Adapter.Tests** - This is the `unit test` project.
 
 ### Get an OrgId
-* Go <a href="https://play-with-fint-adapter.felleskomponent.no/admin/organization/generateOrgId" target="_blank">here</a> to generate an `OrgId`. 
+* Go <a href="https://play-with-fint-adapter.felleskomponent.no/demo/organization/generateOrgId" target="_blank">here</a> to generate an `OrgId`. 
 
 > This `OrgId` is vaild until midnight the same day.
 
