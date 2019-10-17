@@ -75,7 +75,8 @@
 
 <h2 id="causes-for-events">Causes for events</h2>
 
-<p>FINT components produce events for two reasons:
+<p>FINT components produce events for three reasons:
+- Health status requests
 - Periodic cache update events every 15 minutes, triggering <code>GET_ALL_*</code> events.
 - Incoming POST / PUT requests from clients.  Every request produces exactly one event.</p>
 
@@ -86,6 +87,7 @@
 <p>FINT Adapters must be able to handle three different kinds of events:</p>
 
 <ol>
+<li>Request for system health status</li>
 <li>Requests to get all instances of a class from the FINT Consumer Cache Service</li>
 <li>Requests to get a single element of a class from the FINT Consumer API.</li>
 <li>Requests to update (create, modify or delete) a single element of a class from the FINT Consumer API.</li>
@@ -109,6 +111,29 @@
 <li>Reject the event.  The consumer ignores any data from the response.  Other adapters attempting to respond will receive a <code>410</code> status from the Provider.</li>
 <li>Ignore the event, assuming another instance is handling it.  If no other adapter is handling the events, the provider will expire the event after 120 seconds.</li>
 </ol>
+
+<h2 id="system-health-status-health">System health status (<code>HEALTH</code>)</h2>
+
+<p>Every FINT Consumer has a health endpoint (<code>/admin/health</code>) that clients could <code>GET</code> from to
+request health status.</p>
+
+<p>Adapters have 30 seconds to respond to this health event.  The request payload contains an array
+of health status structures, and the response should contain the same, with one additional element
+for the status of the adapter.</p>
+
+<p>The health status structure looks like this:</p>
+
+<pre><code>{
+  &quot;component&quot;: &quot;adapter&quot;,
+  &quot;status&quot;: &quot;APPLICATION_HEALTHY&quot;,
+  &quot;timestamp&quot;: 1571327388028,
+  &quot;time&quot;: &quot;2019-10-17T15:49:48.028Z&quot;
+}
+</code></pre>
+
+<p><code>timestamp</code> is in milliseconds since Unix epoch, <code>time</code> in ISO 8601.</p>
+
+<p><code>status</code> should be <code>APPLICATION_HEALTHY</code> or <code>APPLICATION_UNHEALTHY</code> depending on the state of the back-end application.</p>
 
 <h2 id="get-all-instances-of-a-class-get-all-type">Get all instances of a class (<code>GET_ALL_</code><em>type</em>)</h2>
 
@@ -247,6 +272,7 @@
 <ul>
 <li><a href="#causes-for-events">Causes for events</a></li>
 <li><a href="#event-kinds">Event kinds</a></li>
+<li><a href="#system-health-status-health">System health status (<code>HEALTH</code>)</a></li>
 <li><a href="#get-all-instances-of-a-class-get-all-type">Get all instances of a class (<code>GET_ALL_</code><em>type</em>)</a></li>
 <li><a href="#get-a-single-instance-of-a-class-by-id-get-type">Get a single instance of a class by ID (<code>GET_</code><em>type</em>)</a></li>
 <li><a href="#create-a-new-element-or-update-an-existing-element-by-id-update-type">Create a new element, or update an existing element by ID (<code>UPDATE_</code><em>type</em>)</a></li>
