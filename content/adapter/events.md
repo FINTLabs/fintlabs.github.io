@@ -15,7 +15,8 @@ The general flow between FINT and adapters are:
 
 ## Causes for events
 
-FINT components produce events for two reasons:
+FINT components produce events for three reasons:
+- Health status requests
 - Periodic cache update events every 15 minutes, triggering `GET_ALL_*` events.
 - Incoming POST / PUT requests from clients.  Every request produces exactly one event.
 
@@ -25,6 +26,7 @@ FINT expects exactly one status and one response to every event delivered.  Addi
 
 FINT Adapters must be able to handle three different kinds of events:
 
+  1. Request for system health status
   1. Requests to get all instances of a class from the FINT Consumer Cache Service
   1. Requests to get a single element of a class from the FINT Consumer API.
   1. Requests to update (create, modify or delete) a single element of a class from the FINT Consumer API.
@@ -43,6 +45,28 @@ Any adapter instance registered with the asset ID can handle events in three way
   1. Accept the event and respond with data.  The consumer handles the data from the response.  Other adapters attempting to respond will receive a `410` status from the Provider.
   1. Reject the event.  The consumer ignores any data from the response.  Other adapters attempting to respond will receive a `410` status from the Provider.
   1. Ignore the event, assuming another instance is handling it.  If no other adapter is handling the events, the provider will expire the event after 120 seconds.
+
+## System health status (`HEALTH`)
+
+Every FINT Consumer has a health endpoint (`/admin/health`) that clients could `GET` from to
+request health status.
+
+Adapters have 30 seconds to respond to this health event.  The request payload contains an array
+of health status structures, and the response should contain the same, with one additional element
+for the status of the adapter.
+
+The health status structure looks like this:
+
+    {
+      "component": "adapter",
+      "status": "APPLICATION_HEALTHY",
+      "timestamp": 1571327388028,
+      "time": "2019-10-17T15:49:48.028Z"
+    }
+
+`timestamp` is in milliseconds since Unix epoch, `time` in ISO 8601.
+
+`status` should be `APPLICATION_HEALTHY` or `APPLICATION_UNHEALTHY` depending on the state of the back-end application.
 
 ## Get all instances of a class (`GET_ALL_`_type_)
 
