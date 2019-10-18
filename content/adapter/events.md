@@ -53,7 +53,7 @@ request health status.
 
 Adapters have 30 seconds to respond to this health event.  The request payload contains an array
 of health status structures, and the response should contain the same, with one additional element
-for the status of the adapter.
+for the status of the adapter and connection to the back-end systems.
 
 The health status structure looks like this:
 
