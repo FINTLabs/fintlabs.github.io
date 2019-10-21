@@ -27,7 +27,10 @@ The process is as follows:
      created or updated.
    - _Note:_ If the operation is a deletion, the status code is `410` instead.
    - If rejected by the back-end system, status `400` with a response body indicating the error.
-   - If there was a temporary failure processing the request, status `500` with the error message.
+   - If the update is in conflict with other updates or data in the back-end system, the status
+     is `409` and the response body contains the original information the update conflicts with.
+   - If there was a temporary failure processing the request, status `500` with the
+     error message.
       In this case the client can re-try the request.
 
 The *Status* resource is valid for 30 minutes after initiating the original request.
