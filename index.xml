@@ -88,6 +88,17 @@ All other types are used to construct the main classes, either by abstraction of
     </item>
     
     <item>
+      <title>Error handling</title>
+      <link>https://fintlabs.github.io/adapter/errors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fintlabs.github.io/adapter/errors/</guid>
+      <description>How to deal with errors Since UPDATE_ events involves multiple components and is based on events, errors are bound to happen.
+Update conflicts Sometimes the update attempted is in conflict with other data in the back-end system. This could for instance be:
+ Attempts to create data with identifiers that refer to existing information. Modifications that create illegal state when combined with existing information.  In both cases, the adapter must reject the update with CONFLICT response status.</description>
+    </item>
+    
+    <item>
       <title>Using FINT APIs</title>
       <link>https://fintlabs.github.io/api/guidelines/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

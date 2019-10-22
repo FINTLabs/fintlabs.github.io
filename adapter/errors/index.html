@@ -1,0 +1,209 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" href="/index.xml" type="application/rss+xml" title="FINTLabs Technical Docs">
+    <link rel="icon" href="https://fintlabs.github.io/favicon.ico">
+    <title>Error handling - FINTLabs Technical Docs</title>
+    
+    <link rel="stylesheet" href="https://fintlabs.github.io/css/highlight/github.css">
+    <link rel="stylesheet" href="https://fintlabs.github.io/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fintlabs.github.io/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://fintlabs.github.io/css/theme.css">
+    <link rel="stylesheet" href="https://fintlabs.github.io/css/bootie-docs.css">
+    <link rel="stylesheet" href="https://fintlabs.github.io/css/site.css">
+    <link rel="stylesheet" href="https://fintlabs.github.io/stylesheets/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body role="document">
+
+    
+    <nav class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+                <a class="navbar-brand" href="https://fintlabs.github.io/">FINTLabs Technical Docs</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    
+                      
+                    <li ><a href="/adapter">Adapter</a></li>
+                    
+                    <li ><a href="/api">Api</a></li>
+                    
+                    <li ><a href="/models">Information models</a></li>
+                      
+                </ul>
+                
+            </div>
+            
+        </div>
+    </nav>
+
+    <div class="container">
+
+<div class="row">
+    <div class="col-sm-8 doc-main">
+        <main role="main">
+            <article>
+                <a id="title"></a>
+                <h1 class="doc-entry-title">Error handling</h1>
+
+                <section>
+                    
+
+<h1 id="how-to-deal-with-errors">How to deal with errors</h1>
+
+<p>Since <code>UPDATE_</code> events involves multiple components and is based on events,
+errors are bound to happen.</p>
+
+<h1 id="update-conflicts">Update conflicts</h1>
+
+<p>Sometimes the update attempted is in conflict with other data in the back-end
+system.  This could for instance be:</p>
+
+<ul>
+<li>Attempts to create data with identifiers that refer to existing information.</li>
+<li>Modifications that create illegal state when combined with existing information.</li>
+</ul>
+
+<p>In both cases, the adapter must reject the update with <code>CONFLICT</code> response status.  Furthermore, the response must contain the payload that the original
+ update conflicts with.</p>
+
+<p>This enables the client to update its information and possibly modify the
+ update before another attempt is made.</p>
+
+<h1 id="lost-events">Lost events</h1>
+
+<p>The update events could be lost at multiple stages of the flow.  To better
+illustrate where this happens, let&rsquo;s first describe the successful scenario.</p>
+
+<h2 id="successful-case">Successful case</h2>
+
+<p>The following sequence diagram illustrates the successful case, where
+information is updated, and the client successfully recieves confirmation
+of the update.</p>
+
+<p><img src="/images/normal.svg" alt="Successful case sequence diagram" class="img-responsive" /></p>
+
+<h2 id="event-is-lost-before-it-reaches-adapter">Event is lost before it reaches adapter</h2>
+
+<p>This is the simplest failure scenaro to handle.  Nobody gets informed of the
+update, and the update can safely be retried after the original update
+has expired.</p>
+
+<p><img src="/images/timeout.svg" alt="Timeout case sequence diagram" class="img-responsive" /></p>
+
+<h2 id="event-is-confirmed-by-adapter-but-not-updated-in-back-end-system">Event is confirmed by adapter, but not updated in back-end system</h2>
+
+<p>This scenario is very similar to the one above - the only difference is
+the time it takes for the event to expire.</p>
+
+<p><img src="/images/noresponse.svg" alt="No response case sequence diagram" class="img-responsive" /></p>
+
+<h2 id="event-is-confirmed-and-updated-in-back-end-system-but-client-is-not-notified">Event is confirmed and updated in back-end system, but client is not notified</h2>
+
+<p>This is the most difficult scenario.  Since the back-end system has been
+updated, the event cannot safely be retried, although the client does not
+know.  There are basically two ways to resolve this issue.</p>
+
+<p>Which of these is better depends on the back-end system&rsquo;s ability to record
+and roll back pending modifications.</p>
+
+<h3 id="roll-back-the-modification-so-it-can-safely-be-retried">Roll back the modification so it can safely be retried.</h3>
+
+<p><img src="/images/orphaned.svg" alt="Orphaned case sequence diagram" class="img-responsive" /></p>
+
+<h3 id="use-conflict-detection-to-reject-a-retry-with-conflict-status">Use conflict detection to reject a retry with <code>CONFLICT</code> status.</h3>
+
+<p><img src="/images/duplicate.svg" alt="Duplicate case sequence diagram" class="img-responsive" /></p>
+
+                </section>
+            </article>
+        </main>
+    </div>
+    
+
+     
+<div class="col-sm-3 col-sm-offset-1 doc-sidebar">
+    <div id="sidebar">
+        <div class="sidebar-module">
+            <div class="sidebar-toc">
+                <h4 class="sidebar-heading">Table of Contents</h4>
+                <ul>
+                    <li><strong><a href="#title">Error handling</a></strong></li>
+                </ul>
+                <nav id="TableOfContents">
+<ul>
+<li><a href="#how-to-deal-with-errors">How to deal with errors</a></li>
+<li><a href="#update-conflicts">Update conflicts</a></li>
+<li><a href="#lost-events">Lost events</a>
+<ul>
+<li><a href="#successful-case">Successful case</a></li>
+<li><a href="#event-is-lost-before-it-reaches-adapter">Event is lost before it reaches adapter</a></li>
+<li><a href="#event-is-confirmed-by-adapter-but-not-updated-in-back-end-system">Event is confirmed by adapter, but not updated in back-end system</a></li>
+<li><a href="#event-is-confirmed-and-updated-in-back-end-system-but-client-is-not-notified">Event is confirmed and updated in back-end system, but client is not notified</a>
+<ul>
+<li><a href="#roll-back-the-modification-so-it-can-safely-be-retried">Roll back the modification so it can safely be retried.</a></li>
+<li><a href="#use-conflict-detection-to-reject-a-retry-with-conflict-status">Use conflict detection to reject a retry with <code>CONFLICT</code> status.</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+<hr />
+<footer>
+     
+    <a class="btn btn-link" href="https://www.fintlabs.no" target="_blank" aria-label="FINTProsjektet">
+        <i class="fa fa-home" aria-hidden="true"></i> FINTLabs website
+    </a>
+    |
+    <a class="btn btn-link" href="https://github.com/FINTlabs/" target="_blank" aria-label="FINTProsjektet">
+        <i class="fa fa-github" aria-hidden="true"></i> FINTLabs
+    </a>
+    |
+    <a class="btn btn-link" href="https://informasjonsmodell.felleskomponent.no" target="_blank" aria-label="FIDP">
+        <i class="fa fa-book" aria-hidden="true"></i> Information Model Documentation Portal
+    </a>
+</footer>
+
+
+
+<script src="https://fintlabs.github.io/js/jquery.min.js"></script>
+<script src="https://fintlabs.github.io/js/bootstrap.min.js"></script>
+
+<script src="https://fintlabs.github.io/js/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://fintlabs.github.io/js/ie10-viewport-bug-workaround.js"></script>
+<script src="https://fintlabs.github.io/js/bootie-docs.js"></script>
+
+</body>
+
+</html>

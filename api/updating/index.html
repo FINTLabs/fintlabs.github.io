@@ -91,7 +91,10 @@ header referring to a <code>/status/&lt;uuid&gt;</code> resource</li>
 created or updated.</li>
 <li><em>Note:</em> If the operation is a deletion, the status code is <code>410</code> instead.</li>
 <li>If rejected by the back-end system, status <code>400</code> with a response body indicating the error.</li>
-<li>If there was a temporary failure processing the request, status <code>500</code> with the error message.
+<li>If the update is in conflict with other updates or data in the back-end system, the status
+is <code>409</code> and the response body contains the original information the update conflicts with.</li>
+<li>If there was a temporary failure processing the request, status <code>500</code> with the
+error message.
 In this case the client can re-try the request.</li>
 </ul></li>
 </ol>
