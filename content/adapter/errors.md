@@ -67,7 +67,7 @@ and roll back pending modifications.
 
 For this case to be possible, the connection between the
 adapter and the back-end system must support transaction
-rollback, or similar compensatingg operations.
+rollback, or similar compensating operations.
 
 ### Use conflict detection to reject a retry with `CONFLICT` status.
 
