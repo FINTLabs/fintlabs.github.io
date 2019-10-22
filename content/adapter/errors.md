@@ -65,6 +65,19 @@ and roll back pending modifications.
 
 <img src="/images/orphaned.svg" alt="Orphaned case sequence diagram" class="img-responsive" />
 
+For this case to be possible, the connection between the
+adapter and the back-end system must support transaction
+rollback, or similar compensatingg operations.
+
 ### Use conflict detection to reject a retry with `CONFLICT` status.
 
 <img src="/images/duplicate.svg" alt="Duplicate case sequence diagram" class="img-responsive" />
+
+In this latter case, client support is required for the state
+of the update to be synchronized correctly between client and
+back-end system.  For this to work, it is essential that the
+adapter correctly responds to the `CONFLICT` with a response
+payload indicating the current state of the information in the
+back-end system, and that the client correctly handles the
+`409` status and updates its pending transaction with this
+information.
