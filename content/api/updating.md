@@ -56,7 +56,7 @@ Attributes that can be modified are indicated in the information model.
 
 ## Deleting objects
 
-`DELETE /domain/package/class/field/value`, i.e. `PUT /administrasjon/personal/fravar/systemid/abcdef1234`
+`DELETE /domain/package/class/field/value`, i.e. `DELETE /administrasjon/personal/fravar/systemid/abcdef1234`
 
 Not all information classes support deletion.
 If deletion is not supported, the operation is rejected with status `400`.
