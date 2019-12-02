@@ -238,6 +238,44 @@ for the status of the adapter and connection to the back-end systems.</p>
 <li><code>DELETE</code>: The existing element, identified by the <code>query</code> field, should be removed from the back-end system if this is valid according to the business rules.  No response payload is expected, response status as above.</li>
 </ul>
 
+<p>Events <em>must</em> be responded with a <code>responseStatus</code> setting indicating the result of the operation:</p>
+
+<table>
+<thead>
+<tr>
+<th><code>responseStatus</code></th>
+<th>HTTP status</th>
+<th>Description of result</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>ACCEPTED</code></td>
+<td><code>303</code></td>
+<td>The operation was accepted and completed successfully.  Based on event payload, the FINT API produces a <code>Location</code> header referring to the newly created resource.</td>
+</tr>
+
+<tr>
+<td><code>REJECTED</code></td>
+<td><code>400</code></td>
+<td>The operation was rejected.  The <code>message</code>, <code>statusCoude</code> and <code>problems</code> fields contain explanations as to why.</td>
+</tr>
+
+<tr>
+<td><code>ERROR</code></td>
+<td><code>500</code></td>
+<td>An error occurred during processing of the event.  The client may retry the same operation later.</td>
+</tr>
+
+<tr>
+<td><code>CONFLICT</code></td>
+<td><code>409</code></td>
+<td>The operation is in conflict with other activity.  The response contains an updated version of the resource so the client can update its own state.</td>
+</tr>
+</tbody>
+</table>
+
 <p>If write operations are not supported or permitted, the event must be rejected by posting <code>ADAPTER_REJECTED</code> at the <code>/status</code> phase.</p>
 
 <p>The response payload is handled according to the following, depending on ResponseStatus:</p>
