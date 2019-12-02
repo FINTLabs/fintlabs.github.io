@@ -111,6 +111,15 @@ The adapters are expected to handle the various operations according to the foll
   - `UPDATE`: The existing element, identified by the `query` field, should be updated with the payload according to business rules and which fields are `writable` in the FINT information model.  The response payload must include the final version stored in the back-end system.  Response status as above.
   - `DELETE`: The existing element, identified by the `query` field, should be removed from the back-end system if this is valid according to the business rules.  No response payload is expected, response status as above.
 
+Events *must* be responded with a `responseStatus` setting indicating the result of the operation:
+
+| `responseStatus` | HTTP status | Description of result
+|------------------|-------------|------------------------
+| `ACCEPTED`       | `303`       | The operation was accepted and completed successfully.  Based on event payload, the FINT API produces a `Location` header referring to the newly created resource.
+| `REJECTED`       | `400`       | The operation was rejected.  The `message`, `statusCoude` and `problems` fields contain explanations as to why.
+| `ERROR`          | `500`       | An error occurred during processing of the event.  The client may retry the same operation later.
+| `CONFLICT`       | `409`       | The operation is in conflict with other activity.  The response contains an updated version of the resource so the client can update its own state.
+
 If write operations are not supported or permitted, the event must be rejected by posting `ADAPTER_REJECTED` at the `/status` phase.
 
 The response payload is handled according to the following, depending on ResponseStatus:
