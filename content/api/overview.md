@@ -125,7 +125,76 @@ like this:
             }
         ]
     },
-    "total_items": 111
+    "total_items": 111,
+    "size": 111,
+    "offset": 0
+}
+```
+
+## Pagination of result (`size` and `offset`)
+
+For areas where there are a large number of resources, the API supports pagination.  This is controlled
+by two query parameters:
+
+| parameter | description |
+|-----------|-------------|
+| `size`    | Number of items to return.  Limits the response to contain maximum `size` elements. |
+| `offset`  | Position in list to start returning items from.  Skips `offset` items. |
+
+The response contains `prev` or `next` entries within `_links` if there are more items either before
+or after (or both) compared to the current page.
+
+The `total_items` attribute in the response can also be used to determine number of requests required.
+
+
+**Example: 25,000**
+
+Fetch first page: `/administrasjon/personal/person?size=25000&offset=0`
+
+First 25,000 elements are returned.  The response contains the following:
+
+```json
+{
+    "_links": {
+        "self": [
+            {
+                "href": "/administrasjon/personal/person?size=25000&offset=0"
+            }
+        ],
+        "next": [
+            {
+                "href": "/administrasjon/personal/person?size=25000&offset=25000"
+            }
+        ]
+    },
+    "total_items": 123456,
+    "size": 25000,
+    "offset": 0
+}
+```
+
+Keep following the `next` link as long as it's present, for a total of five requests.
+
+Each response will indicate 123,456 total items.  The first three responses will have a `size` of 25,000,
+but the last response will have a size of 23,456 and no `next` link:
+
+```json
+{
+    "_links": {
+        "self": [
+            {
+                "href": "/administrasjon/personal/person?size=25000&offset=100000"
+            }
+        ],
+        "prev": [
+            {
+                "href": "/administrasjon/personal/person?size=25000&offset=75000"
+            }
+        ]
+    },
+    "total_items": 123456,
+    "size": 23456,
+    "offset": 100000
 }
 ```
 
@@ -186,11 +255,20 @@ provided timestamp.  The response looks like this:
             }
         ]
     },
-    "total_items": 2
+    "total_items": 24324,
+    "size": 2,
+    "offset": 0
 }
 ```
 
-If `total_items` is `0`, this indicates that there are no new updates since the given timestamp.
+If `size` is `0`, this indicates that there are no new updates since the given timestamp.
+
+This request can also be combined with pagination using `size` and `offset` in case a large number of items
+have been updated.
+
+**Note:** When FINT API restarts, all items are regarded new.  This means a `sinceTimeStamp` parameter
+from before the restart will return all items.  It is therefore recommended to use pagination as well if the
+result is large.
 
 ## Health Check
 
