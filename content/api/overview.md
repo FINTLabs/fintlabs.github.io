@@ -175,7 +175,7 @@ First 25,000 elements are returned.  The response contains the following:
 
 Keep following the `next` link as long as it's present, for a total of five requests.
 
-Each response will indicate 123,456 total items.  The first three responses will have a `size` of 25,000,
+Each response will indicate 123,456 total items.  The first four responses will have a `size` of 25,000,
 but the last response will have a size of 23,456 and no `next` link:
 
 ```json
