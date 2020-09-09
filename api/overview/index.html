@@ -214,7 +214,89 @@ like this:</p>
             }
         ]
     },
-    &quot;total_items&quot;: 111
+    &quot;total_items&quot;: 111,
+    &quot;size&quot;: 111,
+    &quot;offset&quot;: 0
+}
+</code></pre>
+
+<h2 id="pagination-of-result-size-and-offset">Pagination of result (<code>size</code> and <code>offset</code>)</h2>
+
+<p>For areas where there are a large number of resources, the API supports pagination.  This is controlled
+by two query parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>size</code></td>
+<td>Number of items to return.  Limits the response to contain maximum <code>size</code> elements.</td>
+</tr>
+
+<tr>
+<td><code>offset</code></td>
+<td>Position in list to start returning items from.  Skips <code>offset</code> items.</td>
+</tr>
+</tbody>
+</table>
+
+<p>The response contains <code>prev</code> or <code>next</code> entries within <code>_links</code> if there are more items either before
+or after (or both) compared to the current page.</p>
+
+<p>The <code>total_items</code> attribute in the response can also be used to determine number of requests required.</p>
+
+<p><strong>Example: 25,000</strong></p>
+
+<p>Fetch first page: <code>/administrasjon/personal/person?size=25000&amp;offset=0</code></p>
+
+<p>First 25,000 elements are returned.  The response contains the following:</p>
+
+<pre><code class="language-json">{
+    &quot;_links&quot;: {
+        &quot;self&quot;: [
+            {
+                &quot;href&quot;: &quot;/administrasjon/personal/person?size=25000&amp;offset=0&quot;
+            }
+        ],
+        &quot;next&quot;: [
+            {
+                &quot;href&quot;: &quot;/administrasjon/personal/person?size=25000&amp;offset=25000&quot;
+            }
+        ]
+    },
+    &quot;total_items&quot;: 123456,
+    &quot;size&quot;: 25000,
+    &quot;offset&quot;: 0
+}
+</code></pre>
+
+<p>Keep following the <code>next</code> link as long as it&rsquo;s present, for a total of five requests.</p>
+
+<p>Each response will indicate 123,456 total items.  The first four responses will have a <code>size</code> of 25,000,
+but the last response will have a size of 23,456 and no <code>next</code> link:</p>
+
+<pre><code class="language-json">{
+    &quot;_links&quot;: {
+        &quot;self&quot;: [
+            {
+                &quot;href&quot;: &quot;/administrasjon/personal/person?size=25000&amp;offset=100000&quot;
+            }
+        ],
+        &quot;prev&quot;: [
+            {
+                &quot;href&quot;: &quot;/administrasjon/personal/person?size=25000&amp;offset=75000&quot;
+            }
+        ]
+    },
+    &quot;total_items&quot;: 123456,
+    &quot;size&quot;: 23456,
+    &quot;offset&quot;: 100000
 }
 </code></pre>
 
@@ -272,11 +354,20 @@ provided timestamp.  The response looks like this:</p>
             }
         ]
     },
-    &quot;total_items&quot;: 2
+    &quot;total_items&quot;: 24324,
+    &quot;size&quot;: 2,
+    &quot;offset&quot;: 0
 }
 </code></pre>
 
-<p>If <code>total_items</code> is <code>0</code>, this indicates that there are no new updates since the given timestamp.</p>
+<p>If <code>size</code> is <code>0</code>, this indicates that there are no new updates since the given timestamp.</p>
+
+<p>This request can also be combined with pagination using <code>size</code> and <code>offset</code> in case a large number of items
+have been updated.</p>
+
+<p><strong>Note:</strong> When FINT API restarts, all items are regarded new.  This means a <code>sinceTimeStamp</code> parameter
+from before the restart will return all items.  It is therefore recommended to use pagination as well if the
+result is large.</p>
 
 <h2 id="health-check">Health Check</h2>
 
@@ -312,6 +403,7 @@ provided timestamp.  The response looks like this:</p>
 <li><a href="#common-operations">Common operations</a>
 <ul>
 <li><a href="#get-all-objects-of-a-given-class">Get all objects of a given class</a></li>
+<li><a href="#pagination-of-result-size-and-offset">Pagination of result (<code>size</code> and <code>offset</code>)</a></li>
 <li><a href="#fetch-individual-item-by-identifier">Fetch individual item by identifier</a></li>
 <li><a href="#size-of-cache-for-a-given-class">Size of cache for a given class</a></li>
 <li><a href="#timestamp-for-when-cache-was-last-updated">Timestamp for when cache was last updated</a></li>
